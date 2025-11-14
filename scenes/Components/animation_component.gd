@@ -44,6 +44,9 @@ func handle_dodge_roll_animation(wants_to_dodge: bool, direction_horizontal: flo
 		elif sprite.animation.contains("right"):
 			sprite.play("dodge_right")
 		is_dodging = true
+		
+func handle_interaction():
+	pass
 
 func _on_animation_finished() -> void:
 	if is_dodging && sprite.animation.contains("dodge"):
