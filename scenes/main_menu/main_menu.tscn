@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyvgpxd0rqg44"]
+[gd_scene load_steps=5 format=3 uid="uid://dyvgpxd0rqg44"]
 
 [ext_resource type="Script" uid="uid://ci7by8hu7ag7v" path="res://scenes/main_menu/main_menu.gd" id="1_nhkf3"]
+[ext_resource type="AudioStream" uid="uid://ckvo43m2bsblb" path="res://resources/music/Pixel Panic 2.mp3" id="2_0ebjn"]
+[ext_resource type="Texture2D" uid="uid://clrv450vqwj76" path="res://resources/background/background.png" id="2_ob46e"]
+
+[sub_resource type="Theme" id="Theme_fsom3"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -9,6 +13,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = SubResource("Theme_fsom3")
 script = ExtResource("1_nhkf3")
 
 [node name="BackgroundColorRect" type="ColorRect" parent="."]
@@ -19,6 +24,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(579.25, 71.74997)
+scale = Vector2(1.1469727, 1.1469727)
+texture = ExtResource("2_ob46e")
 
 [node name="VerticalBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -70,6 +80,11 @@ assets: \"Modern interiors\" by LimeZu
 \"Open Font Package\" by dalton5000
 (https://godotengine.org/asset-library/asset/316)"
 horizontal_alignment = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0ebjn")
+volume_db = 0.143
+autoplay = true
 
 [connection signal="pressed" from="VerticalBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VerticalBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
