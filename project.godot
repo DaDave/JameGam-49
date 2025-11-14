@@ -11,9 +11,19 @@ config_version=5
 [application]
 
 config/name="JameGam-49"
-run/main_scene="uid://d2fu6qb3ij58t"
+run/main_scene="uid://dyvgpxd0rqg44"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+GameManagerSignalBus="*res://scenes/game_manager/game_manager_signal_bus.gd"
+GameManager="*res://scenes/game_manager/game_manager.gd"
+GameTimer="*res://scenes/game_manager/timer.gd"
+
+[gui]
+
+theme/custom_font="uid://7jdcyc6qvdvm"
 
 [input]
 

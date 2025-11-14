@@ -1,10 +1,10 @@
 [gd_scene load_steps=56 format=3 uid="uid://bv3co3tcjuqgx"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_mdl7e"]
+[ext_resource type="Script" uid="uid://bjisn1obrfkhn" path="res://scenes/player.gd" id="1_mdl7e"]
 [ext_resource type="Texture2D" uid="uid://dutkamcf1shae" path="res://assets/player.png" id="1_p0vlq"]
-[ext_resource type="Script" uid="uid://bq0us0ee8mi4e" path="res://scenes/Components/movement_component.gd" id="3_qu4a1"]
-[ext_resource type="Script" uid="uid://ccfn1s3bwoan5" path="res://scenes/Components/input_component.gd" id="4_70d11"]
-[ext_resource type="Script" uid="uid://b58a5mkblegvr" path="res://scenes/Components/animation_component.gd" id="5_qu4a1"]
+[ext_resource type="Script" uid="uid://bq0us0ee8mi4e" path="res://scenes/components/movement_component.gd" id="3_qu4a1"]
+[ext_resource type="Script" uid="uid://ccfn1s3bwoan5" path="res://scenes/components/input_component.gd" id="4_70d11"]
+[ext_resource type="Script" uid="uid://b58a5mkblegvr" path="res://scenes/components/animation_component.gd" id="5_qu4a1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v6fml"]
 atlas = ExtResource("1_p0vlq")

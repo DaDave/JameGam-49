@@ -1,0 +1,76 @@
+[gd_scene load_steps=2 format=3 uid="uid://dyvgpxd0rqg44"]
+
+[ext_resource type="Script" uid="uid://ci7by8hu7ag7v" path="res://scenes/main_menu/main_menu.gd" id="1_nhkf3"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nhkf3")
+
+[node name="BackgroundColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VerticalBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 22.0
+offset_top = -141.0
+offset_right = 161.0
+offset_bottom = -19.0
+grow_vertical = 0
+
+[node name="StartButton" type="Button" parent="VerticalBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="CreditsButton" type="Button" parent="VerticalBoxContainer"]
+layout_mode = 2
+text = "Credits"
+
+[node name="QuitButton" type="Button" parent="VerticalBoxContainer"]
+layout_mode = 2
+text = "Quit"
+
+[node name="CreditsLabel" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -440.0
+offset_top = -314.0
+offset_right = -20.0
+offset_bottom = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Made by
+
+wuhsel (Coding)
+Awe (Coding)
+DaDave (Coding)
+klimagnet (Level design & Audio)
+LiPhora  (Grapics & Animations)
+
+assets: \"Modern interiors\" by LimeZu 
+(https://limezu.itch.io/moderninteriors)
+\"Open Font Package\" by dalton5000
+(https://godotengine.org/asset-library/asset/316)"
+horizontal_alignment = 2
+
+[connection signal="pressed" from="VerticalBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VerticalBoxContainer/CreditsButton" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="VerticalBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
