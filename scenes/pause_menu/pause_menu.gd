@@ -11,4 +11,4 @@ func _on_resume_button_pressed():
 
 func _on_quit_button_pressed():
 	GameManagerSignalBus.pause_requested.emit()
-	GameManagerSignalBus.switch_scene_by_path.emit("res://MainMenu/main_menu.tscn")
+	GameManagerSignalBus.switch_scene_by_path.emit("res://scenes/main_menu/main_menu.tscn")

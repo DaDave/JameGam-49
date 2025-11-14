@@ -1,10 +1,19 @@
-[gd_scene load_steps=5 format=3 uid="uid://dyvgpxd0rqg44"]
+[gd_scene load_steps=10 format=3 uid="uid://dyvgpxd0rqg44"]
 
 [ext_resource type="Script" uid="uid://ci7by8hu7ag7v" path="res://scenes/main_menu/main_menu.gd" id="1_nhkf3"]
 [ext_resource type="AudioStream" uid="uid://ckvo43m2bsblb" path="res://resources/music/Pixel Panic 2.mp3" id="2_0ebjn"]
 [ext_resource type="Texture2D" uid="uid://clrv450vqwj76" path="res://resources/background/background.png" id="2_ob46e"]
+[ext_resource type="FontFile" uid="uid://7jdcyc6qvdvm" path="res://resources/font/poco.ttf" id="3_uqeha"]
 
 [sub_resource type="Theme" id="Theme_fsom3"]
+
+[sub_resource type="Theme" id="Theme_wem23"]
+
+[sub_resource type="Theme" id="Theme_3ovsr"]
+
+[sub_resource type="Theme" id="Theme_5seab"]
+
+[sub_resource type="Theme" id="Theme_4xg86"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -43,14 +52,23 @@ grow_vertical = 0
 
 [node name="StartButton" type="Button" parent="VerticalBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_wem23")
+theme_override_fonts/font = ExtResource("3_uqeha")
+theme_override_font_sizes/font_size = 24
 text = "Start"
 
 [node name="CreditsButton" type="Button" parent="VerticalBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_3ovsr")
+theme_override_fonts/font = ExtResource("3_uqeha")
+theme_override_font_sizes/font_size = 24
 text = "Credits"
 
 [node name="QuitButton" type="Button" parent="VerticalBoxContainer"]
 layout_mode = 2
+theme = SubResource("Theme_5seab")
+theme_override_fonts/font = ExtResource("3_uqeha")
+theme_override_font_sizes/font_size = 24
 text = "Quit"
 
 [node name="CreditsLabel" type="Label" parent="."]
@@ -67,6 +85,9 @@ offset_right = -20.0
 offset_bottom = -20.0
 grow_horizontal = 0
 grow_vertical = 0
+theme = SubResource("Theme_4xg86")
+theme_override_fonts/font = ExtResource("3_uqeha")
+theme_override_font_sizes/font_size = 24
 text = "Made by
 
 wuhsel (Coding)

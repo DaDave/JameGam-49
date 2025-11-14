@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://ciri27wpl8l7m"]
+[gd_scene load_steps=3 format=3 uid="uid://ciri27wpl8l7m"]
 
 [ext_resource type="Script" uid="uid://c1ch3p3tfg3dt" path="res://scenes/pause_menu/pause_menu.gd" id="1_tobvk"]
+[ext_resource type="FontFile" uid="uid://7jdcyc6qvdvm" path="res://resources/font/poco.ttf" id="2_qcmsd"]
 
 [node name="PauseMenu" type="Control"]
 layout_mode = 3
@@ -28,9 +29,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -90.0
-offset_top = -60.0
+offset_top = -68.0
 offset_right = 90.0
-offset_bottom = 60.0
+offset_bottom = 68.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -40,19 +41,24 @@ theme_override_constants/separation = 12
 
 [node name="PauseHeadline" type="Label" parent="MarginContainer/VerticalBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
+theme_override_fonts/font = ExtResource("2_qcmsd")
+theme_override_font_sizes/font_size = 45
 text = "Pause"
 horizontal_alignment = 1
 
 [node name="ResumeButton" type="Button" parent="MarginContainer/VerticalBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qcmsd")
+theme_override_font_sizes/font_size = 30
 text = "Resume"
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VerticalBoxContainer"]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qcmsd")
+theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VerticalBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_pressed"]

@@ -7,8 +7,11 @@ var pause_menu_instance : PauseMenu = null
 var game_over_instance: GameOverMenu
 var occupied_room_values: Array
 var isPaused : bool = false
+var current_scene = null
 
 func _ready() -> void:
+	var root = get_tree().root
+	current_scene = root.get_child(root.get_child_count() - 1)
 	GameManagerSignalBus.switch_scene_by_path.connect(_onSceneByPathSwitched)
 	GameManagerSignalBus.start_game.connect(_onGameStarted)
 	GameManagerSignalBus.pause_menu_initiated.connect(_onPauseMenuInitiated)
@@ -66,6 +69,13 @@ func _onPlayerHealthDecreased() -> void:
 	max_player_health = max_player_health-1
 	if max_player_health <= 0:
 		_onGameOver()
+
+func _deferred_switch_scene(scene_path):
+	current_scene.free()
+	var scene = load(scene_path)
+	current_scene = scene.instantiate()
+	get_tree().root.add_child(current_scene)
+	get_tree().current_scene = current_scene
 
 func select_random_room_for_object() -> int:
 	var availableRoomValues = Rooms.values().filter(func(value):
