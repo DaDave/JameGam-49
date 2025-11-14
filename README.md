@@ -89,10 +89,10 @@ The box is players safe space. By finding a way to open the box the player is ab
 
 | #  | Assignment | Type | Status | Issue | Notes |
 |----|------------|------|--------|-------|-------|
-| 1  | Design document | DOCUMENTATION | OPEN | https://github.com/DaDave/JameGam-49/issues/1 |  |
+| 1  | Design document | DOCUMENTATION | DONE | https://github.com/DaDave/JameGam-49/issues/1 |  |
 | 2  | Main character | ART | OPEN | https://github.com/DaDave/JameGam-49/issues/2 |  |
 | 3  | Level design creation | ART | OPEN | https://github.com/DaDave/JameGam-49/issues/3 |  |
-| 4  | Main menu creation | CODING | OPEN | https://github.com/DaDave/JameGam-49/issues/4 |  |
+| 4  | Main menu creation | CODING | DONE | https://github.com/DaDave/JameGam-49/issues/4 |  |
 | 5  | Main menu background | ART | OPEN | https://github.com/DaDave/JameGam-49/issues/5 |  |
 | 6  | Main menu music | AUDIO | OPEN | https://github.com/DaDave/JameGam-49/issues/6 |  |
 | 7  | level creation | CODING | OPEN | https://github.com/DaDave/JameGam-49/issues/7 |  |
@@ -103,6 +103,7 @@ The box is players safe space. By finding a way to open the box the player is ab
 | 12 | Upload game | OTHERS | OPEN | https://github.com/DaDave/JameGam-49/issues/12 |  |
 | 13 | Exploding object creation | CODING | OPEN | https://github.com/DaDave/JameGam-49/issues/13 |  |
 | 14 | Projectile object creation | CODING | OPEN | https://github.com/DaDave/JameGam-49/issues/14 |  |
+| 15 | Game manager creation | CODING | DONE | https://github.com/DaDave/JameGam-49/issues/15 |  |
 
 
 ### Next Steps
