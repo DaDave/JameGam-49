@@ -1,11 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=5 format=3 uid="uid://k0reyf16mn4x"]
 
+[ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="Texture2D" uid="uid://hgcwf8mb3im1" path="res://resources/background/map.png" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
 
 [sub_resource type="TileSet" id="TileSet_0sr1o"]
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_0sr1o")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(565, 417)
