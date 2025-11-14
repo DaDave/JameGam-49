@@ -1,0 +1,45 @@
+[gd_scene load_steps=6 format=3 uid="uid://dqbmqn2l31phi"]
+
+[ext_resource type="Script" uid="uid://dxdfmoeggswbv" path="res://scenes/explosiv_object/explosion_object.gd" id="1_bn8ib"]
+[ext_resource type="Texture2D" uid="uid://x8y7nron08qg" path="res://scenes/explosiv_object/computer/computer.png" id="2_ad2hb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x8w0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ad2hb")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0ncj0"]
+radius = 121.103264
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3h1"]
+size = Vector2(48, 74)
+
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("collision_area", "danger_area")]
+script = ExtResource("1_bn8ib")
+collision_area = NodePath("Collision_Area2D")
+danger_area = NodePath("Danger_Area2D")
+metadata/_custom_type_script = "uid://dxdfmoeggswbv"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_x8w0s")
+
+[node name="Danger_Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Danger_Area2D"]
+shape = SubResource("CircleShape2D_0ncj0")
+debug_color = Color(1, 0, 0, 0.16862746)
+
+[node name="Collision_Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision_Area2D"]
+shape = SubResource("RectangleShape2D_hp3h1")
+debug_color = Color(0, 0.6, 0.69803923, 0.22745098)
+
+[connection signal="area_entered" from="Danger_Area2D" to="." method="_on_danger_area_2d_area_entered"]
+[connection signal="area_exited" from="Danger_Area2D" to="." method="_on_danger_area_2d_area_exited"]
