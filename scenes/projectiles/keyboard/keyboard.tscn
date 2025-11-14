@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8twy8ul1endc"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_qi4le"]
+[ext_resource type="Texture2D" uid="uid://bkokaqhdxejbb" path="res://scenes/projectiles/keyboard/keyboard.png" id="2_7h2hs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbkxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7h2hs")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7h2hs"]
+size = Vector2(32, 14)
+
+[node name="Keyboard" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_qi4le")
+animated_sprite = NodePath("AnimatedSprite2D")
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kbkxx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_7h2hs")

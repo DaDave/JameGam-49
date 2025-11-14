@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgy83dqvvt4wc"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_6vo24"]
+[ext_resource type="Texture2D" uid="uid://djmrg8rpox7n8" path="res://scenes/projectiles/mouse/mouse.png" id="2_uokoo"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbkxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_uokoo")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvxje"]
+radius = 8.0
+
+[node name="Mouse" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+script = ExtResource("1_6vo24")
+animated_sprite = NodePath("AnimatedSprite2D")
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kbkxx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bvxje")

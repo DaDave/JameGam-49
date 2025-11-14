@@ -1,8 +1,13 @@
-[gd_scene load_steps=2 format=3 uid="uid://d2fu6qb3ij58t"]
+[gd_scene load_steps=3 format=3 uid="uid://bi63vcjcntsty"]
 
+[ext_resource type="PackedScene" uid="uid://dqbmqn2l31phi" path="res://scenes/explosiv_object/computer/computer.tscn" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/player/Player.tscn" id="1_errlg"]
 
 [node name="Test" type="Node2D"]
 
+[node name="Computer" parent="." instance=ExtResource("1_bl13t")]
+position = Vector2(245, 233)
+pixel_for_explosion = 1000
+
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
-position = Vector2(584, 254)
+position = Vector2(554, 231)
