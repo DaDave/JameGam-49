@@ -467,9 +467,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_vdgyb")
 }],
-"loop": true,
+"loop": false,
 "name": &"dodge_down",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -514,9 +514,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_p0eor")
 }],
-"loop": true,
+"loop": false,
 "name": &"dodge_left",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -561,9 +561,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_blnfk")
 }],
-"loop": true,
+"loop": false,
 "name": &"dodge_right",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -608,9 +608,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_onyu1")
 }],
-"loop": true,
+"loop": false,
 "name": &"dodge_up",
-"speed": 5.0
+"speed": 20.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -813,8 +813,6 @@ input_component = NodePath("InputComponent")
 position = Vector2(0, -6)
 sprite_frames = SubResource("SpriteFrames_lt3gi")
 animation = &"dodge_down"
-frame = 5
-frame_progress = 0.16631742
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p0vlq")

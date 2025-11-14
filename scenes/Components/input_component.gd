@@ -10,3 +10,6 @@ func _process(delta):
 
 func wants_to_interact() -> bool:
 	return Input.is_action_just_pressed("player_interact")
+
+func wants_to_dodge() -> bool:
+	return Input.is_action_just_pressed("player_dodge")
