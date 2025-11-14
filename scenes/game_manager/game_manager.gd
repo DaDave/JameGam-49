@@ -31,17 +31,17 @@ func _onGameStarted() -> void:
 	var checkpoint_a = checkpoint_objects.filter(func(checkpoint_object):
 		return checkpoint_object.room_number == room_value_checkpoint_a
 	)
-	## TODO: Make checkpoint_a visible
+	checkpoint_a.visible = true
 	var room_value_checkpoint_b = select_random_room_for_object()
 	var checkpoint_b = checkpoint_objects.filter(func(checkpoint_object):
 		return checkpoint_object.room_number == room_value_checkpoint_b
 	)
-	## TODO: Make checkpoint_b visible
+	checkpoint_b.visible = true
 	var room_value_target = select_random_room_for_object()
 	var target = target_objects.filter(func(target_object):
 		return target_object.room_number == room_value_target
 	)
-	## TODO: Make target visible
+	target.visible = true
 	
 	GameTimer.one_shot = true
 	GameTimer.start(180)

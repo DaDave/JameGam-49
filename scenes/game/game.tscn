@@ -12,5 +12,6 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="PauseMenu" parent="VBoxContainer" instance=ExtResource("1_sul5r")]
+visible = false
 layout_mode = 2
 size_flags_vertical = 3
