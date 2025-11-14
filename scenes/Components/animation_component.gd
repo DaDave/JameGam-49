@@ -30,28 +30,6 @@ func handle_move_animation(direction_horizontal: float, direction_vertical: floa
 	left = direction_horizontal < 0
 	right = direction_horizontal > 0
 
-func show_card():
-	if sprite.animation.contains("up"):
-		sprite.play("show_card_up")
-	elif sprite.animation.contains("down"):
-		sprite.play("show_card_down")
-	elif sprite.animation.contains("left"):
-		sprite.play("show_card_left")
-	elif sprite.animation.contains("right"):
-		sprite.play("show_card_right")
-
-func stop_showing_card():
-	sprite.play()
-	await sprite.animation_finished
-	if sprite.animation.contains("up"):
-		sprite.play("idle_up")
-	elif sprite.animation.contains("down"):
-		sprite.play("idle_down")
-	elif sprite.animation.contains("left"):
-		sprite.play("idle_left")
-	elif sprite.animation.contains("right"):
-		sprite.play("idle_right")
-
 func _on_frame_changed():
 	if sprite.animation.contains("show_card") && sprite.frame == 6:
 		sprite.pause()
