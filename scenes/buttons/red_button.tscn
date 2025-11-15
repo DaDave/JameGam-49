@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://cxqtlkik036ol"]
 
 [ext_resource type="Script" uid="uid://bmme81y4aeysc" path="res://scenes/buttons/red_button.gd" id="1_gp43e"]
-[ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/button_red.png" id="1_ik16c"]
-[ext_resource type="Texture2D" uid="uid://d2abqpk50wabd" path="res://assets/button_green_2.png" id="3_k1m4g"]
-[ext_resource type="Texture2D" uid="uid://dl7re1sh3faur" path="res://assets/button_green.png" id="4_x4tpw"]
+[ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/sprites/button_red.png" id="1_ik16c"]
+[ext_resource type="Texture2D" uid="uid://d2abqpk50wabd" path="res://assets/sprites/button_green_2.png" id="3_k1m4g"]
+[ext_resource type="Texture2D" uid="uid://dl7re1sh3faur" path="res://assets/sprites/button_green.png" id="4_x4tpw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gp43e"]
-size = Vector2(16, 16)
+size = Vector2(30, 29)
 
 [node name="RedButton" type="StaticBody2D" node_paths=PackedStringArray("sprite", "collision_shape")]
 script = ExtResource("1_gp43e")
@@ -20,4 +20,5 @@ up_button_active_sprite = ExtResource("4_x4tpw")
 texture = ExtResource("1_ik16c")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
 shape = SubResource("RectangleShape2D_gp43e")
