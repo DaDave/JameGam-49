@@ -10555,6 +10555,20 @@ sources/7 = SubResource("TileSetAtlasSource_1iff4")
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0sr1o")
 
+[node name="Rooms" type="Node2D" parent="."]
+
+[node name="CoffeeKitchen" type="Node2D" parent="Rooms"]
+
+[node name="BossOffice" type="Node2D" parent="Rooms"]
+
+[node name="Warehouse" type="Node2D" parent="Rooms"]
+
+[node name="Reception" type="Node2D" parent="Rooms"]
+
+[node name="MeetingRoom" type="Node2D" parent="Rooms"]
+
+[node name="OpenPlanOffice" type="Node2D" parent="Rooms"]
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_0sr1o")
 format = 2
