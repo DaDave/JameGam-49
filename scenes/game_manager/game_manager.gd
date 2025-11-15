@@ -59,6 +59,7 @@ func _onGameStarted() -> void:
 	var target = target_objects[target_index]
 	target.visible = true
 	selected_target_object = target
+	selected_target_object.execute_alert_closed_light()
 	
 	GameTimer.one_shot = true
 	GameTimer.start(180)
@@ -100,7 +101,7 @@ func _onCheckpointObjectInteracted() -> void:
 	interaction_countdown = interaction_countdown-1
 	if interaction_countdown <= 0:
 		print("target is interactable")
-		selected_target_object.execute_alert_light()
+		selected_target_object.execute_alert_open_light()
 
 func _onTargetObjectRegistered(target_object: TargetObject) -> void:
 	print("Register target object with room number" + str(target_object.room_number))

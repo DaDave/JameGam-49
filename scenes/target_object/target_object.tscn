@@ -1,24 +1,32 @@
-[gd_scene load_steps=6 format=3 uid="uid://d4ijywnprs7se"]
+[gd_scene load_steps=9 format=3 uid="uid://d4ijywnprs7se"]
 
 [ext_resource type="Script" uid="uid://saxho4a2vqft" path="res://scenes/target_object/target_object.gd" id="1_0yjol"]
-[ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/sprites/button_red.png" id="2_bp0g7"]
-[ext_resource type="Texture2D" uid="uid://butgtsu4kmhdt" path="res://assets/sprites/button_red_2.png" id="3_bp0g7"]
-[ext_resource type="Texture2D" uid="uid://d2abqpk50wabd" path="res://assets/sprites/button_green_2.png" id="3_roh02"]
+[ext_resource type="Texture2D" uid="uid://dmgcsq1dnab0y" path="res://assets/sprites/box_closed.png" id="2_773sx"]
+[ext_resource type="Texture2D" uid="uid://5os47h87elif" path="res://assets/sprites/box_closed_1.png" id="3_bxlg1"]
+[ext_resource type="Texture2D" uid="uid://dl55q1tvqxgmf" path="res://assets/sprites/box_open_half.png" id="4_mpi14"]
+[ext_resource type="Texture2D" uid="uid://vsciguk2ycsh" path="res://assets/sprites/box_open_half_1.png" id="5_4fd2j"]
+[ext_resource type="Texture2D" uid="uid://b60ayk8f0pw6u" path="res://assets/sprites/box_open_full.png" id="6_gn823"]
+[ext_resource type="Texture2D" uid="uid://d16go6h42hjw8" path="res://assets/sprites/box_open_full_1.png" id="7_hap0t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kcy0l"]
-size = Vector2(30, 29)
+size = Vector2(30, 48.474342)
 
 [node name="TargetObject" type="StaticBody2D" node_paths=PackedStringArray("sprite", "collision_shape")]
+scale = Vector2(1.1199993, 1.1199993)
 script = ExtResource("1_0yjol")
 sprite = NodePath("Sprite2D")
 collision_shape = NodePath("CollisionShape2D")
-closed_box_sprite = ExtResource("2_bp0g7")
-open_box_light_a_sprite = ExtResource("3_bp0g7")
-open_box_light_b_sprite = ExtResource("3_roh02")
+box_closed_sprite = ExtResource("2_773sx")
+box_closed_1_sprite = ExtResource("3_bxlg1")
+box_open_half_sprite = ExtResource("4_mpi14")
+box_open_half_1_sprite = ExtResource("5_4fd2j")
+box_open_full_sprite = ExtResource("6_gn823")
+box_open_full_1_sprite = ExtResource("7_hap0t")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_bp0g7")
+texture = ExtResource("2_773sx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -0.5)
+position = Vector2(0, 9.810006)
+scale = Vector2(1, 1.5600007)
 shape = SubResource("RectangleShape2D_kcy0l")

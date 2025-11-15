@@ -986,8 +986,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0vlq"]
-radius = 16.0
-height = 32.0
+height = 20.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("movement_component", "animation_component", "input_component")]
 collision_layer = 7
@@ -998,11 +997,12 @@ input_component = NodePath("InputComponent")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -6)
+scale = Vector2(0.7204169, 0.7204169)
 sprite_frames = SubResource("SpriteFrames_lt3gi")
 animation = &"interact_up"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 32)
+position = Vector2(0, 23)
 shape = SubResource("CapsuleShape2D_p0vlq")
 
 [node name="Camera2D" type="Camera2D" parent="."]

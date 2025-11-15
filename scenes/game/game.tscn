@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=46 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -19,18 +19,17 @@
 [ext_resource type="Texture2D" uid="uid://dsjowm2ml0kku" path="res://assets/spritesheets/Floors_48x48.png" id="11_10c2w"]
 [ext_resource type="PackedScene" uid="uid://bgi2lk7cu01e3" path="res://scenes/explosiv_object/objects/cartons/cartonEO.tscn" id="12_4vuph"]
 [ext_resource type="PackedScene" uid="uid://b5h17lqmc7s3u" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
-[ext_resource type="PackedScene" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
 [ext_resource type="PackedScene" uid="uid://dfvpa4l3xlr0c" path="res://scenes/explosiv_object/objects/camera/cameraEO.tscn" id="12_wdnak"]
 [ext_resource type="PackedScene" uid="uid://b2xb0yh8gs3da" path="res://scenes/explosiv_object/objects/cartons/3_cartonsEO.tscn" id="13_1iff4"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
-[ext_resource type="PackedScene" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
+[ext_resource type="PackedScene" uid="uid://d4ijywnprs7se" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
 [ext_resource type="Texture2D" uid="uid://g335nwc7hyit" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/ExtinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plant.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
+[ext_resource type="PackedScene" uid="uid://bt0bmexq1ufrc" path="res://scenes/explosiv_object/objects/flower_red/flower_redEO.tscn" id="26_l2dhg"]
 [ext_resource type="AudioStream" uid="uid://0wr6n5mxjucy" path="res://resources/music/Inferno Run 2.mp3" id="29_l2dhg"]
-[ext_resource type="PackedScene" path="res://scenes/explosiv_object/objects/flower_red/flower_redEO.tscn" id="26_l2dhg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -5710,29 +5709,29 @@ tile_set = SubResource("TileSet_0sr1o")
 [node name="CoffeeKitchen" type="Node2D" parent="Rooms"]
 
 [node name="CheckpointObject" parent="Rooms/CoffeeKitchen" instance=ExtResource("12_10c2w")]
-position = Vector2(1037, 1321)
+position = Vector2(617, 1703)
 
 [node name="TargetObject" parent="Rooms/CoffeeKitchen" instance=ExtResource("13_pg2xm")]
-position = Vector2(1100, 1337)
+position = Vector2(1036, 899)
 
 [node name="BossOffice" type="Node2D" parent="Rooms"]
 
 [node name="CheckpointObject" parent="Rooms/BossOffice" instance=ExtResource("12_10c2w")]
-position = Vector2(565, 418)
+position = Vector2(285, 146)
 room_number = 1
 
 [node name="TargetObject" parent="Rooms/BossOffice" instance=ExtResource("13_pg2xm")]
-position = Vector2(616, 416)
+position = Vector2(844.00006, 104.00001)
 room_number = 1
 
 [node name="Warehouse" type="Node2D" parent="Rooms"]
 
 [node name="CheckpointObject" parent="Rooms/Warehouse" instance=ExtResource("12_10c2w")]
-position = Vector2(250, 2555)
+position = Vector2(136, 2669)
 room_number = 2
 
 [node name="TargetObject" parent="Rooms/Warehouse" instance=ExtResource("13_pg2xm")]
-position = Vector2(238, 2605)
+position = Vector2(129, 2401)
 room_number = 2
 
 [node name="Camera" parent="Rooms/Warehouse" instance=ExtResource("12_wdnak")]
@@ -5750,33 +5749,33 @@ position = Vector2(2306, 2422)
 [node name="Reception" type="Node2D" parent="Rooms"]
 
 [node name="CheckpointObject" parent="Rooms/Reception" instance=ExtResource("12_10c2w")]
-position = Vector2(3221, 1257)
+position = Vector2(3673, 1210)
 room_number = 3
 
 [node name="TargetObject" parent="Rooms/Reception" instance=ExtResource("13_pg2xm")]
-position = Vector2(3281, 1260)
+position = Vector2(3121, 1161.0001)
 room_number = 3
 
 [node name="Restroom" type="Node2D" parent="Rooms"]
 position = Vector2(8, 0)
 
 [node name="CheckpointObject" parent="Rooms/Restroom" instance=ExtResource("12_10c2w")]
-position = Vector2(1055, 2208)
+position = Vector2(1166, 2216)
 room_number = 4
 
 [node name="TargetObject" parent="Rooms/Restroom" instance=ExtResource("13_pg2xm")]
-position = Vector2(1115, 2220)
+position = Vector2(364, 1829)
 room_number = 4
 
 [node name="MeetingRoom" type="Node2D" parent="Rooms"]
 position = Vector2(4, 0)
 
 [node name="CheckpointObject" parent="Rooms/MeetingRoom" instance=ExtResource("12_10c2w")]
-position = Vector2(2580, 197)
+position = Vector2(2508, 136)
 room_number = 5
 
 [node name="TargetObject" parent="Rooms/MeetingRoom" instance=ExtResource("13_pg2xm")]
-position = Vector2(2594, 254)
+position = Vector2(2551.0002, 106.00001)
 room_number = 5
 
 [node name="OpenPlanOffice" type="Node2D" parent="Rooms"]
@@ -5789,7 +5788,7 @@ position = Vector2(1096, 60)
 room_number = 6
 
 [node name="TargetObject" parent="Rooms/OpenPlanOffice/TopRoom" instance=ExtResource("13_pg2xm")]
-position = Vector2(49, 57)
+position = Vector2(48, -17)
 room_number = 6
 
 [node name="TopCubicles" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom"]
@@ -7199,7 +7198,7 @@ position = Vector2(903, 228)
 position = Vector2(3500, 1753)
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(1722, 2567)
+position = Vector2(1021, 1079)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -576.0
