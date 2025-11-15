@@ -1,0 +1,52 @@
+[gd_scene load_steps=11 format=3 uid="uid://bt0bmexq1ufrc"]
+
+[ext_resource type="Texture2D" uid="uid://boux5we4q3lf4" path="res://scenes/explosiv_object/objects/flower_red/flower_red.png" id="1_huj04"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_wfi74"]
+[ext_resource type="PackedScene" uid="uid://j0cs37mkifqd" path="res://scenes/projectiles/flower_red/flower_red_1.tscn" id="3_k5xwt"]
+[ext_resource type="PackedScene" uid="uid://bi1i465xdbwpw" path="res://scenes/projectiles/flower_red/flower_red_2.tscn" id="4_ogixk"]
+[ext_resource type="PackedScene" uid="uid://dximt7s1mkhih" path="res://scenes/projectiles/flower_red/flower_red_3.tscn" id="5_ylqm6"]
+[ext_resource type="Texture2D" uid="uid://bdm2enocbgfm3" path="res://scenes/projectiles/flower_red/flower_red_projectile_2.png" id="6_ylqm6"]
+[ext_resource type="Texture2D" uid="uid://c313s3x177l66" path="res://scenes/projectiles/flower_red/flower_red_projectile_3.png" id="7_ogfx1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_huj04")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_huj04"]
+radius = 11.0
+height = 38.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(98, 96)
+
+[node name="Flower_red" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+frame_progress = 0.9023496
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_wfi74")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 72
+projectile_objects = Array[Resource]([ExtResource("3_k5xwt"), ExtResource("4_ogixk"), ExtResource("5_ylqm6"), ExtResource("6_ylqm6"), ExtResource("7_ogfx1")])
+pixel_for_explosion = 10000.0
+base_percentage = 3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(1, 2)
+shape = SubResource("CapsuleShape2D_huj04")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
