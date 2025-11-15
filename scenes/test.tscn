@@ -1,26 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://bi63vcjcntsty"]
+[gd_scene load_steps=4 format=3 uid="uid://bi63vcjcntsty"]
 
 [ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/player/Player.tscn" id="1_errlg"]
-[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="3_74lek"]
+[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="3_iyx0m"]
-[ext_resource type="Texture2D" uid="uid://x8y7nron08qg" path="res://scenes/explosiv_object/sprites/computer.png" id="4_74lek"]
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j5jx5"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("4_74lek")
-}],
-"loop": false,
-"name": &"default",
-"speed": 0.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
-size = Vector2(48, 57)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_lpvoh"]
-radius = 223.00224
 
 [node name="Test" type="Node2D"]
 
@@ -34,62 +16,5 @@ position = Vector2(554, 231)
 
 [node name="Computers" type="Node2D" parent="."]
 
-[node name="PC" parent="Computers" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_74lek")]
-position = Vector2(214, 41)
-animated_sprite = NodePath("AnimatedSprite2D")
-danger_area = NodePath("DangerArea2D2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Computers/PC"]
-sprite_frames = SubResource("SpriteFrames_j5jx5")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC"]
-position = Vector2(0, -9.5)
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="DangerArea2D2" type="Area2D" parent="Computers/PC"]
-collision_layer = 4
-
-[node name="DangerShape2D" type="CollisionShape2D" parent="Computers/PC/DangerArea2D2"]
-shape = SubResource("CircleShape2D_lpvoh")
-debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
-
-[node name="PC2" parent="Computers" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_74lek")]
-position = Vector2(1035, 41)
-animated_sprite = NodePath("AnimatedSprite2D")
-danger_area = NodePath("DangerArea2D2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Computers/PC2"]
-sprite_frames = SubResource("SpriteFrames_j5jx5")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC2"]
-position = Vector2(0, -9.5)
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="DangerArea2D2" type="Area2D" parent="Computers/PC2"]
-collision_layer = 4
-
-[node name="DangerShape2D" type="CollisionShape2D" parent="Computers/PC2/DangerArea2D2"]
-shape = SubResource("CircleShape2D_lpvoh")
-debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
-
-[node name="PC3" parent="Computers" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_74lek")]
-position = Vector2(561, 528)
-animated_sprite = NodePath("AnimatedSprite2D")
-danger_area = NodePath("DangerArea2D2")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Computers/PC3"]
-sprite_frames = SubResource("SpriteFrames_j5jx5")
-autoplay = "default"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC3"]
-position = Vector2(0, -9.5)
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="DangerArea2D2" type="Area2D" parent="Computers/PC3"]
-collision_layer = 4
-
-[node name="DangerShape2D" type="CollisionShape2D" parent="Computers/PC3/DangerArea2D2"]
-shape = SubResource("CircleShape2D_lpvoh")
-debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
+[node name="Pc" parent="Computers" instance=ExtResource("3_74lek")]
+position = Vector2(326, 112)

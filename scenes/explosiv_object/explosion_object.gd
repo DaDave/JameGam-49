@@ -108,9 +108,11 @@ func _track_player() -> void:
 
 func _calculate_percentage() -> void:
 	calculated_percentage = movement_pixel / pixel_for_explosion * 100
+	print(str("_calculate_percentage: ", calculated_percentage))
 #endregion
 
 func _on_danger_area_2d_body_entered(body) -> void:
+	print("_on_danger_area_2d_body_entered")
 	if (body is Player):
 		player = body
 		%TimerExplosion.start()
