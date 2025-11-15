@@ -12,14 +12,13 @@ extends StaticBody2D
 
 @export var room_number: int
 
-var interactable = true
+var interactable = false
 var is_pressed = false
 
 func _ready() -> void:
-	#visible = false
-	pass
+	visible = false
 
-func interact():
+func interact() -> void:
 	if interactable:
 		is_pressed = true
 		sprite.texture = down_button_sprite
