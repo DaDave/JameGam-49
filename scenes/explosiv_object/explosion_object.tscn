@@ -2,5 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dxdfmoeggswbv" path="res://scenes/explosiv_object/explosion_object.gd" id="1_thvt2"]
 
-[node name="Explosionobject" type="Node2D"]
+[node name="Explosionobject" type="Node2D" node_paths=PackedStringArray("explosion_particles")]
 script = ExtResource("1_thvt2")
+explosion_particles = [NodePath("")]

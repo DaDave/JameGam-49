@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://dqbmqn2l31phi"]
+[gd_scene load_steps=9 format=3 uid="uid://dqbmqn2l31phi"]
 
 [ext_resource type="Script" uid="uid://dxdfmoeggswbv" path="res://scenes/explosiv_object/explosion_object.gd" id="1_bn8ib"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="2_0ncj0"]
 [ext_resource type="Texture2D" uid="uid://x8y7nron08qg" path="res://scenes/explosiv_object/computer/computer.png" id="2_ad2hb"]
 [ext_resource type="PackedScene" uid="uid://dgy83dqvvt4wc" path="res://scenes/projectiles/mouse/mouse.tscn" id="3_hp3h1"]
+[ext_resource type="PackedScene" uid="uid://cuf5i3takrtbw" path="res://scenes/explosiv_object/explosion_particles.tscn" id="5_x8w0s"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8w0s"]
 animations = [{
@@ -22,16 +23,18 @@ radius = 245.16525
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hp3h1"]
 size = Vector2(48, 74)
 
-[node name="Computer" type="Node2D" node_paths=PackedStringArray("collision_area", "danger_area")]
+[node name="Computer" type="Node2D" node_paths=PackedStringArray("collision_area", "danger_area", "explosion_particles")]
 script = ExtResource("1_bn8ib")
 collision_area = NodePath("Collision_Area2D")
 danger_area = NodePath("Danger_Area2D")
 projectile_angle_deg = 30
 projectile_objects = Array[Resource]([ExtResource("2_0ncj0"), ExtResource("3_hp3h1")])
+explosion_particles = [NodePath("ExplosionGPUParticles2D")]
 pixel_for_explosion = 100
 metadata/_custom_type_script = "uid://dxdfmoeggswbv"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_x8w0s")
 
 [node name="Danger_Area2D" type="Area2D" parent="."]
@@ -43,10 +46,13 @@ shape = SubResource("CircleShape2D_0ncj0")
 debug_color = Color(1, 0.58431375, 0, 0.16862746)
 
 [node name="Collision_Area2D" type="Area2D" parent="."]
+unique_name_in_owner = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collision_Area2D"]
 shape = SubResource("RectangleShape2D_hp3h1")
 debug_color = Color(0, 0.6, 0.69803923, 0.22745098)
+
+[node name="ExplosionGPUParticles2D" parent="." instance=ExtResource("5_x8w0s")]
 
 [connection signal="body_entered" from="Danger_Area2D" to="." method="_on_danger_area_2d_body_entered"]
 [connection signal="body_exited" from="Danger_Area2D" to="." method="_on_danger_area_2d_body_exited"]

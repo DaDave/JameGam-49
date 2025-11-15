@@ -14,6 +14,7 @@ var projectile_counter:int = 0
 		projectile_angle_rad = deg_to_rad(value)
 var projectile_angle_rad:float
 @export var projectile_objects:Array[Resource]
+@export var explosion_particles:Array[GPUParticles2D]
 
 @export var pixel_for_explosion:int = 1000
 
@@ -34,14 +35,20 @@ func _process(_delta) -> void:
 #region explode
 func _explode() -> void:
 	is_exploded = true
-	#_animate_explosion()
+	_animate_explosion()
 	_spawn_projectiles()
 
 func _animate_explosion() -> void:
-	#TODO: animate explosion
-	print("ExplosionObject - _animate_explosion")
-	#TODO: queue free after explosion finished => time? tween?
-	$"..".queue_free()
+	for gpu in explosion_particles:
+		gpu.emitting = true
+	_hide_on_explosion()
+	
+	await get_tree().create_timer(2.0).timeout
+	queue_free()
+
+func _hide_on_explosion():
+	%AnimatedSprite2D.visible = false
+	%Collision_Area2D.collision_layer = 0
 
 func _spawn_projectiles() -> void:
 	for count in count_per_projectile:
@@ -64,7 +71,6 @@ func _spawn_projectile(projectile_blueprint: Resource, count: int) -> void:
 	projectile.global_rotation = direction
 	projectile.movement_vector = movement_vector.rotated(direction)
 	
-	#TODO: add to parent or something else => else projectiles will be removed on queue_free()
 	self.add_child(projectile)
 
 func _calculate_angle(count) -> float:
@@ -74,7 +80,6 @@ func _calculate_angle(count) -> float:
 		pos_neg = -1
 	
 	var return_angle: float = projectile_angle_rad * amount * pos_neg
-	#print(str("Count: ", count, " - Winkel: ", projectile_angle_deg, " - Winkel Rad: ", projectile_angle_rad, " - Anzahl: ", amount, " - pos_neg: ", pos_neg, " - calc: ", return_angle))
 	return return_angle
 #endregion
 

@@ -1,14 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi63vcjcntsty"]
+[gd_scene load_steps=5 format=3 uid="uid://bi63vcjcntsty"]
 
 [ext_resource type="PackedScene" uid="uid://dqbmqn2l31phi" path="res://scenes/explosiv_object/computer/computer.tscn" id="1_bl13t"]
 [ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/player/Player.tscn" id="1_errlg"]
+[ext_resource type="PackedScene" uid="uid://cmk0jyd67nbj8" path="res://scenes/explosiv_object/explosion_object.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="3_iyx0m"]
 
 [node name="Test" type="Node2D"]
-
-[node name="Computer" parent="." instance=ExtResource("1_bl13t")]
-position = Vector2(245, 233)
-pixel_for_explosion = 200
 
 [node name="Keyboard" parent="." instance=ExtResource("3_iyx0m")]
 position = Vector2(626, 246)
@@ -17,3 +14,9 @@ movement_speed = 0
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
 top_level = true
 position = Vector2(554, 231)
+
+[node name="Explosionobject" parent="." instance=ExtResource("3_74lek")]
+position = Vector2(616, 148)
+
+[node name="Computer" parent="." instance=ExtResource("1_bl13t")]
+position = Vector2(274, 223)
