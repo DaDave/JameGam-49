@@ -30,3 +30,6 @@ sprite_frames = SubResource("SpriteFrames_kbkxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_7h2hs")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
