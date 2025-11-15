@@ -7,7 +7,7 @@
 
 [node name="Computer" parent="." instance=ExtResource("1_bl13t")]
 position = Vector2(245, 233)
-pixel_for_explosion = 1000
+pixel_for_explosion = 200
 
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
 position = Vector2(554, 231)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dqbmqn2l31phi"]
+[gd_scene load_steps=8 format=3 uid="uid://dqbmqn2l31phi"]
 
 [ext_resource type="Script" uid="uid://dxdfmoeggswbv" path="res://scenes/explosiv_object/explosion_object.gd" id="1_bn8ib"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="2_0ncj0"]
 [ext_resource type="Texture2D" uid="uid://x8y7nron08qg" path="res://scenes/explosiv_object/computer/computer.png" id="2_ad2hb"]
+[ext_resource type="PackedScene" uid="uid://dgy83dqvvt4wc" path="res://scenes/projectiles/mouse/mouse.tscn" id="3_hp3h1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_x8w0s"]
 animations = [{
@@ -26,7 +27,7 @@ script = ExtResource("1_bn8ib")
 collision_area = NodePath("Collision_Area2D")
 danger_area = NodePath("Danger_Area2D")
 projectile_angle_deg = 30
-projectile_objects = Array[Resource]([ExtResource("2_0ncj0")])
+projectile_objects = Array[Resource]([ExtResource("2_0ncj0"), ExtResource("3_hp3h1")])
 pixel_for_explosion = 100
 metadata/_custom_type_script = "uid://dxdfmoeggswbv"
 

@@ -18,6 +18,9 @@ animations = [{
 size = Vector2(32, 14)
 
 [node name="Keyboard" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
 script = ExtResource("1_qi4le")
 animated_sprite = NodePath("AnimatedSprite2D")
 metadata/_custom_type_script = "uid://fo1mvn5wkoux"

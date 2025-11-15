@@ -54,10 +54,15 @@ func _spawn_projectile(projectile_blueprint: Resource, count: int) -> void:
 	if (projectile is not Projectile):
 		return
 	
-	#TODO: fix position local vs global position
-	var direction = projectile.global_position.angle_to_point(player.global_position)
-	direction += _calculate_angle(count)
+	projectile.look_at(player.global_position)
+	projectile.set_global_position(global_position)
+
+	var directionVector: Vector2 = player.global_position - projectile.global_position
+	var totalVelocity: float = abs(directionVector.x) + abs(directionVector.y)
+	var movement_vector = directionVector / totalVelocity
+	var direction = _calculate_angle(count)
 	projectile.global_rotation = direction
+	projectile.movement_vector = movement_vector.rotated(direction)
 	
 	#TODO: add to parent or something else => else projectiles will be removed on queue_free()
 	self.add_child(projectile)
@@ -69,7 +74,7 @@ func _calculate_angle(count) -> float:
 		pos_neg = -1
 	
 	var return_angle: float = projectile_angle_rad * amount * pos_neg
-	print(str("Count: ", count, " - Winkel: ", projectile_angle_deg, " - Winkel Rad: ", projectile_angle_rad, " - Anzahl: ", amount, " - pos_neg: ", pos_neg, " - calc: ", return_angle))
+	#print(str("Count: ", count, " - Winkel: ", projectile_angle_deg, " - Winkel Rad: ", projectile_angle_rad, " - Anzahl: ", amount, " - pos_neg: ", pos_neg, " - calc: ", return_angle))
 	return return_angle
 #endregion
 
