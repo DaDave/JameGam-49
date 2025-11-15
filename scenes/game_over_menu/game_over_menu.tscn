@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bf73xy2svf657" path="res://scenes/game_over_menu/game_over_menu.gd" id="1_p0tvy"]
 
 [node name="GameOverMenu" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -45,9 +46,15 @@ theme_override_font_sizes/font_size = 45
 text = "Game over"
 horizontal_alignment = 1
 
+[node name="RetryButton" type="Button" parent="MarginContainer/VerticalBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "Retry"
+
 [node name="QuitButton" type="Button" parent="MarginContainer/VerticalBoxContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
+[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

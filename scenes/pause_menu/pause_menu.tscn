@@ -4,6 +4,7 @@
 [ext_resource type="FontFile" uid="uid://7jdcyc6qvdvm" path="res://resources/font/poco.ttf" id="2_qcmsd"]
 
 [node name="PauseMenu" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
