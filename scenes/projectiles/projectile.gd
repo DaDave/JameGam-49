@@ -5,9 +5,11 @@ extends Area2D
 @export var animated_sprite: AnimatedSprite2D
 @export var movement_speed: int = 500
 @export var max_travel_distance: float = 500
+@export var wait_time_layer: float = 0.2
 var travelled_distance: float = 0
 var movement_vector:Vector2
 #endregion
+
 
 func _process(delta) -> void:
 	_move(delta)
@@ -20,7 +22,7 @@ func _move(delta: float) -> void:
 	
 	travelled_distance += movement_speed * delta
 	if (travelled_distance >= max_travel_distance):
-		queue_free()
+		$"..".queue_free()
 
 func _collide(body) -> void:
 	if (body is Player):
@@ -29,3 +31,7 @@ func _collide(body) -> void:
 
 func _on_body_entered(body):
 	_collide(body)
+
+
+func _on_timer_layer_timeout():
+	self.collision_layer = 4
