@@ -40,6 +40,7 @@ sprite_frames = SubResource("SpriteFrames_gvo5k")
 autoplay = "default"
 
 [node name="DangerArea2D2" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 
 [node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D2"]

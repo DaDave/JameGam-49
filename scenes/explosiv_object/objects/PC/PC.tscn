@@ -3,9 +3,6 @@
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="1_k5c33"]
 [ext_resource type="Texture2D" uid="uid://dyiiaor4iqyh5" path="res://assets/sprites/objects/PC_right.png" id="2_k5c33"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb60f"]
-size = Vector2(24, 46)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
 "frames": [{
@@ -17,10 +14,17 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sb60f"]
+size = Vector2(24, 46)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_45gsc"]
 radius = 223.00224
 
 [node name="Pc" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_th3o8")
+autoplay = "default"
 
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("1_k5c33")]
 animated_sprite = NodePath("../AnimatedSprite2D")
@@ -29,10 +33,6 @@ pixel_for_explosion = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
 shape = SubResource("RectangleShape2D_sb60f")
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_th3o8")
-autoplay = "default"
 
 [node name="DangerArea2D2" type="Area2D" parent="."]
 visible = false

@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://vo7kwhnd74pt"]
+
+[ext_resource type="Texture2D" uid="uid://7jbctaqx4rqy" path="res://scenes/explosiv_object/objects/plant/plant.png" id="1_hn2vw"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="1_kmnv0"]
+[ext_resource type="PackedScene" uid="uid://t4urtqdqui85" path="res://scenes/projectiles/plant/plant_1.tscn" id="3_nnhd7"]
+[ext_resource type="PackedScene" uid="uid://b6rcej0c8olt8" path="res://scenes/projectiles/plant/plant_2.tscn" id="4_wpxit"]
+[ext_resource type="PackedScene" uid="uid://ct2wlsi7d2fin" path="res://scenes/projectiles/plant/plant_3.tscn" id="5_citjq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hn2vw")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hn2vw"]
+radius = 15.0
+height = 67.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_45gsc"]
+radius = 311.02573
+
+[node name="Plant" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_th3o8")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("1_kmnv0")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D2")
+count_per_projectile = 2
+projectile_angle_deg = 60
+projectile_objects = Array[Resource]([ExtResource("3_nnhd7"), ExtResource("4_wpxit"), ExtResource("5_citjq")])
+pixel_for_explosion = 10000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_hn2vw")
+
+[node name="DangerArea2D2" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D2"]
+shape = SubResource("CircleShape2D_45gsc")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
