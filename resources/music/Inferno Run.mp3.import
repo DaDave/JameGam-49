@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dbs5fbhssx8sj"
+path="res://.godot/imported/Inferno Run.mp3-afe01a7b62d4a7bc98a039ff33a357d5.mp3str"
+
+[deps]
+
+source_file="res://resources/music/Inferno Run.mp3"
+dest_files=["res://.godot/imported/Inferno Run.mp3-afe01a7b62d4a7bc98a039ff33a357d5.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
