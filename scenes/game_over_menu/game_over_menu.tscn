@@ -40,12 +40,13 @@ theme_override_constants/separation = 12
 
 [node name="GameOverHeadline" type="Label" parent="MarginContainer/VerticalBoxContainer"]
 layout_mode = 2
-theme_override_font_sizes/font_size = 30
-text = "Game over. Thanks for playing. Have a nice day."
+theme_override_font_sizes/font_size = 45
+text = "Game over"
 horizontal_alignment = 1
 
 [node name="QuitButton" type="Button" parent="MarginContainer/VerticalBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 30
 text = "Quit"
 
 [connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

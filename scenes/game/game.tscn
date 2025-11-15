@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=8 format=4 uid="uid://k0reyf16mn4x"]
 
-[ext_resource type="Script" path="res://scenes/game/game.gd" id="1_0sr1o"]
+[ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="Texture2D" uid="uid://hgcwf8mb3im1" path="res://resources/background/map.png" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
 [ext_resource type="Texture2D" uid="uid://co08cid1pk4oh" path="res://assets/spritesheets/Generic_Home_1_Layer_1_48x48.png" id="3_kelw5"]
+[ext_resource type="PackedScene" uid="uid://jw72sm4n7uia" path="res://scenes/game_over_menu/game_over_menu.tscn" id="4_lfrn8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -1508,6 +1509,11 @@ offset_right = 1152.0
 offset_bottom = 648.0
 
 [node name="PauseMenu" parent="VBoxContainer" instance=ExtResource("1_sul5r")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="GameOverMenu" parent="VBoxContainer" instance=ExtResource("4_lfrn8")]
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
