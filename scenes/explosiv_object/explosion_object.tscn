@@ -167,3 +167,9 @@ amount = 20
 lifetime = 0.25
 one_shot = true
 process_material = SubResource("ParticleProcessMaterial_wmxbn")
+
+[node name="TimerExplosion" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 0.3
+
+[connection signal="timeout" from="TimerExplosion" to="." method="_on_timer_explosion_timeout"]
