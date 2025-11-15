@@ -17,9 +17,13 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-GameManager="*res://scenes/game_manager/game_manager.gd"
 GameManagerSignalBus="*res://scenes/game_manager/game_manager_signal_bus.gd"
+GameManager="*res://scenes/game_manager/game_manager.gd"
 GameTimer="*res://scenes/game_manager/timer.gd"
+
+[gui]
+
+theme/custom_font="uid://7jdcyc6qvdvm"
 
 [input]
 

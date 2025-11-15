@@ -9,12 +9,13 @@ var left: bool = false
 var right: bool = false 
 
 var is_dodging: bool = false
+var is_interacting: bool = false
 
 func _ready():
 	sprite.animation_finished.connect(_on_animation_finished)
 
 func handle_move_animation(direction_horizontal: float, direction_vertical: float) -> void:
-	if !is_dodging:
+	if !is_dodging and !is_interacting:
 		if left:
 			if direction_horizontal != 0: sprite.play("run_left")
 			else: sprite.play("idle_left")
@@ -45,11 +46,22 @@ func handle_dodge_roll_animation(wants_to_dodge: bool, direction_horizontal: flo
 			sprite.play("dodge_right")
 		is_dodging = true
 		
-func handle_interaction():
-	pass
+func handle_interaction() -> void:
+	if !is_interacting:
+		if sprite.animation.contains("up"):
+			sprite.play("interact_up")
+		elif sprite.animation.contains("down"):
+			sprite.play("interact_down")
+		elif sprite.animation.contains("left"):
+			sprite.play("interact_left")
+		elif sprite.animation.contains("right"):
+			sprite.play("interact_right")
+		is_interacting = true
 
 func _on_animation_finished() -> void:
 	if is_dodging && sprite.animation.contains("dodge"):
 		is_dodging = false
+	if is_interacting && sprite.animation.contains("interact"):
+		is_interacting = false
 	
 	
