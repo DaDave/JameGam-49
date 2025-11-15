@@ -9,5 +9,4 @@ func _on_credits_button_pressed():
 	$CreditsLabel.visible = !$CreditsLabel.visible
 
 func _on_quit_button_pressed():
-	GameManagerSignalBus.pause_requested.emit()
 	get_tree().quit()

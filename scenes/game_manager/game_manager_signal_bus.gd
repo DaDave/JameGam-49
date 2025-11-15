@@ -12,6 +12,8 @@ signal game_over()
 
 signal game_over_menu_initiated(game_over_closed: GameOverMenu)
 
+signal game_over_menu_quitted()
+
 signal switch_scene_by_path(path: String)
 
 signal decrease_player_health()

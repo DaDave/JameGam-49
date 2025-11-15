@@ -18,6 +18,7 @@ func _ready() -> void:
 	GameManagerSignalBus.pause_requested.connect(_onPauseRequested)
 	GameManagerSignalBus.game_over_menu_initiated.connect(_onGameOverMenuInitiated)
 	GameManagerSignalBus.game_over.connect(_onGameOver)
+	GameManagerSignalBus.game_over_menu_quitted.connect(_onGameOverQuitted)
 	GameManagerSignalBus.register_checkpoint_object.connect(_onCheckpointObjectRegistered)
 	GameManagerSignalBus.register_target_object.connect(_onTargetObjectRegistered)
 	GameManagerSignalBus.decrease_player_health.connect(_onPlayerHealthDecreased)
@@ -53,13 +54,21 @@ func _onPauseMenuInitiated(pause_menu: PauseMenu) -> void:
 	pause_menu_instance = pause_menu
 
 func _onPauseRequested() -> void:
+	if(isPaused):
+		pause_menu_instance.hide()
+	else:
+		pause_menu_instance.show()
 	pause()
 
 func _onGameOverMenuInitiated(game_over: GameOverMenu) -> void:
 	game_over_instance = game_over
 
 func _onGameOver() -> void:
+	pause()
 	game_over_instance.show()
+	
+func _onGameOverQuitted() -> void:
+	pause()
 
 func _onCheckpointObjectRegistered(checkpoint_object: CheckpointObject) -> void:
 	checkpoint_objects.append(checkpoint_object)
@@ -68,8 +77,11 @@ func _onTargetObjectRegistered(target_object: TargetObject) -> void:
 	target_objects.append(target_object)
 	
 func _onPlayerHealthDecreased() -> void:
+	print(max_player_health)
 	max_player_health = max_player_health-1
+	print(max_player_health)
 	if max_player_health <= 0:
+		print("game_over")
 		_onGameOver()
 
 func _deferred_switch_scene(scene_path):
@@ -89,11 +101,9 @@ func select_random_room_for_object() -> int:
 
 func pause():
 	if isPaused:
-		pause_menu_instance.hide()
 		Engine.time_scale = 1
 		get_tree().paused = false
 	else:
-		pause_menu_instance.show()
 		Engine.time_scale = 0
 		get_tree().paused = true
 	
