@@ -1004,6 +1004,8 @@ animation = &"interact_up"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_p0vlq")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+
 [node name="MovementComponent" type="Node" parent="."]
 script = ExtResource("3_qu4a1")
 speed = 200.0
