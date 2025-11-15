@@ -1,8 +1,8 @@
-[gd_scene load_steps=29 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=31 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
-[ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/player/Player.tscn" id="2_5jirj"]
+[ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/characters/Player.tscn" id="2_5jirj"]
 [ext_resource type="Texture2D" uid="uid://co08cid1pk4oh" path="res://assets/spritesheets/Generic_Home_1_Layer_1_48x48.png" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://bg5s7ytaf8w1b" path="res://assets/spritesheets/Condominium_Design_layer_1_48x48.png" id="4_kp23o"]
 [ext_resource type="PackedScene" uid="uid://jw72sm4n7uia" path="res://scenes/game_over_menu/game_over_menu.tscn" id="4_lfrn8"]
@@ -13,8 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://df1b7e0ipwqmm" path="res://assets/spritesheets/Museum_room_4_layer_1_48x48.png" id="9_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://d4hffwfntchg7" path="res://assets/sprites/objects/Cubicle_wall.png" id="10_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://bjs6a78isa1s3" path="res://assets/spritesheets/Tv_Studio_Design_layer_1_48x48.png" id="10_5v6r0"]
-[ext_resource type="Texture2D" uid="uid://cprnl3h07xmt2" path="res://assets/spritesheets/Room_Builder_48x48.png" id="10_vaxfo"]
 [ext_resource type="Texture2D" uid="uid://cxwbinwmqgoy5" path="res://assets/sprites/objects/Table_vertical.png" id="10_otnwt"]
+[ext_resource type="Texture2D" uid="uid://cprnl3h07xmt2" path="res://assets/spritesheets/Room_Builder_48x48.png" id="10_vaxfo"]
 [ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC.tscn" id="11_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 
@@ -34214,15 +34214,15 @@ sources/6 = SubResource("TileSetAtlasSource_3jaai")
 sources/7 = SubResource("TileSetAtlasSource_1iff4")
 sources/8 = SubResource("TileSetAtlasSource_ftsea")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyinl"]
-size = Vector2(12, 170)
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otnwt"]
 radius = 19.0
 height = 156.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_10c2w"]
 size = Vector2(30, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uyinl"]
+size = Vector2(12, 170)
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0sr1o")
@@ -34263,6 +34263,384 @@ position = Vector2(4, 0)
 [node name="OpenPlanOffice" type="Node2D" parent="Rooms"]
 
 [node name="TopRoom" type="Node2D" parent="Rooms/OpenPlanOffice"]
+position = Vector2(1103, 126)
+
+[node name="TopCubicles" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom"]
+
+[node name="Cubicle" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles"]
+position = Vector2(123, 59)
+
+[node name="TableWithPCsLeft" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle"]
+position = Vector2(66, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft"]
+position = Vector2(34, -49.00011)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft"]
+position = Vector2(34, 29.00001)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsLeft/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="TableWithPCsRight" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle"]
+position = Vector2(122, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+scale = Vector2(-1, 1)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+scale = Vector2(-1, 1)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight"]
+position = Vector2(-33.999992, -49.000008)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight"]
+position = Vector2(-34, 28.999992)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle/TableWithPCsRight/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Cubicle2" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles"]
+position = Vector2(361, 59)
+
+[node name="Wall" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2"]
+position = Vector2(-23, 47)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/Wall"]
+texture = ExtResource("10_3xj4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/Wall"]
+shape = SubResource("RectangleShape2D_uyinl")
+
+[node name="TableWithPCsLeft" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2"]
+position = Vector2(66, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft"]
+position = Vector2(34, -49.00011)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft"]
+position = Vector2(34, 29.00001)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsLeft/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="TableWithPCsRight" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2"]
+position = Vector2(122, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+scale = Vector2(-1, 1)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+scale = Vector2(-1, 1)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight"]
+position = Vector2(-33.999992, -49.000008)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight"]
+position = Vector2(-34, 28.999992)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle2/TableWithPCsRight/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Cubicle3" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles"]
+position = Vector2(603, 59)
+
+[node name="Wall" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3"]
+position = Vector2(-23, 47)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/Wall"]
+texture = ExtResource("10_3xj4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/Wall"]
+shape = SubResource("RectangleShape2D_uyinl")
+
+[node name="TableWithPCsLeft" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3"]
+position = Vector2(66, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft"]
+position = Vector2(34, -49.00011)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft"]
+position = Vector2(34, 29.00001)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsLeft/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="TableWithPCsRight" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3"]
+position = Vector2(122, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+scale = Vector2(-1, 1)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+scale = Vector2(-1, 1)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight"]
+position = Vector2(-33.999992, -49.000008)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight"]
+position = Vector2(-34, 28.999992)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle3/TableWithPCsRight/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Cubicle4" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles"]
+position = Vector2(843, 59)
+
+[node name="Wall" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4"]
+position = Vector2(-23, 47)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/Wall"]
+texture = ExtResource("10_3xj4h")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/Wall"]
+shape = SubResource("RectangleShape2D_uyinl")
+
+[node name="TableWithPCsLeft" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4"]
+position = Vector2(66, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft"]
+position = Vector2(34, -49.00011)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft"]
+position = Vector2(34, 29.00001)
+scale = Vector2(-1, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsLeft/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="TableWithPCsRight" type="Node2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4"]
+position = Vector2(122, 52)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="Pc" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(4.351139e-06, -50)
+scale = Vector2(-1, 1)
+
+[node name="Pc2" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight" instance=ExtResource("11_3xj4h")]
+position = Vector2(-2.4678372e-06, 28)
+scale = Vector2(-1, 1)
+
+[node name="Chair" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight"]
+position = Vector2(-33.999992, -49.000008)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight/Chair"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight/Chair"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
+
+[node name="Chair2" type="StaticBody2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight"]
+position = Vector2(-34, 28.999992)
+
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight/Chair2"]
+texture = ExtResource("13_5v6r0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/TopRoom/TopCubicles/Cubicle4/TableWithPCsRight/Chair2"]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_10c2w")
 
 [node name="BottomRoom" type="Node2D" parent="Rooms/OpenPlanOffice"]
 
