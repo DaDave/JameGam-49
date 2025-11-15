@@ -24,8 +24,7 @@ func _move(delta: float) -> void:
 
 func _collide(body) -> void:
 	if (body is Player):
-		#TODO: deal damage to the player
-		print("deal damage")
+		GameManagerSignalBus.decrease_player_health.emit()
 	queue_free()
 
 func _on_body_entered(body):
