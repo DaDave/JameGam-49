@@ -47,7 +47,9 @@ func _animate_explosion() -> void:
 	queue_free()
 
 func _hide_on_explosion():
-	%AnimatedSprite2D.visible = false
+	%Sprite_Explosion.visible = true
+	%Sprite_Explosion.play()
+	%Sprite_Object.visible = false
 	%Collision_Area2D.collision_layer = 0
 
 func _spawn_projectiles() -> void:
