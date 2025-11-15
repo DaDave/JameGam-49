@@ -1,0 +1,114 @@
+[gd_scene load_steps=17 format=3 uid="uid://dfvpa4l3xlr0c"]
+
+[ext_resource type="Texture2D" uid="uid://dkuh124j8j36q" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="1_awb6q"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_fk5ig"]
+[ext_resource type="PackedScene" uid="uid://c4rmc202203oa" path="res://scenes/projectiles/camera/camera.tscn" id="3_awb6q"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c4n0"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(0, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5spob"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(48, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5te0"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(96, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r0ul"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(144, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v43q"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(192, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v0nu"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(240, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f3ao"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(288, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xidw"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(336, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4edx"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(384, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjk4e"]
+atlas = ExtResource("1_awb6q")
+region = Rect2(432, 20, 48, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c4n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5spob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5te0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r0ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v43q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v0nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f3ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xidw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4edx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjk4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awb6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(364, 299)
+
+[node name="Camera" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+autoplay = "default"
+frame_progress = 0.9023496
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_fk5ig")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 0
+projectile_objects = Array[Resource]([ExtResource("3_awb6q")])
+base_percentage = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(-10, 1)
+shape = SubResource("CircleShape2D_awb6q")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+position = Vector2(0, 149.5)
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

@@ -1,0 +1,42 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4rmc202203oa"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_yg1y2"]
+[ext_resource type="Texture2D" uid="uid://dkuh124j8j36q" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="2_rm527"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8q2di"]
+atlas = ExtResource("2_rm527")
+region = Rect2(0, 20, 30, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8q2di")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3qb12"]
+radius = 13.0
+
+[node name="Camera" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_yg1y2")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 700
+max_travel_distance = 750.0
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvsp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_3qb12")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
