@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://blcba666o5g43"]
+[gd_scene load_steps=6 format=3 uid="uid://b5h17lqmc7s3u"]
 
 [ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/sprites/button_red.png" id="1_g3ob0"]
 [ext_resource type="Script" uid="uid://c5g3rttbh6p37" path="res://scenes/checkpoint_object/checkpoint_object.gd" id="1_kcy0l"]

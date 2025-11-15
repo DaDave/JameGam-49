@@ -1,8 +1,10 @@
 extends Node
 
 var max_player_health: int
+var interaction_countdown: int
 var checkpoint_objects: Array[CheckpointObject]
 var target_objects: Array[TargetObject]
+var selected_target_object: TargetObject
 var pause_menu_instance : PauseMenu = null
 var game_over_instance: GameOverMenu
 var occupied_room_values: Array
@@ -20,6 +22,7 @@ func _ready() -> void:
 	GameManagerSignalBus.game_over.connect(_onGameOver)
 	GameManagerSignalBus.game_over_menu_quitted.connect(_onGameOverQuitted)
 	GameManagerSignalBus.register_checkpoint_object.connect(_onCheckpointObjectRegistered)
+	GameManagerSignalBus.interact_checkpoint_object.connect(_onCheckpointObjectInteracted)
 	GameManagerSignalBus.register_target_object.connect(_onTargetObjectRegistered)
 	GameManagerSignalBus.decrease_player_health.connect(_onPlayerHealthDecreased)
 
@@ -28,23 +31,34 @@ func _onSceneByPathSwitched(path: String) -> void:
 
 func _onGameStarted() -> void:
 	max_player_health = 3
+	interaction_countdown = 2
+	## select checkpoint a
 	var room_value_checkpoint_a = select_random_room_for_object()
-	var checkpoint_a = checkpoint_objects.filter(func(checkpoint_object):
+	var checkpoint_a_index = checkpoint_objects.find_custom(func(checkpoint_object):
 		return checkpoint_object.room_number == room_value_checkpoint_a
 	)
+	print("selected checkpoint a room index: " + str(checkpoint_a_index))
+	var checkpoint_a = checkpoint_objects[checkpoint_a_index]
 	checkpoint_a.visible = true
 	checkpoint_a.interactable = true
+	## select checkpoint b
 	var room_value_checkpoint_b = select_random_room_for_object()
-	var checkpoint_b = checkpoint_objects.filter(func(checkpoint_object):
+	var checkpoint_b_index = checkpoint_objects.find_custom(func(checkpoint_object):
 		return checkpoint_object.room_number == room_value_checkpoint_b
 	)
+	print("selected checkpoint b room index: " + str(checkpoint_b_index))
+	var checkpoint_b = checkpoint_objects[checkpoint_b_index]
 	checkpoint_b.visible = true
 	checkpoint_b.interactable = true
+	## select target 
 	var room_value_target = select_random_room_for_object()
-	var target = target_objects.filter(func(target_object):
+	var target_index = target_objects.find_custom(func(target_object):
 		return target_object.room_number == room_value_target
 	)
+	print("selected target room index: " + str(target_index))
+	var target = target_objects[target_index]
 	target.visible = true
+	selected_target_object = target
 	
 	GameTimer.one_shot = true
 	GameTimer.start(180)
@@ -63,17 +77,28 @@ func _onPauseRequested() -> void:
 func _onGameOverMenuInitiated(game_over: GameOverMenu) -> void:
 	game_over_instance = game_over
 
-func _onGameOver() -> void:
+func _onGameOver(successful: bool) -> void:
 	pause()
 	game_over_instance.show()
 	
 func _onGameOverQuitted() -> void:
+	checkpoint_objects = []
+	target_objects = []
 	pause()
 
 func _onCheckpointObjectRegistered(checkpoint_object: CheckpointObject) -> void:
+	print("Register checkpoint object with room number" + str(checkpoint_object.room_number))
 	checkpoint_objects.append(checkpoint_object)
+	
+func _onCheckpointObjectInteracted() -> void:
+	print("Interact with checkpoint object")
+	interaction_countdown = interaction_countdown-1
+	if interaction_countdown <= 0:
+		print("target is interactable")
+		selected_target_object.execute_alert_light()
 
 func _onTargetObjectRegistered(target_object: TargetObject) -> void:
+	print("Register target object with room number" + str(target_object.room_number))
 	target_objects.append(target_object)
 	
 func _onPlayerHealthDecreased() -> void:
@@ -82,7 +107,7 @@ func _onPlayerHealthDecreased() -> void:
 	print(max_player_health)
 	if max_player_health <= 0:
 		print("game_over")
-		_onGameOver()
+		_onGameOver(false)
 
 func _deferred_switch_scene(scene_path):
 	current_scene.free()

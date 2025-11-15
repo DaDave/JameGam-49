@@ -16,11 +16,14 @@ var interactable = false
 var is_pressed = false
 
 func _ready() -> void:
+	GameManagerSignalBus.register_checkpoint_object.emit(self)
 	visible = false
 
 func interact() -> void:
 	if interactable:
-		is_pressed = true
+		if !is_pressed:
+			GameManagerSignalBus.interact_checkpoint_object.emit()
+			is_pressed = true
 		sprite.texture = down_button_sprite
 		await get_tree().create_timer(1).timeout
 		sprite.texture = up_button_active_sprite
