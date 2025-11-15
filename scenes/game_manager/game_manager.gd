@@ -79,9 +79,14 @@ func _onGameOverMenuInitiated(game_over: GameOverMenu) -> void:
 
 func _onGameOver(successful: bool) -> void:
 	pause()
+	if successful:
+		game_over_instance.set_text("You did it!")
+	else:
+		game_over_instance.set_text("You blew up!")
 	game_over_instance.show()
 	
 func _onGameOverQuitted() -> void:
+	occupied_room_values = []
 	checkpoint_objects = []
 	target_objects = []
 	pause()
