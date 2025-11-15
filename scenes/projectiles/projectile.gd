@@ -23,13 +23,9 @@ func _move(delta: float) -> void:
 		queue_free()
 
 func _collide(body) -> void:
-	print("_collide")
 	if (body is Player):
-		#TODO: deal damage to the player
-		print("deal damage")
+		GameManagerSignalBus.decrease_player_health.emit()
 	queue_free()
 
 func _on_body_entered(body):
-	print("_on_body_entered")
-	#TODO: Wieso wird der Player nicht erkannt?
 	_collide(body)

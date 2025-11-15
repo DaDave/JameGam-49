@@ -1,5 +1,4 @@
 [gd_scene load_steps=21 format=4 uid="uid://k0reyf16mn4x"]
-
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="Texture2D" uid="uid://hgcwf8mb3im1" path="res://resources/background/map.png" id="1_7h61r"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -11,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://b7es04lbumdx5" path="res://assets/spritesheets/Museum_room_3_layer_1_48x48.png" id="8_otnwt"]
 [ext_resource type="Texture2D" uid="uid://df1b7e0ipwqmm" path="res://assets/spritesheets/Museum_room_4_layer_1_48x48.png" id="9_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://bjs6a78isa1s3" path="res://assets/spritesheets/Tv_Studio_Design_layer_1_48x48.png" id="10_5v6r0"]
-
+[ext_resource type="PackedScene" uid="uid://jw72sm4n7uia" path="res://scenes/game_over_menu/game_over_menu.tscn" id="4_lfrn8"]
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
 texture_region_size = Vector2i(48, 48)
@@ -10588,3 +10587,14 @@ offset_bottom = 648.0
 visible = false
 layout_mode = 2
 size_flags_vertical = 3
+
+[node name="GameOverMenu" parent="VBoxContainer" instance=ExtResource("4_lfrn8")]
+visible = false
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Map" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.13725491)
+position = Vector2(2541.5, 1600.75)
+scale = Vector2(1.1306185, 1.0061339)
+texture = ExtResource("1_7h61r")

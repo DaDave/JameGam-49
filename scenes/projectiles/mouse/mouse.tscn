@@ -23,6 +23,8 @@ collision_layer = 4
 collision_mask = 4
 script = ExtResource("1_6vo24")
 animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 700
+max_travel_distance = 600.0
 metadata/_custom_type_script = "uid://fo1mvn5wkoux"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -30,3 +32,6 @@ sprite_frames = SubResource("SpriteFrames_kbkxx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_bvxje")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
