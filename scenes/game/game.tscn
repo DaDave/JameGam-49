@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=29 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -12,6 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://b7es04lbumdx5" path="res://assets/spritesheets/Museum_room_3_layer_1_48x48.png" id="8_otnwt"]
 [ext_resource type="Texture2D" uid="uid://df1b7e0ipwqmm" path="res://assets/spritesheets/Museum_room_4_layer_1_48x48.png" id="9_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://bjs6a78isa1s3" path="res://assets/spritesheets/Tv_Studio_Design_layer_1_48x48.png" id="10_5v6r0"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="10_ftsea"]
+[ext_resource type="Texture2D" uid="uid://cxwbinwmqgoy5" path="res://assets/sprites/objects/Table_vertical.png" id="10_otnwt"]
+[ext_resource type="Texture2D" uid="uid://dyiiaor4iqyh5" path="res://assets/sprites/objects/PC_right.png" id="12_3xj4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -10617,6 +10620,27 @@ sources/5 = SubResource("TileSetAtlasSource_8b66f")
 sources/6 = SubResource("TileSetAtlasSource_3jaai")
 sources/7 = SubResource("TileSetAtlasSource_1iff4")
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otnwt"]
+radius = 19.0
+height = 156.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3xj4h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_3xj4h")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5v6r0"]
+size = Vector2(24, 46)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uyinl"]
+radius = 223.00224
+
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0sr1o")
 
@@ -10653,6 +10677,110 @@ tile_set = SubResource("TileSet_0sr1o")
 [node name="MeetingRoom" type="Node2D" parent="Rooms"]
 
 [node name="OpenPlanOffice" type="Node2D" parent="Rooms"]
+
+[node name="Cubicle" type="Node2D" parent="Rooms/OpenPlanOffice"]
+
+[node name="TableWithPCsLeft" type="Node2D" parent="Rooms/OpenPlanOffice/Cubicle"]
+position = Vector2(2078, 1202)
+rotation = 3.1415927
+scale = Vector2(1, -1)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="PC" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("10_ftsea")]
+position = Vector2(1, -49)
+animated_sprite = NodePath("AnimatedSprite2D")
+danger_area = NodePath("DangerArea2D2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC"]
+sprite_frames = SubResource("SpriteFrames_3xj4h")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC"]
+shape = SubResource("RectangleShape2D_5v6r0")
+
+[node name="DangerArea2D2" type="Area2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC"]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC/DangerArea2D2"]
+shape = SubResource("CircleShape2D_uyinl")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
+
+[node name="PC2" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("10_ftsea")]
+position = Vector2(0, 28)
+animated_sprite = NodePath("AnimatedSprite2D")
+danger_area = NodePath("DangerArea2D2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC2"]
+sprite_frames = SubResource("SpriteFrames_3xj4h")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC2"]
+shape = SubResource("RectangleShape2D_5v6r0")
+
+[node name="DangerArea2D2" type="Area2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC2"]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsLeft/PC2/DangerArea2D2"]
+shape = SubResource("CircleShape2D_uyinl")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
+
+[node name="TableWithPCsRight" type="Node2D" parent="Rooms/OpenPlanOffice/Cubicle"]
+position = Vector2(2124, 1202)
+
+[node name="Table" type="StaticBody2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight"]
+
+[node name="TableSprite" type="Sprite2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/Table"]
+texture = ExtResource("10_otnwt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/Table"]
+position = Vector2(0, -5)
+shape = SubResource("CapsuleShape2D_otnwt")
+
+[node name="PC" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("10_ftsea")]
+position = Vector2(1, -49)
+animated_sprite = NodePath("AnimatedSprite2D")
+danger_area = NodePath("DangerArea2D2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC"]
+sprite_frames = SubResource("SpriteFrames_3xj4h")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC"]
+shape = SubResource("RectangleShape2D_5v6r0")
+
+[node name="DangerArea2D2" type="Area2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC"]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC/DangerArea2D2"]
+shape = SubResource("CircleShape2D_uyinl")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
+
+[node name="PC2" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("10_ftsea")]
+position = Vector2(0, 28)
+animated_sprite = NodePath("AnimatedSprite2D")
+danger_area = NodePath("DangerArea2D2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC2"]
+sprite_frames = SubResource("SpriteFrames_3xj4h")
+autoplay = "default"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC2"]
+shape = SubResource("RectangleShape2D_5v6r0")
+
+[node name="DangerArea2D2" type="Area2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC2"]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="Rooms/OpenPlanOffice/Cubicle/TableWithPCsRight/PC2/DangerArea2D2"]
+shape = SubResource("CircleShape2D_uyinl")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
 position = Vector2(477, 216)

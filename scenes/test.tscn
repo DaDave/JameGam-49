@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/player/Player.tscn" id="1_errlg"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="3_iyx0m"]
-[ext_resource type="Texture2D" uid="uid://x8y7nron08qg" path="res://scenes/explosiv_object/computer/computer.png" id="4_74lek"]
+[ext_resource type="Texture2D" uid="uid://x8y7nron08qg" path="res://scenes/explosiv_object/sprites/computer.png" id="4_74lek"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j5jx5"]
 animations = [{
