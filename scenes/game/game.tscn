@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=41 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -17,11 +17,14 @@
 [ext_resource type="Texture2D" uid="uid://cxwbinwmqgoy5" path="res://assets/sprites/objects/Table_vertical.png" id="10_otnwt"]
 [ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC/PC.tscn" id="11_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://dsjowm2ml0kku" path="res://assets/spritesheets/Floors_48x48.png" id="11_10c2w"]
+[ext_resource type="PackedScene" uid="uid://bgi2lk7cu01e3" path="res://scenes/explosiv_object/objects/cartons/cartonEO.tscn" id="12_4vuph"]
+[ext_resource type="PackedScene" uid="uid://b2xb0yh8gs3da" path="res://scenes/explosiv_object/objects/cartons/3_cartonsEO.tscn" id="13_1iff4"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://nxoktdra6ykx" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/ExtinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plant.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
+[ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -5703,6 +5706,15 @@ tile_set = SubResource("TileSet_0sr1o")
 [node name="BossOffice" type="Node2D" parent="Rooms"]
 
 [node name="Warehouse" type="Node2D" parent="Rooms"]
+
+[node name="carton" parent="Rooms/Warehouse" instance=ExtResource("12_4vuph")]
+position = Vector2(2451, 2389)
+
+[node name="7_cartons" parent="Rooms/Warehouse" instance=ExtResource("23_3jaai")]
+position = Vector2(2579, 2350)
+
+[node name="3_cartons" parent="Rooms/Warehouse" instance=ExtResource("13_1iff4")]
+position = Vector2(2306, 2422)
 
 [node name="Reception" type="Node2D" parent="Rooms"]
 
