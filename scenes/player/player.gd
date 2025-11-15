@@ -5,6 +5,11 @@ class_name Player extends CharacterBody2D
 @export var animation_component: AnimationComponent
 @export var input_component: InputComponent
 
+@export_subgroup("Settings")
+@export var iframe_length = 1 # in seconds
+
+var is_iframed = false
+
 func _process(delta: float) -> void:
 	animation_component.handle_move_animation(input_component.input_horizontal, input_component.input_vertical)
 	animation_component.handle_dodge_roll_animation(input_component.wants_to_dodge(), input_component.input_horizontal, input_component.input_vertical)
@@ -22,3 +27,11 @@ func _handle_interaction(interactable):
 	animation_component.handle_interaction()
 	await get_tree().create_timer(0.2).timeout
 	interactable.interact()
+
+func _handle_dodge_iframe(is_dodging): #TODO: noch testen
+	if is_dodging and !is_iframed:
+		self.set_collision_layer_value(3, false)
+		is_iframed = true
+		await get_tree().create_timer(iframe_length).timeout
+		self.set_collision_layer_value(3, true)
+		is_iframed = false
