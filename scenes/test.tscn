@@ -16,11 +16,11 @@ animations = [{
 "speed": 0.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
+size = Vector2(48, 57)
+
 [sub_resource type="CircleShape2D" id="CircleShape2D_lpvoh"]
 radius = 223.00224
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_at5dv"]
-size = Vector2(48, 76)
 
 [node name="Test" type="Node2D"]
 
@@ -34,68 +34,62 @@ position = Vector2(554, 231)
 
 [node name="Computers" type="Node2D" parent="."]
 
-[node name="PC" parent="Computers" node_paths=PackedStringArray("animated_sprite", "collision_area", "danger_area") instance=ExtResource("3_74lek")]
+[node name="PC" parent="Computers" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_74lek")]
 position = Vector2(214, 41)
 animated_sprite = NodePath("AnimatedSprite2D")
-collision_area = NodePath("CollisionArea2D")
-danger_area = NodePath("DangerArea2D")
+danger_area = NodePath("DangerArea2D2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Computers/PC"]
 sprite_frames = SubResource("SpriteFrames_j5jx5")
 autoplay = "default"
 
-[node name="DangerArea2D" type="Area2D" parent="Computers/PC"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="DangerArea2D2" type="Area2D" parent="Computers/PC"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC/DangerArea2D"]
+[node name="DangerShape2D" type="CollisionShape2D" parent="Computers/PC/DangerArea2D2"]
 shape = SubResource("CircleShape2D_lpvoh")
 debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
 
-[node name="CollisionArea2D" type="Area2D" parent="Computers/PC"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC/CollisionArea2D"]
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="PC2" parent="Computers" node_paths=PackedStringArray("animated_sprite", "collision_area", "danger_area") instance=ExtResource("3_74lek")]
-position = Vector2(963, 47)
+[node name="PC2" parent="Computers" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_74lek")]
+position = Vector2(1035, 41)
 animated_sprite = NodePath("AnimatedSprite2D")
-collision_area = NodePath("CollisionArea2D")
-danger_area = NodePath("DangerArea2D")
+danger_area = NodePath("DangerArea2D2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Computers/PC2"]
 sprite_frames = SubResource("SpriteFrames_j5jx5")
 autoplay = "default"
 
-[node name="DangerArea2D" type="Area2D" parent="Computers/PC2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC2"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="DangerArea2D2" type="Area2D" parent="Computers/PC2"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC2/DangerArea2D"]
+[node name="DangerShape2D" type="CollisionShape2D" parent="Computers/PC2/DangerArea2D2"]
 shape = SubResource("CircleShape2D_lpvoh")
 debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
 
-[node name="CollisionArea2D" type="Area2D" parent="Computers/PC2"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC2/CollisionArea2D"]
-shape = SubResource("RectangleShape2D_at5dv")
-
-[node name="PC3" parent="Computers" node_paths=PackedStringArray("animated_sprite", "collision_area", "danger_area") instance=ExtResource("3_74lek")]
-position = Vector2(495, 510)
+[node name="PC3" parent="Computers" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_74lek")]
+position = Vector2(561, 528)
 animated_sprite = NodePath("AnimatedSprite2D")
-collision_area = NodePath("CollisionArea2D")
-danger_area = NodePath("DangerArea2D")
+danger_area = NodePath("DangerArea2D2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Computers/PC3"]
 sprite_frames = SubResource("SpriteFrames_j5jx5")
 autoplay = "default"
 
-[node name="DangerArea2D" type="Area2D" parent="Computers/PC3"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC3"]
+position = Vector2(0, -9.5)
+shape = SubResource("RectangleShape2D_at5dv")
+
+[node name="DangerArea2D2" type="Area2D" parent="Computers/PC3"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC3/DangerArea2D"]
+[node name="DangerShape2D" type="CollisionShape2D" parent="Computers/PC3/DangerArea2D2"]
 shape = SubResource("CircleShape2D_lpvoh")
 debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
-
-[node name="CollisionArea2D" type="Area2D" parent="Computers/PC3"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Computers/PC3/CollisionArea2D"]
-shape = SubResource("RectangleShape2D_at5dv")

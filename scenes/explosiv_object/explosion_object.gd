@@ -1,9 +1,8 @@
 class_name ExplosionObject
-extends Node2D
+extends StaticBody2D
 
 #region variables
 @export var animated_sprite: AnimatedSprite2D
-@export var collision_area: Area2D
 @export var danger_area: Area2D
 
 @export var count_per_projectile:int = 1
@@ -57,7 +56,7 @@ func _hide_on_explosion():
 	%Sprite_Explosion.visible = true
 	%Sprite_Explosion.play()
 	animated_sprite.visible = false
-	collision_area.collision_layer = 0
+	collision_layer = 0
 #endregion
 
 #region projectiles

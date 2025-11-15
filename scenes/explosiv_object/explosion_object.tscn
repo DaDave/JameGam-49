@@ -150,10 +150,11 @@ linear_accel_max = 79.99999
 scale_max = 7.0
 color = Color(0.87748265, 0.35417065, 3.85046e-07, 1)
 
-[node name="Explosionobject" type="Node2D"]
+[node name="Explosionobject" type="StaticBody2D"]
 script = ExtResource("1_thvt2")
 projectile_angle_deg = 30
 projectile_objects = Array[Resource]([ExtResource("2_0ncj0"), ExtResource("3_hp3h1")])
+metadata/_custom_type_script = "uid://dxdfmoeggswbv"
 
 [node name="Sprite_Explosion" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
