@@ -14,8 +14,6 @@ var projectile_counter:int = 0
 		projectile_angle_rad = deg_to_rad(value)
 var projectile_angle_rad:float
 @export var projectile_objects:Array[Resource]
-@export var explosion_particles:Array[GPUParticles2D]
-
 @export var pixel_for_explosion:int = 1000
 
 var is_exploded:bool = false
@@ -29,6 +27,11 @@ var player:Player
 var last_position:Vector2
 #endregion
 
+func _ready() -> void:
+	animated_sprite.visible = true
+	danger_area.body_entered.connect(_on_danger_area_2d_body_entered)
+	danger_area.body_exited.connect(_on_danger_area_2d_body_exited)
+
 func _process(_delta) -> void:
 	_track_player()
 
@@ -39,8 +42,7 @@ func _explode() -> void:
 	_spawn_projectiles()
 
 func _animate_explosion() -> void:
-	for gpu in explosion_particles:
-		gpu.emitting = true
+	%ExplosionGPUParticles2D.emitting = true
 	_hide_on_explosion()
 	
 	await get_tree().create_timer(2.0).timeout
@@ -49,8 +51,8 @@ func _animate_explosion() -> void:
 func _hide_on_explosion():
 	%Sprite_Explosion.visible = true
 	%Sprite_Explosion.play()
-	%Sprite_Object.visible = false
-	%Collision_Area2D.collision_layer = 0
+	animated_sprite.visible = false
+	collision_area.collision_layer = 0
 
 func _spawn_projectiles() -> void:
 	for count in count_per_projectile:
@@ -98,7 +100,6 @@ func _track_player() -> void:
 		movement_pixel += int((player_position - last_position).length())
 	last_position = player_position
 #endregion
-
 
 func _on_danger_area_2d_body_entered(body) -> void:
 	if (body is Player):
