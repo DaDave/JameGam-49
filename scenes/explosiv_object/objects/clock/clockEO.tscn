@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://lni2l41cc6hh"]
+[gd_scene load_steps=9 format=3 uid="uid://lni2l41cc6hh"]
 
 [ext_resource type="Texture2D" uid="uid://blte4wr2j1404" path="res://scenes/explosiv_object/objects/clock/clock.png" id="1_48t38"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_o40b3"]
 [ext_resource type="PackedScene" uid="uid://de84f05j1l5pi" path="res://scenes/projectiles/clock/clock_1.tscn" id="3_ngjva"]
+[ext_resource type="AudioStream" uid="uid://i5ef7pttpt3k" path="res://assets/sounds/clock.wav" id="3_ymra7"]
 [ext_resource type="PackedScene" uid="uid://dw1u0vk0a48gv" path="res://scenes/projectiles/clock/clock_2.tscn" id="4_nsjtj"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
@@ -33,6 +34,7 @@ sprite_frames = SubResource("SpriteFrames_th3o8")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_o40b3")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("3_ymra7")
 projectile_angle_deg = 20
 projectile_objects = Array[Resource]([ExtResource("3_ngjva"), ExtResource("4_nsjtj")])
 pixel_for_explosion = 10000.0
