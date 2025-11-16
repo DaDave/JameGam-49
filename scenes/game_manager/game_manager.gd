@@ -34,7 +34,7 @@ func _onSceneByPathSwitched(path: String) -> void:
 	call_deferred("_deferred_switch_scene", path)
 
 func _onGameStarted() -> void:
-	max_player_health = 100
+	max_player_health = 10
 	actual_player_health = max_player_health
 	interaction_countdown = 2
 	## select checkpoint a
@@ -131,7 +131,7 @@ func _onPlayerHealthIncreased(hp: int) -> void:
 	actual_player_health = actual_player_health + hp
 	if (actual_player_health > max_player_health):
 		actual_player_health = max_player_health
-	print(max_player_health)
+	print(actual_player_health)
 
 func _deferred_switch_scene(scene_path):
 	current_scene.free()

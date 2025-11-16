@@ -10,5 +10,5 @@ func _ready():
 
 func _on_body_entered(body):
 	if (body is Player):
-		GameManagerSignalBus.decrease_player_health.emit()
+		GameManagerSignalBus.increase_player_health.emit(2)
 		$".".queue_free()
