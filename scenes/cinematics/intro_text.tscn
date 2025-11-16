@@ -278,5 +278,6 @@ text = "Start"
 [node name="Medipack" type="AnimatedSprite2D" parent="Control"]
 position = Vector2(932, 592)
 sprite_frames = SubResource("SpriteFrames_suada")
+autoplay = "default"
 frame = 1
 frame_progress = 0.88594687
