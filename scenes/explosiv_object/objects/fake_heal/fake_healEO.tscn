@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://cspfe5373bbr1"]
+
+[ext_resource type="Texture2D" uid="uid://db5pjxa8eofwo" path="res://scenes/heal_object/medipack.png" id="1_yyavd"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_tgtqy"]
+[ext_resource type="PackedScene" uid="uid://bxjxpfqs6jn3g" path="res://scenes/projectiles/fake_heal/fake_heal.tscn" id="3_oqv52"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_yyavd")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(32, 39)
+
+[node name="FakeHeal" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_tgtqy")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 0
+projectile_objects = Array[Resource]([ExtResource("3_oqv52")])
+pixel_for_explosion = 99999.0
+base_percentage = 100.0
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+position = Vector2(0, 4.5)
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
