@@ -10,6 +10,8 @@ var game_over_instance: GameOverMenu
 var occupied_room_values: Array
 var isPaused : bool = false
 var current_scene = null
+var button_rooms: Array[int] = []
+var box_room: int
 
 func _ready() -> void:
 	var root = get_tree().root
@@ -41,6 +43,8 @@ func _onGameStarted() -> void:
 	var checkpoint_a = checkpoint_objects[checkpoint_a_index]
 	checkpoint_a.visible = true
 	checkpoint_a.interactable = true
+	button_rooms.append(checkpoint_a_index)
+	
 	## select checkpoint b
 	var room_value_checkpoint_b = select_random_room_for_object()
 	var checkpoint_b_index = checkpoint_objects.find_custom(func(checkpoint_object):
@@ -50,6 +54,8 @@ func _onGameStarted() -> void:
 	var checkpoint_b = checkpoint_objects[checkpoint_b_index]
 	checkpoint_b.visible = true
 	checkpoint_b.interactable = true
+	button_rooms.append(checkpoint_b_index)
+	
 	## select target 
 	var room_value_target = select_random_room_for_object()
 	var target_index = target_objects.find_custom(func(target_object):
@@ -58,6 +64,8 @@ func _onGameStarted() -> void:
 	print("selected target room index: " + str(target_index))
 	var target = target_objects[target_index]
 	target.visible = true
+	box_room = target_index
+	
 	selected_target_object = target
 	selected_target_object.execute_alert_closed_light()
 	

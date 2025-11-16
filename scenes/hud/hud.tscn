@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://b86e5a4ie6hp6"]
+[gd_scene load_steps=4 format=3 uid="uid://b86e5a4ie6hp6"]
 
 [ext_resource type="Script" uid="uid://0ahcoxfpwt3l" path="res://scenes/hud/hud.gd" id="1_48c2t"]
 [ext_resource type="PackedScene" uid="uid://kmtgpd2wi5x7" path="res://scenes/hud/heart.tscn" id="2_cgeww"]
+[ext_resource type="LabelSettings" uid="uid://dc1rv5ap7yev5" path="res://scenes/hud/hud_label_settings.tres" id="3_c45xl"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "countdown_label")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "countdown_label", "button_objective_1", "button_objective_2", "box_objective")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -576.0
@@ -12,18 +13,41 @@ offset_right = -536.0
 offset_bottom = -284.0
 scale = Vector2(2, 2)
 script = ExtResource("1_48c2t")
-healthbar = NodePath("VBoxContainer/Healthbar")
+healthbar = NodePath("Left_Hud/Healthbar")
 heart_scene = ExtResource("2_cgeww")
-countdown_label = NodePath("VBoxContainer/Countdown")
+countdown_label = NodePath("Left_Hud/Countdown")
+button_objective_1 = NodePath("Right_Hud/ButtonObjective1")
+button_objective_2 = NodePath("Right_Hud/ButtonObjective2")
+box_objective = NodePath("Right_Hud/BoxObjective")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="Left_Hud" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 80.0
 
-[node name="Healthbar" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Healthbar" type="HBoxContainer" parent="Left_Hud"]
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 
-[node name="Countdown" type="Label" parent="VBoxContainer"]
+[node name="Countdown" type="Label" parent="Left_Hud"]
 layout_mode = 2
+label_settings = ExtResource("3_c45xl")
+
+[node name="Right_Hud" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 407.5
+offset_top = -0.5
+offset_right = 447.5
+offset_bottom = 67.5
+
+[node name="ButtonObjective1" type="Label" parent="Right_Hud"]
+layout_mode = 2
+label_settings = ExtResource("3_c45xl")
+
+[node name="ButtonObjective2" type="Label" parent="Right_Hud"]
+layout_mode = 2
+label_settings = ExtResource("3_c45xl")
+
+[node name="BoxObjective" type="Label" parent="Right_Hud"]
+layout_mode = 2
+label_settings = ExtResource("3_c45xl")
