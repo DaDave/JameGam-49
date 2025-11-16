@@ -30,6 +30,7 @@ projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("3_oqv52")])
 pixel_for_explosion = 99999.0
 base_percentage = 100.0
+timer_ticks = 0.1
 
 [node name="DangerArea2D" type="Area2D" parent="."]
 collision_layer = 4
