@@ -237,6 +237,15 @@ offset_right = 363.0
 offset_bottom = 508.0
 text = "Reception"
 
+[node name="Label8" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 500.0
+offset_right = 75.0
+offset_bottom = 520.0
+rotation = -1.5707964
+text = "Start"
+
 [node name="Medipack" type="Sprite2D" parent="Control"]
 position = Vector2(932, 592)
 texture = ExtResource("14_0jaoo")
