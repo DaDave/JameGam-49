@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://da8rrq77a13na"]
+[gd_scene load_steps=18 format=3 uid="uid://da8rrq77a13na"]
 
 [ext_resource type="Script" uid="uid://7lbs4mlfg7w5" path="res://scenes/cinematics/intro_text.gd" id="1_b1bac"]
 [ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/sprites/button_red.png" id="2_c2pxh"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://vsciguk2ycsh" path="res://assets/sprites/box_open_half_1.png" id="10_8jbrj"]
 [ext_resource type="Texture2D" uid="uid://b60ayk8f0pw6u" path="res://assets/sprites/box_open_full.png" id="11_yd50d"]
 [ext_resource type="Texture2D" uid="uid://c1ktvq5ubiumj" path="res://resources/background/Version_1.png" id="13_1fvgr"]
+[ext_resource type="Texture2D" uid="uid://deju26fo67sdh" path="res://scenes/heal_object/medipack.png" id="14_0jaoo"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f3nx"]
 font_size = 24
@@ -136,15 +137,19 @@ autowrap_mode = 2
 [node name="DescriptionText" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 705.0
-offset_top = 335.0
+offset_top = 330.0
 offset_right = 1148.0
-offset_bottom = 494.0
+offset_bottom = 602.0
 theme_override_font_sizes/font_size = 18
 text = "You need to press two different buttons hidden in
 random rooms to open the safety box.
 
+Then you have to find the safety box in a third room.
 
-Then you have to find the safety box in a third room."
+
+
+If you get hurt there are some medkits placed around
+the facility"
 horizontal_alignment = 1
 
 [node name="AnyKeyText" type="Label" parent="Control"]
@@ -158,14 +163,14 @@ text = "Press any key to continue"
 horizontal_alignment = 1
 
 [node name="ButtonRed" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(932, 412)
+position = Vector2(932, 395)
 sprite_frames = SubResource("SpriteFrames_ehks3")
 autoplay = "default"
 frame = 1
 frame_progress = 0.19741084
 
 [node name="BoxOpenFull1" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(932, 509)
+position = Vector2(932, 463)
 sprite_frames = SubResource("SpriteFrames_to777")
 autoplay = "default"
 frame = 2
@@ -231,3 +236,7 @@ offset_top = 488.0
 offset_right = 363.0
 offset_bottom = 508.0
 text = "Reception"
+
+[node name="Medipack" type="Sprite2D" parent="Control"]
+position = Vector2(932, 581)
+texture = ExtResource("14_0jaoo")
