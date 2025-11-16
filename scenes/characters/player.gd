@@ -6,9 +6,12 @@ class_name Player extends CharacterBody2D
 @export var input_component: InputComponent
 
 @export_subgroup("Settings")
-@export var iframe_length = 0.2 # in seconds
+@export var iframe_length = 0.1 # in seconds
 
 var is_iframed = false
+
+func _ready() -> void:
+	GameManagerSignalBus.decrease_player_health.connect(_on_decrease_player_health)
 
 func _process(delta: float) -> void:
 	animation_component.handle_move_animation(input_component.input_horizontal, input_component.input_vertical)
@@ -37,3 +40,6 @@ func _handle_dodge_iframe(is_dodging): #TODO: noch testen
 		self.set_collision_layer_value(3, true)
 	if !is_dodging and is_iframed:
 		is_iframed = false
+
+func _on_decrease_player_health():
+	animation_component.handle_player_damage()
