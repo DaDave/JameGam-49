@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://da8rrq77a13na"]
+[gd_scene load_steps=22 format=3 uid="uid://da8rrq77a13na"]
 
 [ext_resource type="Script" uid="uid://7lbs4mlfg7w5" path="res://scenes/cinematics/intro_text.gd" id="1_b1bac"]
 [ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/sprites/button_red.png" id="2_c2pxh"]
@@ -14,6 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://b60ayk8f0pw6u" path="res://assets/sprites/box_open_full.png" id="11_yd50d"]
 [ext_resource type="Texture2D" uid="uid://c1ktvq5ubiumj" path="res://resources/background/Version_1.png" id="13_1fvgr"]
 [ext_resource type="Texture2D" uid="uid://deju26fo67sdh" path="res://scenes/heal_object/medipack.png" id="14_0jaoo"]
+[ext_resource type="Texture2D" uid="uid://cfu6y1o8saxuv" path="res://scenes/heal_object/medipack_2.png" id="15_yd50d"]
+[ext_resource type="Texture2D" uid="uid://cp1l6h7ataqft" path="res://scenes/heal_object/medipack_3.png" id="16_a0jlw"]
+[ext_resource type="Texture2D" uid="uid://d0il20c24x5wu" path="res://scenes/heal_object/medipack_4.png" id="17_to777"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f3nx"]
 font_size = 24
@@ -93,6 +96,32 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 1.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_suada"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_0jaoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yd50d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a0jlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_to777")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a0jlw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_yd50d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
 }]
 
 [node name="IntroText" type="Node2D"]
@@ -246,6 +275,8 @@ offset_bottom = 520.0
 rotation = -1.5707964
 text = "Start"
 
-[node name="Medipack" type="Sprite2D" parent="Control"]
+[node name="Medipack" type="AnimatedSprite2D" parent="Control"]
 position = Vector2(932, 592)
-texture = ExtResource("14_0jaoo")
+sprite_frames = SubResource("SpriteFrames_suada")
+frame = 1
+frame_progress = 0.88594687
