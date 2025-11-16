@@ -1,4 +1,4 @@
-[gd_scene load_steps=74 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=75 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -50,6 +50,7 @@
 [ext_resource type="PackedScene" uid="uid://i1gowanntonj" path="res://scenes/explosiv_object/objects/pillow_yellow/pillow_yellowEO.tscn" id="40_3322e"]
 [ext_resource type="PackedScene" uid="uid://dthorv72smpjy" path="res://scenes/explosiv_object/objects/toilet_paper/3_toilet_paperEO.tscn" id="40_teoly"]
 [ext_resource type="PackedScene" uid="uid://cfut3i3neesyg" path="res://scenes/explosiv_object/objects/toilet_paper/toilet_paperEO.tscn" id="41_b7fhm"]
+[ext_resource type="PackedScene" uid="uid://dy2y35v0jfu5e" path="res://scenes/explosiv_object/objects/pillow_blue/pillow_blueEO.tscn" id="41_mge0u"]
 [ext_resource type="PackedScene" uid="uid://c77pwihjdg71k" path="res://scenes/explosiv_object/objects/table_lamp/table_lampEO.tscn" id="49_ye7x0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
@@ -10581,6 +10582,10 @@ position = Vector2(3511, 123)
 
 [node name="PillowYellow" parent="Rooms/MeetingRoom" instance=ExtResource("40_3322e")]
 position = Vector2(3455, 731)
+
+[node name="PillowBlue" parent="Rooms/MeetingRoom" instance=ExtResource("41_mge0u")]
+position = Vector2(2928, 731)
+scale = Vector2(-1, 1)
 
 [node name="OpenPlanOffice" type="Node2D" parent="Rooms"]
 
