@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://da8rrq77a13na"]
+[gd_scene load_steps=5 format=3 uid="uid://da8rrq77a13na"]
 
 [ext_resource type="Script" uid="uid://7lbs4mlfg7w5" path="res://scenes/cinematics/intro_text.gd" id="1_b1bac"]
+[ext_resource type="Texture2D" uid="uid://c56hu0rknm8sx" path="res://assets/sprites/button_red.png" id="2_c2pxh"]
+[ext_resource type="Texture2D" uid="uid://d16go6h42hjw8" path="res://assets/sprites/box_open_full_1.png" id="3_j0wwg"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f3nx"]
 font_size = 24
@@ -24,12 +26,55 @@ offset_bottom = 40.0
 custom_minimum_size = Vector2(1000, 0)
 layout_mode = 0
 offset_left = 76.0
-offset_top = 170.0
+offset_top = 26.0
 offset_right = 1076.0
-offset_bottom = 497.0
+offset_bottom = 353.0
 text = "Your first day at your new workplace just started: Explocorp, the leading producer of explosives in the world. 
 Explocorp is known for its extensive safety measures, making sure that no employee is harmed working with their dangerous products. While your new boss shows you around and talks endlessly about how great Explocorp is, the boredom overwhelms you and you accidentally lean on a big red button on a nearby console. 
 Suddenly your bosses eyes widen and you hear a blaring voice from a nearby speaker \"Self-destruction initiated. All employees should make their way to the nearest safety box.\" You hear muffled explosions in the distance and decide to go looking for those ominous boxes."
 label_settings = SubResource("LabelSettings_1f3nx")
 horizontal_alignment = 1
 autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 732.0
+offset_top = 412.0
+offset_right = 1123.0
+offset_bottom = 478.0
+text = "You need to press two different buttons hidden in
+random rooms to open the safety box.
+Then you have to find the safety box in a third room"
+
+[node name="Label3" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 751.0
+offset_top = 492.0
+offset_right = 839.0
+offset_bottom = 512.0
+text = "The Buttons:"
+
+[node name="Label4" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 995.0
+offset_top = 493.0
+offset_right = 1083.0
+offset_bottom = 513.0
+text = "The Box:"
+
+[node name="Label5" type="Label" parent="Control"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 605.0
+offset_right = 748.0
+offset_bottom = 625.0
+text = "Press any key to continue"
+horizontal_alignment = 1
+
+[node name="ButtonRed" type="Sprite2D" parent="Control"]
+position = Vector2(796, 542)
+texture = ExtResource("2_c2pxh")
+
+[node name="BoxOpenFull1" type="Sprite2D" parent="Control"]
+position = Vector2(1022, 555)
+texture = ExtResource("3_j0wwg")
