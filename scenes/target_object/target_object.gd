@@ -20,6 +20,7 @@ var interactable = false
 func _ready() -> void:
 	GameManagerSignalBus.register_target_object.emit(self)
 	visible = false
+	set_collision_layer_value(1, false)
 
 func execute_alert_closed_light() -> void:
 	while(!interactable):

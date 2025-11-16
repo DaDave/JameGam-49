@@ -46,6 +46,7 @@ func _onGameStarted() -> void:
 	var checkpoint_a = checkpoint_objects[checkpoint_a_index]
 	checkpoint_a.visible = true
 	checkpoint_a.interactable = true
+	checkpoint_a.set_collision_layer_value(1, true)
 	button_rooms.append(room_value_checkpoint_a)
 	
 	## select checkpoint b
@@ -57,6 +58,7 @@ func _onGameStarted() -> void:
 	var checkpoint_b = checkpoint_objects[checkpoint_b_index]
 	checkpoint_b.visible = true
 	checkpoint_b.interactable = true
+	checkpoint_b.set_collision_layer_value(1, true)
 	button_rooms.append(room_value_checkpoint_b)
 	
 	## select target 
@@ -67,6 +69,7 @@ func _onGameStarted() -> void:
 	print("selected target room index: " + str(target_index))
 	var target = target_objects[target_index]
 	target.visible = true
+	checkpoint_b.set_collision_layer_value(1, true)
 	box_room = room_value_target
 	
 	selected_target_object = target

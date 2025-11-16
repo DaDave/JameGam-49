@@ -18,6 +18,7 @@ var is_pressed = false
 func _ready() -> void:
 	GameManagerSignalBus.register_checkpoint_object.emit(self)
 	visible = false
+	set_collision_layer_value(1, false)
 
 func interact() -> void:
 	if interactable:
