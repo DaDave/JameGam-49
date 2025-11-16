@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://cn1iyuwb471xp"]
+
+[ext_resource type="Texture2D" uid="uid://sdl2267eoh37" path="res://scenes/explosiv_object/objects/sink/sink.png" id="1_suw4d"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_h5f4x"]
+[ext_resource type="PackedScene" uid="uid://xw2tgu418bb5" path="res://scenes/projectiles/sink/sink_1.tscn" id="3_lwrqs"]
+[ext_resource type="PackedScene" uid="uid://c4he8afrsrwbc" path="res://scenes/projectiles/sink/sink_2.tscn" id="4_ljpaa"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_suw4d")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1s5n"]
+size = Vector2(72, 30)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(432, 111)
+
+[node name="Sink" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_h5f4x")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 15
+projectile_objects = Array[Resource]([ExtResource("3_lwrqs"), ExtResource("4_ljpaa"), ExtResource("4_ljpaa"), ExtResource("4_ljpaa"), ExtResource("4_ljpaa")])
+pixel_for_explosion = 10000.0
+base_percentage = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(0, 6)
+shape = SubResource("RectangleShape2D_y1s5n")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+position = Vector2(0, 46.5)
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
