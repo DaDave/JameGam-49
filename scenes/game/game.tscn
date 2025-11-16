@@ -80,9 +80,9 @@
 [ext_resource type="PackedScene" uid="uid://b7jp4bg61w7vi" path="res://scenes/explosiv_object/objects/cuckoo/cuckooEO.tscn" id="67_5dkr6"]
 [ext_resource type="PackedScene" uid="uid://226arhqfpu5m" path="res://scenes/explosiv_object/objects/image1/image1EO.tscn" id="67_864w3"]
 [ext_resource type="PackedScene" uid="uid://d0m76hrwshn6r" path="res://scenes/heal_object/heal_object.tscn" id="74_yegcf"]
-[ext_resource type="Texture2D" uid="uid://bpuqhu0fjs6aa" path="res://scenes/explosiv_object/objects/image1/image1.png" id="76_shuhp"]
+[ext_resource type="Texture2D" uid="uid://drg78xswtd6ai" path="res://scenes/explosiv_object/objects/cartons/carton.png" id="76_shuhp"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="77_ev1tq"]
-[ext_resource type="PackedScene" uid="uid://cyy761ov8k6qs" path="res://scenes/projectiles/image1/image1_projectile_3.tscn" id="78_17607"]
+[ext_resource type="PackedScene" uid="uid://d1oreu7royhkq" path="res://scenes/projectiles/bugfix_carton/bugfix_carton.tscn" id="78_ev1tq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -32729,7 +32729,7 @@ size = Vector2(12, 170)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pg2xm"]
 size = Vector2(86, 86)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -32740,11 +32740,11 @@ animations = [{
 "speed": 0.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qns4f"]
-size = Vector2(38, 44)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi31f"]
+size = Vector2(24, 28)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_al1mh"]
-size = Vector2(1368, 137)
+[sub_resource type="CircleShape2D" id="CircleShape2D_17607"]
+radius = 190.21304
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_0sr1o")
@@ -35169,33 +35169,30 @@ position = Vector2(131, 404)
 [node name="Image1" parent="Rooms/StartRoom" instance=ExtResource("67_864w3")]
 position = Vector2(142, 1061)
 
-[node name="Image2" type="Node2D" parent="Rooms/StartRoom"]
-visible = false
-position = Vector2(-412, 1413)
+[node name="bugfix_carton" type="Node2D" parent="Rooms/StartRoom"]
+position = Vector2(133, 1352)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/StartRoom/Image2"]
-sprite_frames = SubResource("SpriteFrames_f1fnh")
-frame_progress = 0.9023496
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/StartRoom/bugfix_carton"]
+sprite_frames = SubResource("SpriteFrames_th3o8")
 
-[node name="Explosionobject" parent="Rooms/StartRoom/Image2" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("77_ev1tq")]
+[node name="Explosionobject" parent="Rooms/StartRoom/bugfix_carton" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("77_ev1tq")]
 animated_sprite = NodePath("../AnimatedSprite2D")
-danger_area = NodePath("../DangerArea2D")
-projectile_angle_deg = 0
-projectile_objects = Array[Resource]([ExtResource("78_17607")])
+danger_area = NodePath("../DangerArea2D2")
+projectile_angle_deg = 25
+projectile_objects = Array[Resource]([ExtResource("78_ev1tq")])
+pixel_for_explosion = 3000.0
 base_percentage = 100.0
-timer_ticks = 0.05
-adjust_audio_volume = -20
+timer_ticks = 0.1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/StartRoom/Image2/Explosionobject"]
-shape = SubResource("RectangleShape2D_qns4f")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/StartRoom/bugfix_carton/Explosionobject"]
+shape = SubResource("RectangleShape2D_mi31f")
 
-[node name="DangerArea2D" type="Area2D" parent="Rooms/StartRoom/Image2"]
+[node name="DangerArea2D2" type="Area2D" parent="Rooms/StartRoom/bugfix_carton"]
 collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/StartRoom/Image2/DangerArea2D"]
-position = Vector2(663, 41)
-shape = SubResource("RectangleShape2D_al1mh")
-debug_color = Color(0.9951156, 0, 0.21856731, 0.41960785)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/StartRoom/bugfix_carton/DangerArea2D2"]
+shape = SubResource("CircleShape2D_17607")
+debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="HealObjects" type="Node2D" parent="Rooms"]
 
