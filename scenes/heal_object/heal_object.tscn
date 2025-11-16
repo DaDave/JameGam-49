@@ -1,17 +1,35 @@
-[gd_scene load_steps=8 format=3 uid="uid://d0m76hrwshn6r"]
+[gd_scene load_steps=11 format=3 uid="uid://d0m76hrwshn6r"]
 
 [ext_resource type="Script" uid="uid://csym5wiatptbc" path="res://scenes/heal_object/heal_object.gd" id="1_bo3rm"]
 [ext_resource type="Texture2D" uid="uid://db5pjxa8eofwo" path="res://scenes/heal_object/medipack.png" id="2_6err1"]
+[ext_resource type="Texture2D" uid="uid://c7v3g3126jj60" path="res://scenes/heal_object/medipack_2.png" id="3_ndjky"]
+[ext_resource type="Texture2D" uid="uid://c6yl8ggv2h786" path="res://scenes/heal_object/medipack_3.png" id="4_niinc"]
+[ext_resource type="Texture2D" uid="uid://d0il20c24x5wu" path="res://scenes/heal_object/medipack_4.png" id="5_mw2es"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mw2es"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_6err1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndjky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_niinc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mw2es")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_niinc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ndjky")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 4.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niinc"]
@@ -46,7 +64,7 @@ script = ExtResource("1_bo3rm")
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_mw2es")
 autoplay = "default"
-frame_progress = 0.2358616
+frame_progress = 0.9331347
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_niinc")
