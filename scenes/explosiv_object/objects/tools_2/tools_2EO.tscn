@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cwa1vusnv6ygj"]
+
+[ext_resource type="Texture2D" uid="uid://be8g861nhjos0" path="res://scenes/explosiv_object/objects/tools_2/Tools_2.png" id="1_eu0u3"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_obuc4"]
+[ext_resource type="PackedScene" uid="uid://e7eqrqk80nil" path="res://scenes/projectiles/tool_2/tool_2_projectile_3.tscn" id="3_bp7jr"]
+[ext_resource type="PackedScene" uid="uid://2g0dv7pf6cul" path="res://scenes/projectiles/tool_2/tool_2_projectile_1.tscn" id="4_rp1q1"]
+[ext_resource type="PackedScene" uid="uid://hm5w17v3do6k" path="res://scenes/projectiles/tool_2/tool_2_projectile_2.tscn" id="5_vvhpx"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eu0u3")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_drgvk"]
+radius = 1.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_rp1q1"]
+radius = 250.62572
+
+[node name="Tool_1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_th3o8")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_obuc4")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D2")
+projectile_objects = Array[Resource]([ExtResource("3_bp7jr"), ExtResource("4_rp1q1"), ExtResource("5_vvhpx")])
+pixel_for_explosion = 2500.0
+base_percentage = 10.0
+timer_ticks = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_drgvk")
+
+[node name="DangerArea2D2" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D2"]
+position = Vector2(0, 0.5)
+shape = SubResource("CircleShape2D_rp1q1")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

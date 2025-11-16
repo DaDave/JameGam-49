@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=65 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -35,10 +35,13 @@
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
+[ext_resource type="PackedScene" uid="uid://w1k3s82ivplk" path="res://scenes/explosiv_object/objects/carrots/carrotsEO.tscn" id="21_sikks"]
 [ext_resource type="PackedScene" uid="uid://dadol1h0ka8ml" path="res://scenes/explosiv_object/objects/fruits/fruitsEO.tscn" id="21_tyhjx"]
 [ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
 [ext_resource type="PackedScene" uid="uid://bt0bmexq1ufrc" path="res://scenes/explosiv_object/objects/flower_red/flower_redEO.tscn" id="26_l2dhg"]
+[ext_resource type="PackedScene" uid="uid://btl7i4hfxoyb3" path="res://scenes/explosiv_object/objects/tools_1/tools_1EO.tscn" id="29_ah1mj"]
 [ext_resource type="AudioStream" uid="uid://0wr6n5mxjucy" path="res://resources/music/Inferno Run 2.mp3" id="29_l2dhg"]
+[ext_resource type="PackedScene" uid="uid://cwa1vusnv6ygj" path="res://scenes/explosiv_object/objects/tools_2/tools_2EO.tscn" id="30_t5owt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -10290,6 +10293,9 @@ position = Vector2(1036, 899)
 
 [node name="Objects" type="Node2D" parent="Rooms/CoffeeKitchen"]
 
+[node name="Carrots" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_sikks")]
+position = Vector2(797, 1519)
+
 [node name="Oranges" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_5q2xh")]
 position = Vector2(1195, 1375)
 
@@ -10337,16 +10343,24 @@ room_number = 2
 position = Vector2(129, 2401)
 room_number = 2
 
-[node name="Camera" parent="Rooms/Warehouse" instance=ExtResource("12_wdnak")]
+[node name="Objects" type="Node2D" parent="Rooms/Warehouse"]
+
+[node name="Tool_1" parent="Rooms/Warehouse/Objects" instance=ExtResource("29_ah1mj")]
+position = Vector2(1909, 2223)
+
+[node name="Tool_2" parent="Rooms/Warehouse/Objects" instance=ExtResource("30_t5owt")]
+position = Vector2(2096, 2417)
+
+[node name="Camera" parent="Rooms/Warehouse/Objects" instance=ExtResource("12_wdnak")]
 position = Vector2(1418, 2349)
 
-[node name="carton" parent="Rooms/Warehouse" instance=ExtResource("12_4vuph")]
+[node name="carton" parent="Rooms/Warehouse/Objects" instance=ExtResource("12_4vuph")]
 position = Vector2(2451, 2389)
 
-[node name="7_cartons" parent="Rooms/Warehouse" instance=ExtResource("23_3jaai")]
+[node name="7_cartons" parent="Rooms/Warehouse/Objects" instance=ExtResource("23_3jaai")]
 position = Vector2(2579, 2350)
 
-[node name="3_cartons" parent="Rooms/Warehouse" instance=ExtResource("13_1iff4")]
+[node name="3_cartons" parent="Rooms/Warehouse/Objects" instance=ExtResource("13_1iff4")]
 position = Vector2(2306, 2422)
 
 [node name="Reception" type="Node2D" parent="Rooms"]
@@ -11801,7 +11815,7 @@ position = Vector2(903, 228)
 position = Vector2(3500, 1753)
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(1021, 1079)
+position = Vector2(2470, 2080)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -576.0

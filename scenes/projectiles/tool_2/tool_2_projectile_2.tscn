@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://hm5w17v3do6k"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_ll52n"]
+[ext_resource type="Texture2D" uid="uid://b023r0fy4gs35" path="res://scenes/projectiles/tool_2/Tools_2_projectile_2.png" id="2_ll52n"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ll52n")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m1wyk"]
+size = Vector2(14, 26)
+
+[node name="Tool_2_projectile_2" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ll52n")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 450
+max_travel_distance = 300.0
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvsp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_m1wyk")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
