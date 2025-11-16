@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=99 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -70,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://bnf2ogp5aovdn" path="res://scenes/explosiv_object/objects/toilet/toiletEO.tscn" id="57_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
 [ext_resource type="PackedScene" uid="uid://bquo8oretf2x8" path="res://scenes/explosiv_object/objects/duck/duckEO.tscn" id="63_7dxef"]
+[ext_resource type="Texture2D" uid="uid://rpnq0kvoqug2" path="res://assets/sprites/objects/Locker_back.png" id="64_bjk8q"]
 [ext_resource type="PackedScene" uid="uid://b7jp4bg61w7vi" path="res://scenes/explosiv_object/objects/cuckoo/cuckooEO.tscn" id="67_5dkr6"]
 [ext_resource type="PackedScene" uid="uid://226arhqfpu5m" path="res://scenes/explosiv_object/objects/image1/image1EO.tscn" id="67_864w3"]
 
@@ -29982,59 +29983,29 @@ shape = SubResource("RectangleShape2D_pg2xm")
 [node name="BottomLockers" type="Node2D" parent="Rooms/BathLockerRoom/LockRoom"]
 position = Vector2(490, 446)
 
-[node name="Locker" type="StaticBody2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
-position = Vector2(0, -20)
+[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
+position = Vector2(0, -55)
+texture = ExtResource("64_bjk8q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker"]
-texture = ExtResource("14_5v6r0")
+[node name="Sprite2D2" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
+position = Vector2(87, -55)
+texture = ExtResource("64_bjk8q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker"]
-shape = SubResource("RectangleShape2D_pg2xm")
+[node name="Sprite2D3" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
+position = Vector2(174, -55)
+texture = ExtResource("64_bjk8q")
 
-[node name="Locker2" type="StaticBody2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
-position = Vector2(87, -20)
+[node name="Sprite2D4" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
+position = Vector2(261, -55)
+texture = ExtResource("64_bjk8q")
 
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker2"]
-texture = ExtResource("14_5v6r0")
+[node name="Sprite2D5" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
+position = Vector2(348, -55)
+texture = ExtResource("64_bjk8q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker2"]
-shape = SubResource("RectangleShape2D_pg2xm")
-
-[node name="Locker3" type="StaticBody2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
-position = Vector2(174, -20)
-
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker3"]
-texture = ExtResource("14_5v6r0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker3"]
-shape = SubResource("RectangleShape2D_pg2xm")
-
-[node name="Locker4" type="StaticBody2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
-position = Vector2(261, -20)
-
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker4"]
-texture = ExtResource("14_5v6r0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker4"]
-shape = SubResource("RectangleShape2D_pg2xm")
-
-[node name="Locker5" type="StaticBody2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
-position = Vector2(347, -20)
-
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker5"]
-texture = ExtResource("14_5v6r0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker5"]
-shape = SubResource("RectangleShape2D_pg2xm")
-
-[node name="Locker6" type="StaticBody2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
-position = Vector2(587, -20)
-
-[node name="Sprite2D" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker6"]
-texture = ExtResource("14_5v6r0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers/Locker6"]
-shape = SubResource("RectangleShape2D_pg2xm")
+[node name="Sprite2D6" type="Sprite2D" parent="Rooms/BathLockerRoom/LockRoom/BottomLockers"]
+position = Vector2(587, -55)
+texture = ExtResource("64_bjk8q")
 
 [node name="Objects" type="Node2D" parent="Rooms/BathLockerRoom/LockRoom"]
 
@@ -30079,9 +30050,9 @@ position = Vector2(142, 1061)
 position = Vector2(139, 1298)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
-offset_left = -576.0
+offset_left = -575.0
 offset_top = -324.0
-offset_right = 576.0
+offset_right = 577.0
 offset_bottom = 324.0
 
 [node name="PauseMenu" parent="Player/VBoxContainer" instance=ExtResource("1_sul5r")]
