@@ -23,3 +23,5 @@ signal register_checkpoint_object(checkpoint_object: CheckpointObject)
 signal interact_checkpoint_object()
 
 signal register_target_object(Target_object: TargetObject)
+
+signal game_started()

@@ -64,6 +64,8 @@ func _onGameStarted() -> void:
 	GameTimer.one_shot = true
 	GameTimer.start(180)
 	
+	GameManagerSignalBus.game_started.emit()
+	
 
 func _onPauseMenuInitiated(pause_menu: PauseMenu) -> void:
 	pause_menu_instance = pause_menu

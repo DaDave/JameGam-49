@@ -1,0 +1,51 @@
+[gd_scene load_steps=7 format=3 uid="uid://kmtgpd2wi5x7"]
+
+[ext_resource type="Texture2D" uid="uid://cx55pc3tfuohf" path="res://assets/sprites/single_heart.png" id="1_jhtun"]
+[ext_resource type="Script" uid="uid://dgvasdbt253ox" path="res://scenes/hud/heart.gd" id="1_ryuuj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryuuj"]
+atlas = ExtResource("1_jhtun")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxkvk"]
+atlas = ExtResource("1_jhtun")
+region = Rect2(0, 0, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5eyuw"]
+atlas = ExtResource("1_jhtun")
+region = Rect2(18, 0, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdr8i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryuuj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oxkvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5eyuw")
+}],
+"loop": true,
+"name": &"low_hp",
+"speed": 5.0
+}]
+
+[node name="Heart" type="TextureRect" node_paths=PackedStringArray("sprite")]
+custom_minimum_size = Vector2(18, 0)
+offset_right = 18.0
+offset_bottom = 18.0
+script = ExtResource("1_ryuuj")
+sprite = NodePath("HeartSprite")
+
+[node name="HeartSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, 9)
+sprite_frames = SubResource("SpriteFrames_gdr8i")
+animation = &"low_hp"
+frame_progress = 0.6441891
