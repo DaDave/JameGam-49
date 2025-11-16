@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://d12udrv8knpds"]
 
 [ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_yb28q"]
-[ext_resource type="Texture2D" uid="uid://3qx88bijfiby" path="res://scenes/explosiv_object/objects/bin/Bin.png" id="2_q2pwd"]
+[ext_resource type="Texture2D" uid="uid://cqudke4j781up" path="res://scenes/explosiv_object/objects/extinguisher/fire_extinguisher.png" id="2_q2pwd"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
 animations = [{
