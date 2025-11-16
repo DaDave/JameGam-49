@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ci7by8hu7ag7v" path="res://scenes/main_menu/main_menu.gd" id="1_nhkf3"]
 [ext_resource type="AudioStream" uid="uid://ckvo43m2bsblb" path="res://resources/music/Pixel Panic 2.mp3" id="2_0ebjn"]
-[ext_resource type="Texture2D" uid="uid://clrv450vqwj76" path="res://resources/background/background.png" id="2_ob46e"]
+[ext_resource type="Texture2D" uid="uid://c0aopgd3m65b3" path="res://resources/background/background_plus-export.png" id="2_uqeha"]
 [ext_resource type="FontFile" uid="uid://7jdcyc6qvdvm" path="res://resources/font/poco.ttf" id="3_uqeha"]
 
 [sub_resource type="Theme" id="Theme_fsom3"]
@@ -36,9 +36,9 @@ scale = Vector2(0.9959025, 1)
 color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
-position = Vector2(579.25, 71.74997)
-scale = Vector2(1.1469727, 1.1469727)
-texture = ExtResource("2_ob46e")
+position = Vector2(575, 240)
+scale = Vector2(0.7962157, 0.7962157)
+texture = ExtResource("2_uqeha")
 
 [node name="VerticalBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
