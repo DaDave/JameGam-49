@@ -30,6 +30,7 @@ var hearts:Array = []
 func _ready():
 	GameManagerSignalBus.game_started.connect(_on_game_started)
 	GameManagerSignalBus.decrease_player_health.connect(_on_decrease_player_health)
+	GameManagerSignalBus.increase_player_health.connect(_on_increase_player_health)
 	
 func _process(delta) -> void:
 	countdown_label.text = countdown_label_text.format([roundi(GameTimer.time_left)])
@@ -73,3 +74,12 @@ func _on_decrease_player_health():
 	remove_heart()
 	if(hearts.size() == 1):
 		hearts[0].make_critical()
+
+func _on_increase_player_health(hp: int):
+	var additional_hp = hp
+	var actual_heart_count = GameManager.actual_player_health
+	var max_heart_count = GameManager.max_player_health
+	if(actual_heart_count + additional_hp > max_heart_count):
+		additional_hp = max_heart_count - actual_heart_count
+	for n in additional_hp:
+		add_heart()

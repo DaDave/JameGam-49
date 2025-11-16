@@ -1,6 +1,7 @@
 extends Node
 
 var max_player_health: int
+var actual_player_health: int
 var interaction_countdown: int
 var checkpoint_objects: Array[CheckpointObject]
 var target_objects: Array[TargetObject]
@@ -27,12 +28,14 @@ func _ready() -> void:
 	GameManagerSignalBus.interact_checkpoint_object.connect(_onCheckpointObjectInteracted)
 	GameManagerSignalBus.register_target_object.connect(_onTargetObjectRegistered)
 	GameManagerSignalBus.decrease_player_health.connect(_onPlayerHealthDecreased)
+	GameManagerSignalBus.increase_player_health.connect(_onPlayerHealthIncreased)
 
 func _onSceneByPathSwitched(path: String) -> void:
 	call_deferred("_deferred_switch_scene", path)
 
 func _onGameStarted() -> void:
 	max_player_health = 100
+	actual_player_health = max_player_health
 	interaction_countdown = 2
 	## select checkpoint a
 	var room_value_checkpoint_a = select_random_room_for_object()
@@ -118,12 +121,17 @@ func _onTargetObjectRegistered(target_object: TargetObject) -> void:
 	target_objects.append(target_object)
 	
 func _onPlayerHealthDecreased() -> void:
-	print(max_player_health)
-	max_player_health = max_player_health-1
-	print(max_player_health)
-	if max_player_health <= 0:
+	actual_player_health = actual_player_health-1
+	print(actual_player_health)
+	if actual_player_health <= 0:
 		print("game_over")
 		_onGameOver(false)
+
+func _onPlayerHealthIncreased(hp: int) -> void:
+	actual_player_health = actual_player_health + hp
+	if (actual_player_health > max_player_health):
+		actual_player_health = max_player_health
+	print(max_player_health)
 
 func _deferred_switch_scene(scene_path):
 	current_scene.free()

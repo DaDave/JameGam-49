@@ -18,6 +18,8 @@ signal switch_scene_by_path(path: String)
 
 signal decrease_player_health()
 
+signal increase_player_health(hp: int)
+
 signal register_checkpoint_object(checkpoint_object: CheckpointObject)
 
 signal interact_checkpoint_object()
