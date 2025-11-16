@@ -36,8 +36,7 @@ func _ready() -> void:
 	danger_area.body_entered.connect(_on_danger_area_2d_body_entered)
 	danger_area.body_exited.connect(_on_danger_area_2d_body_exited)
 	%TimerExplosion.wait_time = timer_ticks
-	if (explosion_sound != null):
-		%AudioStreamPlayer2D.stream = explosion_sound
+	_setup_sound()
 
 func _process(_delta) -> void:
 	_track_player()
@@ -113,6 +112,12 @@ func _track_player() -> void:
 func _calculate_percentage() -> void:
 	calculated_percentage = movement_pixel / pixel_for_explosion * 100
 #endregion
+
+func _setup_sound() -> void:
+	if (explosion_sound != null):
+		%AudioStreamPlayer2D.stream = explosion_sound
+	
+	%AudioStreamPlayer2D.pitch_scale += random_number_generator.randf_range(-0.1, 0.1)
 
 func _on_danger_area_2d_body_entered(body) -> void:
 	if (body is Player):
