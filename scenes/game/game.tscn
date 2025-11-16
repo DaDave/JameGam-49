@@ -1,4 +1,4 @@
-[gd_scene load_steps=75 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=91 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -47,6 +47,9 @@
 [ext_resource type="AudioStream" uid="uid://0wr6n5mxjucy" path="res://resources/music/Inferno Run 2.mp3" id="29_l2dhg"]
 [ext_resource type="PackedScene" uid="uid://cwa1vusnv6ygj" path="res://scenes/explosiv_object/objects/tools_2/tools_2EO.tscn" id="30_t5owt"]
 [ext_resource type="PackedScene" uid="uid://c7c7mxhgfbfjt" path="res://scenes/explosiv_object/objects/telefon/telefonEO.tscn" id="34_41gcl"]
+[ext_resource type="Texture2D" uid="uid://dkuh124j8j36q" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="36_jiu3o"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="37_vbi6r"]
+[ext_resource type="PackedScene" uid="uid://c4rmc202203oa" path="res://scenes/projectiles/camera/camera.tscn" id="38_twah4"]
 [ext_resource type="PackedScene" uid="uid://i1gowanntonj" path="res://scenes/explosiv_object/objects/pillow_yellow/pillow_yellowEO.tscn" id="40_3322e"]
 [ext_resource type="PackedScene" uid="uid://dthorv72smpjy" path="res://scenes/explosiv_object/objects/toilet_paper/3_toilet_paperEO.tscn" id="40_teoly"]
 [ext_resource type="PackedScene" uid="uid://cfut3i3neesyg" path="res://scenes/explosiv_object/objects/toilet_paper/toilet_paperEO.tscn" id="41_b7fhm"]
@@ -10336,6 +10339,89 @@ sources/14 = SubResource("TileSetAtlasSource_t5owt")
 sources/15 = SubResource("TileSetAtlasSource_6ehwc")
 sources/16 = SubResource("TileSetAtlasSource_tyhjx")
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_6c4n0"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(0, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5spob"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(48, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5te0"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(96, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2r0ul"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(144, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7v43q"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(192, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v0nu"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(240, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4f3ao"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(288, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xidw"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(336, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4edx"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(384, 20, 48, 28)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjk4e"]
+atlas = ExtResource("36_jiu3o")
+region = Rect2(432, 20, 48, 28)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6c4n0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5spob")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5te0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2r0ul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7v43q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v0nu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4f3ao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xidw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4edx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjk4e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_awb6q"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(364, 299)
+
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_otnwt"]
 radius = 19.0
 height = 156.0
@@ -10466,9 +10552,35 @@ position = Vector2(2096, 2417)
 [node name="Camera" parent="Rooms/Warehouse/Objects" instance=ExtResource("12_wdnak")]
 position = Vector2(1418, 2349)
 
-[node name="Camera2" parent="Rooms/Warehouse/Objects" instance=ExtResource("12_wdnak")]
+[node name="Camera2" type="Node2D" parent="Rooms/Warehouse/Objects"]
 position = Vector2(2734, 1818)
 rotation = 1.5864893
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/Warehouse/Objects/Camera2"]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+autoplay = "default"
+frame_progress = 0.9023496
+
+[node name="Explosionobject" parent="Rooms/Warehouse/Objects/Camera2" node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("37_vbi6r")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 0
+projectile_objects = Array[Resource]([ExtResource("38_twah4")])
+base_percentage = 10.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/Warehouse/Objects/Camera2/Explosionobject"]
+position = Vector2(-10, 1)
+shape = SubResource("CircleShape2D_awb6q")
+
+[node name="DangerArea2D" type="Area2D" parent="Rooms/Warehouse/Objects/Camera2"]
+rotation = -1.5807289
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="Rooms/Warehouse/Objects/Camera2/DangerArea2D"]
+position = Vector2(0, 149.5)
+rotation = -0.006967286
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
 
 [node name="carton" parent="Rooms/Warehouse/Objects" instance=ExtResource("12_4vuph")]
 position = Vector2(2451, 2389)
