@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dxkd7p6xwwyow"]
+
+[ext_resource type="Texture2D" uid="uid://j2r0kqxksfyf" path="res://scenes/explosiv_object/objects/book_blue/Book_blue.png" id="1_ia1sh"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_y0tit"]
+[ext_resource type="PackedScene" uid="uid://biajt4oi3ylov" path="res://scenes/projectiles/book_blue/book_blue.tscn" id="3_ia1sh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ia1sh")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxvp"]
+size = Vector2(12, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gpbq3"]
+size = Vector2(218, 144)
+
+[node name="BookBlue" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_th3o8")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_y0tit")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D2")
+projectile_angle_deg = 20
+projectile_objects = Array[Resource]([ExtResource("3_ia1sh")])
+pixel_for_explosion = 2500.0
+base_percentage = 10.0
+timer_ticks = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+shape = SubResource("RectangleShape2D_isxvp")
+
+[node name="DangerArea2D2" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D2"]
+position = Vector2(0, 56)
+shape = SubResource("RectangleShape2D_gpbq3")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
