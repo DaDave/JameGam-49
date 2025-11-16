@@ -1,4 +1,4 @@
-[gd_scene load_steps=72 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=73 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -37,6 +37,7 @@
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
 [ext_resource type="PackedScene" uid="uid://bn0y5donx6h6p" path="res://scenes/explosiv_object/objects/bottle_yellow/bottle_yellowEO.tscn" id="21_35t1a"]
 [ext_resource type="PackedScene" uid="uid://d3gj2of70wm3h" path="res://scenes/explosiv_object/objects/fridge/fridgeEO.tscn" id="21_fba2n"]
+[ext_resource type="PackedScene" uid="uid://c2yu2wsm50pin" path="res://scenes/explosiv_object/objects/coffee_mug/coffee_mugEO.tscn" id="21_oepbe"]
 [ext_resource type="PackedScene" uid="uid://w1k3s82ivplk" path="res://scenes/explosiv_object/objects/carrots/carrotsEO.tscn" id="21_sikks"]
 [ext_resource type="PackedScene" uid="uid://dadol1h0ka8ml" path="res://scenes/explosiv_object/objects/fruits/fruitsEO.tscn" id="21_tyhjx"]
 [ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
@@ -10386,6 +10387,9 @@ position = Vector2(617, 1703)
 position = Vector2(1036, 899)
 
 [node name="Objects" type="Node2D" parent="Rooms/CoffeeKitchen"]
+
+[node name="CoffeeMug" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_oepbe")]
+position = Vector2(1444, 1285)
 
 [node name="BottleYellow" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_35t1a")]
 position = Vector2(758, 1180)
