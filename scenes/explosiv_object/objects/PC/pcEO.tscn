@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://crinajwxurlyn"]
+[gd_scene load_steps=7 format=3 uid="uid://crinajwxurlyn"]
 
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="1_k5c33"]
 [ext_resource type="Texture2D" uid="uid://dyiiaor4iqyh5" path="res://assets/sprites/objects/PC_right.png" id="2_k5c33"]
+[ext_resource type="AudioStream" uid="uid://muwjiljcryqy" path="res://assets/sounds/computer keyes.wav" id="3_66vdk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
@@ -29,6 +30,7 @@ autoplay = "default"
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("1_k5c33")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("3_66vdk")
 pixel_for_explosion = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]

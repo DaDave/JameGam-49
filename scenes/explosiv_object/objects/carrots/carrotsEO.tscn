@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://w1k3s82ivplk"]
+[gd_scene load_steps=8 format=3 uid="uid://w1k3s82ivplk"]
 
 [ext_resource type="Texture2D" uid="uid://cpsk7s81lgi30" path="res://scenes/explosiv_object/objects/carrots/Carrots.png" id="1_ecd7u"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_ksb5i"]
 [ext_resource type="PackedScene" uid="uid://dgx6deexlp07h" path="res://scenes/projectiles/carrot/carrot.tscn" id="3_ecd7u"]
+[ext_resource type="AudioStream" uid="uid://u28erabjdlus" path="res://assets/sounds/karotte.wav" id="3_gpbq3"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
@@ -29,6 +30,7 @@ sprite_frames = SubResource("SpriteFrames_th3o8")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_ksb5i")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("3_gpbq3")
 projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("3_ecd7u")])
 pixel_for_explosion = 2500.0

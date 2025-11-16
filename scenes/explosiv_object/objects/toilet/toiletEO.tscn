@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bnf2ogp5aovdn"]
+[gd_scene load_steps=9 format=3 uid="uid://bnf2ogp5aovdn"]
 
 [ext_resource type="Texture2D" uid="uid://bi7335rug2k4a" path="res://scenes/explosiv_object/objects/toilet/toilet.png" id="1_rk27d"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_ugnsx"]
 [ext_resource type="PackedScene" uid="uid://d2k563m5hl22" path="res://scenes/projectiles/toilet/toilet_1.tscn" id="3_rk27d"]
+[ext_resource type="AudioStream" uid="uid://vyybwdnmxhl6" path="res://assets/sounds/klo  oder kaffeemaschine.wav" id="3_xpugf"]
 [ext_resource type="PackedScene" uid="uid://cxs44wndibnbv" path="res://scenes/projectiles/toilet/toilet_2.tscn" id="4_xpugf"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
@@ -30,6 +31,7 @@ sprite_frames = SubResource("SpriteFrames_f1fnh")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_ugnsx")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D")
+explosion_sound = ExtResource("3_xpugf")
 projectile_objects = Array[Resource]([ExtResource("3_rk27d"), ExtResource("4_xpugf")])
 base_percentage = 2.5
 
