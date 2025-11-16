@@ -73,6 +73,7 @@
 [ext_resource type="PackedScene" uid="uid://cn1iyuwb471xp" path="res://scenes/explosiv_object/objects/sink/sinkEO.tscn" id="57_6o42e"]
 [ext_resource type="PackedScene" uid="uid://bnf2ogp5aovdn" path="res://scenes/explosiv_object/objects/toilet/toiletEO.tscn" id="57_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
+[ext_resource type="PackedScene" uid="uid://bquo8oretf2x8" path="res://scenes/explosiv_object/objects/duck/duckEO.tscn" id="63_7dxef"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -29932,6 +29933,9 @@ position = Vector2(425, 228)
 [node name="Bin2" parent="Rooms/BathLockerRoom/LockRoom/Objects" instance=ExtResource("18_gc57s")]
 position = Vector2(903, 228)
 
+[node name="Duck" parent="Rooms/BathLockerRoom/LockRoom/Objects" instance=ExtResource("63_7dxef")]
+position = Vector2(1050, 161)
+
 [node name="CheckpointObject" parent="Rooms/BathLockerRoom" instance=ExtResource("12_10c2w")]
 position = Vector2(1096, 360)
 room_number = 4
@@ -29941,7 +29945,7 @@ position = Vector2(294, -27)
 room_number = 4
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(141, 1272)
+position = Vector2(1077, 2198)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -576.0
