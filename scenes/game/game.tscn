@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=105 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://co08cid1pk4oh" path="res://assets/spritesheets/Generic_Home_1_Layer_1_48x48.png" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://bg5s7ytaf8w1b" path="res://assets/spritesheets/Condominium_Design_layer_1_48x48.png" id="4_kp23o"]
 [ext_resource type="PackedScene" uid="uid://jw72sm4n7uia" path="res://scenes/game_over_menu/game_over_menu.tscn" id="4_lfrn8"]
-[ext_resource type="Texture2D" uid="uid://bbcr2cyloqx5o" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
+[ext_resource type="Texture2D" uid="uid://cfn2j1h4ktrbi" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
 [ext_resource type="Texture2D" uid="uid://batqmyr75e4xj" path="res://assets/spritesheets/Modern_Office_32x32.png" id="5_2vph8"]
 [ext_resource type="Texture2D" uid="uid://fqd882q6k1qc" path="res://assets/spritesheets/Condominium_Design_2_layer_1_48x48.png" id="5_5jirj"]
 [ext_resource type="Texture2D" uid="uid://b8leypmtu6cur" path="res://assets/spritesheets/Modern_Office_48x48.png" id="6_0gkf7"]
@@ -27,15 +27,15 @@
 [ext_resource type="Texture2D" uid="uid://eial020lkqmp" path="res://assets/spritesheets/6_Garage_Sales_48x48.png" id="11_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://bgi2lk7cu01e3" path="res://scenes/explosiv_object/objects/cartons/cartonEO.tscn" id="12_4vuph"]
 [ext_resource type="Texture2D" uid="uid://d1heovyvxtf28" path="res://assets/spritesheets/8_Worksite_48x48.png" id="12_6o42e"]
-[ext_resource type="PackedScene" uid="uid://b5h17lqmc7s3u" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
 [ext_resource type="PackedScene" uid="uid://dfvpa4l3xlr0c" path="res://scenes/explosiv_object/objects/camera/cameraEO.tscn" id="12_wdnak"]
 [ext_resource type="PackedScene" uid="uid://b2xb0yh8gs3da" path="res://scenes/explosiv_object/objects/cartons/3_cartonsEO.tscn" id="13_1iff4"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://d4ijywnprs7se" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
 [ext_resource type="Texture2D" uid="uid://o0150rm8twrj" path="res://assets/spritesheets/22_Post_Office_48x48.png" id="13_rnb85"]
-[ext_resource type="Texture2D" uid="uid://g335nwc7hyit" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
+[ext_resource type="Texture2D" uid="uid://nxoktdra6ykx" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://c4md0ai46los6" path="res://assets/spritesheets/3_Bathroom_48x48.png" id="15_5dkr6"]
-[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
+[ext_resource type="PackedScene" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
@@ -70,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://cn1iyuwb471xp" path="res://scenes/explosiv_object/objects/sink/sinkEO.tscn" id="57_6o42e"]
 [ext_resource type="PackedScene" uid="uid://bnf2ogp5aovdn" path="res://scenes/explosiv_object/objects/toilet/toiletEO.tscn" id="57_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://dlmvhspgj0jlm" path="res://scenes/explosiv_object/objects/toaster/toasterEO.tscn" id="58_bf22m"]
+[ext_resource type="PackedScene" uid="uid://d0m76hrwshn6r" path="res://scenes/heal_object/heal_object.tscn" id="58_yegcf"]
 [ext_resource type="PackedScene" uid="uid://d2lfds34vt8oj" path="res://scenes/explosiv_object/objects/plant2/plant2EO.tscn" id="59_gsju6"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
 [ext_resource type="PackedScene" uid="uid://tc1ya8s2kgkn" path="res://scenes/explosiv_object/objects/water_dispenser/water_dispenserEO.tscn" id="63_3f8qr"]
@@ -35047,8 +35048,13 @@ position = Vector2(132, 1434)
 [node name="Image1" parent="Rooms/StartRoom" instance=ExtResource("67_864w3")]
 position = Vector2(142, 1061)
 
+[node name="HealObjects" type="Node2D" parent="Rooms"]
+
+[node name="HealObject" parent="Rooms/HealObjects" instance=ExtResource("58_yegcf")]
+position = Vector2(2858, 2293)
+
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(1882, 574)
+position = Vector2(2958, 2225)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -575.0
