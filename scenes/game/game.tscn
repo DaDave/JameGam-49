@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=71 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -35,11 +35,13 @@
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
+[ext_resource type="PackedScene" uid="uid://bn0y5donx6h6p" path="res://scenes/explosiv_object/objects/bottle_yellow/bottle_yellowEO.tscn" id="21_35t1a"]
 [ext_resource type="PackedScene" uid="uid://d3gj2of70wm3h" path="res://scenes/explosiv_object/objects/fridge/fridgeEO.tscn" id="21_fba2n"]
 [ext_resource type="PackedScene" uid="uid://w1k3s82ivplk" path="res://scenes/explosiv_object/objects/carrots/carrotsEO.tscn" id="21_sikks"]
 [ext_resource type="PackedScene" uid="uid://dadol1h0ka8ml" path="res://scenes/explosiv_object/objects/fruits/fruitsEO.tscn" id="21_tyhjx"]
 [ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
 [ext_resource type="PackedScene" uid="uid://bt0bmexq1ufrc" path="res://scenes/explosiv_object/objects/flower_red/flower_redEO.tscn" id="26_l2dhg"]
+[ext_resource type="PackedScene" uid="uid://bq503316m4v5r" path="res://scenes/explosiv_object/objects/bottle_red/bottle_redEO.tscn" id="26_ye7x0"]
 [ext_resource type="PackedScene" uid="uid://btl7i4hfxoyb3" path="res://scenes/explosiv_object/objects/tools_1/tools_1EO.tscn" id="29_ah1mj"]
 [ext_resource type="AudioStream" uid="uid://0wr6n5mxjucy" path="res://resources/music/Inferno Run 2.mp3" id="29_l2dhg"]
 [ext_resource type="PackedScene" uid="uid://cwa1vusnv6ygj" path="res://scenes/explosiv_object/objects/tools_2/tools_2EO.tscn" id="30_t5owt"]
@@ -10297,6 +10299,9 @@ position = Vector2(1036, 899)
 
 [node name="Objects" type="Node2D" parent="Rooms/CoffeeKitchen"]
 
+[node name="BottleYellow" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_35t1a")]
+position = Vector2(758, 1180)
+
 [node name="Fridge" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_fba2n")]
 position = Vector2(1280, 1057)
 
@@ -10308,6 +10313,9 @@ position = Vector2(1195, 1375)
 
 [node name="Fruits" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_tyhjx")]
 position = Vector2(949, 1333)
+
+[node name="BottleRed" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("26_ye7x0")]
+position = Vector2(1040, 1284)
 
 [node name="BossOffice" type="Node2D" parent="Rooms"]
 
@@ -11832,7 +11840,7 @@ position = Vector2(294, -27)
 room_number = 4
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(221, 2208)
+position = Vector2(795, 977)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -576.0

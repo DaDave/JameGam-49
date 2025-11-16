@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://6sjfkqsficu"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_obs2k"]
+[ext_resource type="Texture2D" uid="uid://g7uhbra8n3h1" path="res://scenes/explosiv_object/objects/bottle_yellow/bottle_yellow.png" id="2_stox1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_stox1")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_stox1"]
+
+[node name="BottleYellow" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_obs2k")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 700
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvsp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_stox1")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
