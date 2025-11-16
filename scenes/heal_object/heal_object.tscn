@@ -1,21 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://d0m76hrwshn6r"]
+[gd_scene load_steps=8 format=3 uid="uid://d0m76hrwshn6r"]
 
 [ext_resource type="Script" uid="uid://csym5wiatptbc" path="res://scenes/heal_object/heal_object.gd" id="1_bo3rm"]
-[ext_resource type="Texture2D" uid="uid://dn64hfeq3d4ke" path="res://assets/sprites/Bild.png" id="1_wvn2x"]
-[ext_resource type="Texture2D" uid="uid://cbm81gk5fojmt" path="res://assets/sprites/Bild_2.png" id="2_bo3rm"]
-[ext_resource type="Texture2D" uid="uid://b6y3tl0l3nwd2" path="res://assets/sprites/Bild_3.png" id="3_ndjky"]
+[ext_resource type="Texture2D" uid="uid://db5pjxa8eofwo" path="res://scenes/heal_object/medipack.png" id="2_6err1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mw2es"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_wvn2x")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_bo3rm")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_ndjky")
+"texture": ExtResource("2_6err1")
 }],
 "loop": true,
 "name": &"default",
@@ -23,7 +15,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_niinc"]
-size = Vector2(48, 48)
+size = Vector2(32, 38)
 
 [sub_resource type="Curve" id="Curve_bo3rm"]
 _data = [Vector2(0, 0.85385436), 0.0, 0.0, 0, 0, Vector2(0.49863014, 0.5476445), -1.8473811, -1.8473811, 0, 0, Vector2(1, 0.16488218), 0.0, 0.0, 0, 0]
@@ -35,10 +27,10 @@ curve = SubResource("Curve_bo3rm")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_bo3rm"]
 particle_flag_disable_z = true
 emission_shape = 3
-emission_box_extents = Vector3(30, 1, 1)
+emission_box_extents = Vector3(22, 1, 1)
 direction = Vector3(0, 0, 0)
 gravity = Vector3(0, -20, 0)
-linear_accel_min = -5.000002
+linear_accel_min = -2.0000021
 linear_accel_max = 4.9999976
 scale_min = 2.0
 scale_max = 3.5
@@ -61,9 +53,8 @@ shape = SubResource("RectangleShape2D_niinc")
 debug_color = Color(0, 0.64632624, 0.2470426, 0.41960785)
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-position = Vector2(0, 25)
-amount = 12
-lifetime = 2.8
+position = Vector2(0, 19)
+lifetime = 2.5
 process_material = SubResource("ParticleProcessMaterial_bo3rm")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
