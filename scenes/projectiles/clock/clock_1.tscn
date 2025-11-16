@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://co84xhy34e8e2"]
+[gd_scene load_steps=5 format=3 uid="uid://de84f05j1l5pi"]
 
-[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_rr6ne"]
-[ext_resource type="Texture2D" uid="uid://bbmb7cxgi6uti" path="res://scenes/projectiles/book_orange/Book_orange.png" id="2_mj7k8"]
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_vk0lo"]
+[ext_resource type="Texture2D" uid="uid://cdn5bwbvn84qq" path="res://scenes/projectiles/clock/clock_1.png" id="2_b8p6v"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mj7k8")
+"texture": ExtResource("2_b8p6v")
 }],
 "loop": false,
 "name": &"default",
@@ -15,23 +15,23 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gew1k"]
-size = Vector2(9, 24)
+size = Vector2(14, 27)
 
-[node name="BookOrange" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+[node name="Clock1" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
 top_level = true
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_rr6ne")
+script = ExtResource("1_vk0lo")
 animated_sprite = NodePath("AnimatedSprite2D")
-movement_speed = 400
-max_travel_distance = 350.0
+movement_speed = 800
+max_travel_distance = 450.0
 metadata/_custom_type_script = "uid://fo1mvn5wkoux"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kvsp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(2, -0.5)
 shape = SubResource("RectangleShape2D_gew1k")
 debug_color = Color(1, 0, 0, 0.41960785)
 

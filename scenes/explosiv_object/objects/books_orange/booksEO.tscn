@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://cnt5l2jatysmk" path="res://scenes/explosiv_object/objects/books_orange/Books_orange.png" id="1_isxvp"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_fl3r2"]
-[ext_resource type="PackedScene" uid="uid://de84f05j1l5pi" path="res://scenes/projectiles/book_orange/book_orange.tscn" id="3_isxvp"]
+[ext_resource type="PackedScene" uid="uid://co84xhy34e8e2" path="res://scenes/projectiles/book_orange/book_orange.tscn" id="3_isxvp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
