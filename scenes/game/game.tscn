@@ -35170,7 +35170,8 @@ position = Vector2(131, 404)
 position = Vector2(142, 1061)
 
 [node name="Image2" type="Node2D" parent="Rooms/StartRoom"]
-position = Vector2(-1124, 1388)
+visible = false
+position = Vector2(-412, 1413)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Rooms/StartRoom/Image2"]
 sprite_frames = SubResource("SpriteFrames_f1fnh")
@@ -35183,7 +35184,7 @@ projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("78_17607")])
 base_percentage = 100.0
 timer_ticks = 0.05
-adjust_audio_volume = -100
+adjust_audio_volume = -20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rooms/StartRoom/Image2/Explosionobject"]
 shape = SubResource("RectangleShape2D_qns4f")
