@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dxkd7p6xwwyow"]
+[gd_scene load_steps=8 format=3 uid="uid://dxkd7p6xwwyow"]
 
 [ext_resource type="Texture2D" uid="uid://j2r0kqxksfyf" path="res://scenes/explosiv_object/objects/book_blue/Book_blue.png" id="1_ia1sh"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_y0tit"]
 [ext_resource type="PackedScene" uid="uid://biajt4oi3ylov" path="res://scenes/projectiles/book_blue/book_blue.tscn" id="3_ia1sh"]
+[ext_resource type="AudioStream" uid="uid://cte15o4fdiuuk" path="res://assets/sounds/Wasserspender explosion.wav" id="3_yujsx"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
@@ -32,6 +33,7 @@ sprite_frames = SubResource("SpriteFrames_th3o8")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_y0tit")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("3_yujsx")
 projectile_angle_deg = 20
 projectile_objects = Array[Resource]([ExtResource("3_ia1sh")])
 pixel_for_explosion = 2500.0

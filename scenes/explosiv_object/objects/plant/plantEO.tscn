@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://vo7kwhnd74pt"]
+[gd_scene load_steps=10 format=3 uid="uid://vo7kwhnd74pt"]
 
 [ext_resource type="Texture2D" uid="uid://7jbctaqx4rqy" path="res://scenes/explosiv_object/objects/plant/plant.png" id="1_hn2vw"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="1_kmnv0"]
+[ext_resource type="AudioStream" uid="uid://cbp2n6iysfmia" path="res://assets/sounds/kling.wav" id="3_5yyev"]
 [ext_resource type="PackedScene" uid="uid://t4urtqdqui85" path="res://scenes/projectiles/plant/plant_1.tscn" id="3_nnhd7"]
 [ext_resource type="PackedScene" uid="uid://b6rcej0c8olt8" path="res://scenes/projectiles/plant/plant_2.tscn" id="4_wpxit"]
 [ext_resource type="PackedScene" uid="uid://ct2wlsi7d2fin" path="res://scenes/projectiles/plant/plant_3.tscn" id="5_citjq"]
@@ -32,6 +33,7 @@ sprite_frames = SubResource("SpriteFrames_th3o8")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("1_kmnv0")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("3_5yyev")
 count_per_projectile = 2
 projectile_angle_deg = 60
 projectile_objects = Array[Resource]([ExtResource("3_nnhd7"), ExtResource("4_wpxit"), ExtResource("5_citjq")])

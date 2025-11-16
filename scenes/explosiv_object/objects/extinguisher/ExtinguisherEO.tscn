@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://b6ixn7244ikek"]
+[gd_scene load_steps=8 format=3 uid="uid://b6ixn7244ikek"]
 
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="1_ck1ti"]
 [ext_resource type="PackedScene" uid="uid://d12udrv8knpds" path="res://scenes/projectiles/extinguisher/extinguisher.tscn" id="2_2o5jm"]
-[ext_resource type="Texture2D" uid="uid://cqudke4j781up" path="res://scenes/explosiv_object/objects/extinguisher/fire_extinguisher.png" id="2_n2xrq"]
+[ext_resource type="Texture2D" uid="uid://bylk0twr7iplf" path="res://scenes/explosiv_object/objects/extinguisher/fire_extinguisher.png" id="2_n2xrq"]
+[ext_resource type="AudioStream" uid="uid://cpkkhbv3i6h3h" path="res://assets/sounds/tschtschtschk maschine.wav" id="2_x6voh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nptky"]
 size = Vector2(24, 38)
@@ -26,6 +27,7 @@ size = Vector2(250, 150)
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("1_ck1ti")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("2_x6voh")
 projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("2_2o5jm")])
 pixel_for_explosion = 1000.0

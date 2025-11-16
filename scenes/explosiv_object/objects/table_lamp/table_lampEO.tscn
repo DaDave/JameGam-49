@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://c77pwihjdg71k"]
+[gd_scene load_steps=8 format=3 uid="uid://c77pwihjdg71k"]
 
 [ext_resource type="Texture2D" uid="uid://df17otnjhrl8k" path="res://scenes/explosiv_object/objects/table_lamp/Table_lamp.png" id="1_t23wt"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_mlapf"]
+[ext_resource type="AudioStream" uid="uid://cbp2n6iysfmia" path="res://assets/sounds/kling.wav" id="3_mlapf"]
 [ext_resource type="PackedScene" uid="uid://drrrpcvsh0afr" path="res://scenes/projectiles/table_lamp/table_lamp.tscn" id="3_t23wt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
@@ -29,6 +30,7 @@ sprite_frames = SubResource("SpriteFrames_f1fnh")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_mlapf")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D")
+explosion_sound = ExtResource("3_mlapf")
 projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("3_t23wt")])
 base_percentage = 2.5
