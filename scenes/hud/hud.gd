@@ -6,7 +6,7 @@ class_name Hud extends Control
 @export var countdown_label: Label
 
 @export_subgroup("Settings")
-@export var countdown_label_text: String = "{0} seconds til detonation!"
+@export var countdown_label_text: String = "{0}"
 
 var is_initialized = false
 var hearts:Array = []
@@ -14,7 +14,6 @@ var hearts:Array = []
 func _ready():
 	GameManagerSignalBus.game_started.connect(_on_game_started)
 	GameManagerSignalBus.decrease_player_health.connect(_on_decrease_player_health)
-	
 	
 func _process(delta) -> void:
 	countdown_label.text = countdown_label_text.format([roundi(GameTimer.time_left)])
