@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dc4yhs4127itg"]
+[gd_scene load_steps=8 format=3 uid="uid://dc4yhs4127itg"]
 
 [ext_resource type="Texture2D" uid="uid://byjssqtt3rqnh" path="res://scenes/explosiv_object/objects/couch_left/Couch_left.png" id="1_0bhrt"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_wlue5"]
+[ext_resource type="AudioStream" uid="uid://duj3iba163hed" path="res://assets/sounds/Explosion 1.wav" id="3_0hvgg"]
 [ext_resource type="PackedScene" uid="uid://xnvxjurh8l21" path="res://scenes/projectiles/couch_left/couch_left.tscn" id="3_14p7g"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
@@ -29,6 +30,7 @@ sprite_frames = SubResource("SpriteFrames_th3o8")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_wlue5")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
+explosion_sound = ExtResource("3_0hvgg")
 count_per_projectile = 3
 projectile_angle_deg = 60
 projectile_objects = Array[Resource]([ExtResource("3_14p7g")])

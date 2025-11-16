@@ -1,7 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://dfvpa4l3xlr0c"]
+[gd_scene load_steps=18 format=3 uid="uid://dfvpa4l3xlr0c"]
 
-[ext_resource type="Texture2D" uid="uid://dkuh124j8j36q" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="1_awb6q"]
+[ext_resource type="Texture2D" uid="uid://4uixk5i2kgfj" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="1_awb6q"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_fk5ig"]
+[ext_resource type="AudioStream" uid="uid://bcrn8w1pwx5xo" path="res://assets/sounds/Explosion 3.wav" id="3_6c4n0"]
 [ext_resource type="PackedScene" uid="uid://c4rmc202203oa" path="res://scenes/projectiles/camera/camera.tscn" id="3_awb6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6c4n0"]
@@ -97,6 +98,7 @@ frame_progress = 0.9023496
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_fk5ig")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D")
+explosion_sound = ExtResource("3_6c4n0")
 projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("3_awb6q")])
 base_percentage = 10.0
