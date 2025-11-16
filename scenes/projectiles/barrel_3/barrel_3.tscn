@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://vjfobkrip7qk"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_rvonm"]
+[ext_resource type="Texture2D" uid="uid://c2hvi0yyq5c5c" path="res://scenes/explosiv_object/objects/barrel_3/Barrel_3.png" id="2_trcx8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_trcx8")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_u4pib"]
+height = 36.0
+
+[node name="Barrel3" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_rvonm")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 450
+max_travel_distance = 350.0
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_kvsp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 9)
+shape = SubResource("CapsuleShape2D_u4pib")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

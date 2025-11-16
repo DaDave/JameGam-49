@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=101 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -61,6 +61,8 @@
 [ext_resource type="PackedScene" uid="uid://d0nxssr1gygm" path="res://scenes/explosiv_object/objects/tool_cabinet/tool_cabinetEO.tscn" id="44_yy23q"]
 [ext_resource type="PackedScene" uid="uid://ckbap2hslurvu" path="res://scenes/explosiv_object/objects/barrel_1/barrel_1EO.tscn" id="45_0bk81"]
 [ext_resource type="PackedScene" uid="uid://dxkd7p6xwwyow" path="res://scenes/explosiv_object/objects/book_blue/bookEO.tscn" id="45_qn4tv"]
+[ext_resource type="PackedScene" uid="uid://djt647cha0ggf" path="res://scenes/explosiv_object/objects/barrel_2/barrel_2EO.tscn" id="46_6o42e"]
+[ext_resource type="PackedScene" uid="uid://db7j1cfom1hj" path="res://scenes/explosiv_object/objects/barrel_3/barrel_3EO.tscn" id="47_rnb85"]
 [ext_resource type="PackedScene" uid="uid://c77pwihjdg71k" path="res://scenes/explosiv_object/objects/table_lamp/table_lampEO.tscn" id="49_ye7x0"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
 
@@ -10633,6 +10635,12 @@ position = Vector2(3092, 2334)
 
 [node name="Barrel1" parent="Rooms/Warehouse/Objects" instance=ExtResource("45_0bk81")]
 position = Vector2(2574, 2563)
+
+[node name="Barrel2" parent="Rooms/Warehouse/Objects" instance=ExtResource("46_6o42e")]
+position = Vector2(2901, 2649)
+
+[node name="Barrel3" parent="Rooms/Warehouse/Objects" instance=ExtResource("47_rnb85")]
+position = Vector2(3119, 2613)
 
 [node name="Shelve" parent="Rooms/Warehouse/Objects" instance=ExtResource("61_tcm0m")]
 position = Vector2(3083, 2013)
