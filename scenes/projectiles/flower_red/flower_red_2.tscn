@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://bi1i465xdbwpw"]
 
 [ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_7y63w"]
-[ext_resource type="Texture2D" uid="uid://bdm2enocbgfm3" path="res://scenes/projectiles/flower_red/flower_red_projectile_2.png" id="2_7y63w"]
+[ext_resource type="Texture2D" uid="uid://c6cgem0l31ghd" path="res://scenes/projectiles/flower_red/flower_red_projectile_2.png" id="2_7y63w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
 animations = [{

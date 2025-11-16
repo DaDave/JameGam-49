@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://226arhqfpu5m"]
+
+[ext_resource type="Texture2D" uid="uid://bpuqhu0fjs6aa" path="res://scenes/explosiv_object/objects/image1/image1.png" id="1_fg16q"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_mv28o"]
+[ext_resource type="PackedScene" uid="uid://cyy761ov8k6qs" path="res://scenes/projectiles/image1/image1_projectile_3.tscn" id="3_fg16q"]
+[ext_resource type="PackedScene" uid="uid://c8o0hy0b3vj6c" path="res://scenes/projectiles/image1/image1_projectile_1.tscn" id="4_qns4f"]
+[ext_resource type="PackedScene" uid="uid://cxet4tpjd4xh0" path="res://scenes/projectiles/image1/image1_projectile_2.tscn" id="5_8larl"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_fg16q")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qns4f"]
+size = Vector2(38, 44)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(98, 228)
+
+[node name="Flower_red" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+frame_progress = 0.9023496
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_mv28o")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_objects = Array[Resource]([ExtResource("3_fg16q"), ExtResource("4_qns4f"), ExtResource("5_8larl")])
+pixel_for_explosion = 50000.0
+base_percentage = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+shape = SubResource("RectangleShape2D_qns4f")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+position = Vector2(0, 135)
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

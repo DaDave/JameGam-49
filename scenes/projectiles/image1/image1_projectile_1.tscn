@@ -1,27 +1,26 @@
-[gd_scene load_steps=5 format=3 uid="uid://j0cs37mkifqd"]
+[gd_scene load_steps=5 format=3 uid="uid://c8o0hy0b3vj6c"]
 
-[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_mchh1"]
-[ext_resource type="Texture2D" uid="uid://dqxwsgpxyep8l" path="res://scenes/projectiles/flower_red/flower_red_projectile_3.png" id="2_mchh1"]
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_f8uft"]
+[ext_resource type="Texture2D" uid="uid://bw33r4ho2i26l" path="res://scenes/projectiles/image1/image1_projectile_1.png" id="2_xowdr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_mchh1")
+"texture": ExtResource("2_xowdr")
 }],
 "loop": false,
 "name": &"default",
 "speed": 0.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_3qb12"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8igu7"]
 
-[node name="Flower_red_1" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+[node name="Image1_p_1" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
 top_level = true
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_mchh1")
+script = ExtResource("1_f8uft")
 animated_sprite = NodePath("AnimatedSprite2D")
 movement_speed = 400
 max_travel_distance = 350.0
@@ -31,7 +30,7 @@ metadata/_custom_type_script = "uid://fo1mvn5wkoux"
 sprite_frames = SubResource("SpriteFrames_kvsp2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_3qb12")
+shape = SubResource("RectangleShape2D_8igu7")
 debug_color = Color(1, 0, 0, 0.41960785)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

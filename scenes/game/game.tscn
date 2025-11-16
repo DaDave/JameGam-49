@@ -1,4 +1,4 @@
-[gd_scene load_steps=103 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=97 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://co08cid1pk4oh" path="res://assets/spritesheets/Generic_Home_1_Layer_1_48x48.png" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://bg5s7ytaf8w1b" path="res://assets/spritesheets/Condominium_Design_layer_1_48x48.png" id="4_kp23o"]
 [ext_resource type="PackedScene" uid="uid://jw72sm4n7uia" path="res://scenes/game_over_menu/game_over_menu.tscn" id="4_lfrn8"]
-[ext_resource type="Texture2D" uid="uid://bbcr2cyloqx5o" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
+[ext_resource type="Texture2D" uid="uid://cfn2j1h4ktrbi" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
 [ext_resource type="Texture2D" uid="uid://batqmyr75e4xj" path="res://assets/spritesheets/Modern_Office_32x32.png" id="5_2vph8"]
 [ext_resource type="Texture2D" uid="uid://fqd882q6k1qc" path="res://assets/spritesheets/Condominium_Design_2_layer_1_48x48.png" id="5_5jirj"]
 [ext_resource type="Texture2D" uid="uid://b8leypmtu6cur" path="res://assets/spritesheets/Modern_Office_48x48.png" id="6_0gkf7"]
@@ -27,15 +27,14 @@
 [ext_resource type="Texture2D" uid="uid://eial020lkqmp" path="res://assets/spritesheets/6_Garage_Sales_48x48.png" id="11_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://bgi2lk7cu01e3" path="res://scenes/explosiv_object/objects/cartons/cartonEO.tscn" id="12_4vuph"]
 [ext_resource type="Texture2D" uid="uid://d1heovyvxtf28" path="res://assets/spritesheets/8_Worksite_48x48.png" id="12_6o42e"]
-[ext_resource type="PackedScene" uid="uid://b5h17lqmc7s3u" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
 [ext_resource type="PackedScene" uid="uid://dfvpa4l3xlr0c" path="res://scenes/explosiv_object/objects/camera/cameraEO.tscn" id="12_wdnak"]
 [ext_resource type="PackedScene" uid="uid://b2xb0yh8gs3da" path="res://scenes/explosiv_object/objects/cartons/3_cartonsEO.tscn" id="13_1iff4"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://d4ijywnprs7se" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
 [ext_resource type="Texture2D" uid="uid://o0150rm8twrj" path="res://assets/spritesheets/22_Post_Office_48x48.png" id="13_rnb85"]
-[ext_resource type="Texture2D" uid="uid://g335nwc7hyit" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
-[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/ExtinguisherEO.tscn" id="15_uyinl"]
-
+[ext_resource type="Texture2D" uid="uid://nxoktdra6ykx" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
+[ext_resource type="PackedScene" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
@@ -53,9 +52,6 @@
 [ext_resource type="PackedScene" uid="uid://lni2l41cc6hh" path="res://scenes/explosiv_object/objects/clock/clockEO.tscn" id="29_rnb85"]
 [ext_resource type="PackedScene" uid="uid://cwa1vusnv6ygj" path="res://scenes/explosiv_object/objects/tools_2/tools_2EO.tscn" id="30_t5owt"]
 [ext_resource type="PackedScene" uid="uid://c7c7mxhgfbfjt" path="res://scenes/explosiv_object/objects/telefon/telefonEO.tscn" id="34_41gcl"]
-[ext_resource type="Texture2D" uid="uid://4uixk5i2kgfj" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="36_jiu3o"]
-[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="37_vbi6r"]
-[ext_resource type="PackedScene" uid="uid://c4rmc202203oa" path="res://scenes/projectiles/camera/camera.tscn" id="38_twah4"]
 [ext_resource type="PackedScene" uid="uid://pct6aj3jkveo" path="res://scenes/explosiv_object/objects/camera_2/camera_2EO.tscn" id="37_0bk81"]
 [ext_resource type="PackedScene" uid="uid://i1gowanntonj" path="res://scenes/explosiv_object/objects/pillow_yellow/pillow_yellowEO.tscn" id="40_3322e"]
 [ext_resource type="PackedScene" uid="uid://dthorv72smpjy" path="res://scenes/explosiv_object/objects/toilet_paper/3_toilet_paperEO.tscn" id="40_teoly"]
@@ -74,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://bnf2ogp5aovdn" path="res://scenes/explosiv_object/objects/toilet/toiletEO.tscn" id="57_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
 [ext_resource type="PackedScene" uid="uid://bquo8oretf2x8" path="res://scenes/explosiv_object/objects/duck/duckEO.tscn" id="63_7dxef"]
+[ext_resource type="PackedScene" uid="uid://226arhqfpu5m" path="res://scenes/explosiv_object/objects/image1/image1EO.tscn" id="67_864w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
 texture = ExtResource("3_kelw5")
@@ -27964,6 +27961,7 @@ position = Vector2(2456, 1870)
 [node name="Tool_3" parent="Rooms/Warehouse/Objects" instance=ExtResource("29_ah1mj")]
 position = Vector2(873.00006, 2613)
 rotation = 0.39555848
+
 [node name="Barrel1" parent="Rooms/Warehouse/Objects" instance=ExtResource("45_0bk81")]
 position = Vector2(2574, 2563)
 
@@ -29944,8 +29942,13 @@ room_number = 4
 position = Vector2(294, -27)
 room_number = 4
 
+[node name="StartRoom" type="Node2D" parent="Rooms"]
+
+[node name="Flower_red" parent="Rooms/StartRoom" instance=ExtResource("67_864w3")]
+position = Vector2(141, 1061)
+
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(1077, 2198)
+position = Vector2(139, 1298)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -576.0
