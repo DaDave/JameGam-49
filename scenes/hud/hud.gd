@@ -2,6 +2,7 @@ class_name Hud extends Control
 
 @export_subgroup("Nodes")
 @export var healthbar: HBoxContainer
+@export var objectives: VBoxContainer
 @export var heart_scene: PackedScene
 @export var countdown_label: Label
 @export var button_objective_1: Label
@@ -32,6 +33,8 @@ func _ready():
 	
 func _process(delta) -> void:
 	countdown_label.text = countdown_label_text.format([roundi(GameTimer.time_left)])
+	if Input.is_action_just_pressed("toggle_objectives"):
+		objectives.visible = !objectives.visible
 
 func add_heart():
 	var new_heart = heart_scene.instantiate()

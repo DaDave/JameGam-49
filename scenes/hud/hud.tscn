@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://kmtgpd2wi5x7" path="res://scenes/hud/heart.tscn" id="2_cgeww"]
 [ext_resource type="LabelSettings" uid="uid://dc1rv5ap7yev5" path="res://scenes/hud/hud_label_settings.tres" id="3_c45xl"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "countdown_label", "button_objective_1", "button_objective_2", "box_objective")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "objectives", "countdown_label", "button_objective_1", "button_objective_2", "box_objective")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -576.0
@@ -14,8 +14,9 @@ offset_bottom = -284.0
 scale = Vector2(2, 2)
 script = ExtResource("1_48c2t")
 healthbar = NodePath("Left_Hud/Healthbar")
+objectives = NodePath("Right_Hud")
 heart_scene = ExtResource("2_cgeww")
-countdown_label = NodePath("Left_Hud/Countdown")
+countdown_label = NodePath("Middle_Hud/Countdown")
 button_objective_1 = NodePath("Right_Hud/ButtonObjective1")
 button_objective_2 = NodePath("Right_Hud/ButtonObjective2")
 box_objective = NodePath("Right_Hud/BoxObjective")
@@ -29,7 +30,15 @@ offset_bottom = 80.0
 custom_minimum_size = Vector2(0, 14)
 layout_mode = 2
 
-[node name="Countdown" type="Label" parent="Left_Hud"]
+[node name="Middle_Hud" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 268.5
+offset_top = 0.5
+offset_right = 308.5
+offset_bottom = 18.5
+alignment = 1
+
+[node name="Countdown" type="Label" parent="Middle_Hud"]
 layout_mode = 2
 label_settings = ExtResource("3_c45xl")
 
