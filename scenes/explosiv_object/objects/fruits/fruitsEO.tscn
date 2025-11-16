@@ -1,10 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dadol1h0ka8ml"]
+[gd_scene load_steps=8 format=3 uid="uid://dadol1h0ka8ml"]
 
 [ext_resource type="Texture2D" uid="uid://crpcslkr6y8fr" path="res://scenes/explosiv_object/objects/fruits/Fruits.png" id="1_8ixne"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_so5fl"]
 [ext_resource type="PackedScene" uid="uid://t5p46rpvua6q" path="res://scenes/projectiles/fruits/fruits_1.tscn" id="3_g5mb2"]
 [ext_resource type="PackedScene" uid="uid://de6rkquolwbk1" path="res://scenes/projectiles/fruits/fruits_2.tscn" id="4_mc4ji"]
-[ext_resource type="Texture2D" uid="uid://c6jfkuggrq3h0" path="res://scenes/projectiles/fruits/Fruits_projectile_1.png" id="5_fg4an"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
 animations = [{
@@ -32,7 +31,7 @@ sprite_frames = SubResource("SpriteFrames_th3o8")
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
 projectile_angle_deg = 25
-projectile_objects = Array[Resource]([ExtResource("3_g5mb2"), ExtResource("4_mc4ji"), ExtResource("5_fg4an")])
+projectile_objects = Array[Resource]([ExtResource("3_g5mb2"), ExtResource("4_mc4ji"), ExtResource("3_g5mb2")])
 pixel_for_explosion = 10000.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
