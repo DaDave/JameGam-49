@@ -1000,10 +1000,10 @@ input_component = NodePath("InputComponent")
 position = Vector2(0, -6)
 scale = Vector2(0.7204169, 0.7204169)
 sprite_frames = SubResource("SpriteFrames_lt3gi")
-animation = &"dodge_up"
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 23)
+position = Vector2(0, 13)
 shape = SubResource("CapsuleShape2D_p0vlq")
 
 [node name="Camera2D" type="Camera2D" parent="."]
