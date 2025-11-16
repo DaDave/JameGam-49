@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bi63vcjcntsty"]
 
 [ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/characters/Player.tscn" id="1_errlg"]
-[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC.tscn" id="3_74lek"]
+[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC/pcEO.tscn" id="3_74lek"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="3_iyx0m"]
 
 [node name="Test" type="Node2D"]

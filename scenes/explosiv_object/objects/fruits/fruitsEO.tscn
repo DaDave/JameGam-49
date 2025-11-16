@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://dadol1h0ka8ml"]
+
+[ext_resource type="Texture2D" uid="uid://crpcslkr6y8fr" path="res://scenes/explosiv_object/objects/fruits/Fruits.png" id="1_8ixne"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_so5fl"]
+[ext_resource type="PackedScene" uid="uid://t5p46rpvua6q" path="res://scenes/projectiles/fruits/fruits_1.tscn" id="3_g5mb2"]
+[ext_resource type="PackedScene" uid="uid://de6rkquolwbk1" path="res://scenes/projectiles/fruits/fruits_2.tscn" id="4_mc4ji"]
+[ext_resource type="Texture2D" uid="uid://c6jfkuggrq3h0" path="res://scenes/projectiles/fruits/Fruits_projectile_1.png" id="5_fg4an"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_8ixne")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8ixne"]
+radius = 21.5
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_45gsc"]
+radius = 135.05925
+
+[node name="Fruits" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_th3o8")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_so5fl")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D2")
+projectile_angle_deg = 25
+projectile_objects = Array[Resource]([ExtResource("3_g5mb2"), ExtResource("4_mc4ji"), ExtResource("5_fg4an")])
+pixel_for_explosion = 10000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_8ixne")
+
+[node name="DangerArea2D2" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D2"]
+shape = SubResource("CircleShape2D_45gsc")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

@@ -21,7 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://bjs6a78isa1s3" path="res://assets/spritesheets/Tv_Studio_Design_layer_1_48x48.png" id="10_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://ls64pfv2npob" path="res://assets/spritesheets/13_Conference_Hall_16x16.png" id="10_l2dhg"]
 [ext_resource type="Texture2D" uid="uid://cxwbinwmqgoy5" path="res://assets/sprites/objects/Table_vertical.png" id="10_otnwt"]
-[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC.tscn" id="11_3xj4h"]
+[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC/pcEO.tscn" id="11_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://dsjowm2ml0kku" path="res://assets/spritesheets/Floors_48x48.png" id="11_10c2w"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 

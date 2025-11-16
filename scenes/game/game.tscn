@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=61 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cfn2j1h4ktrbi" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
 [ext_resource type="Texture2D" uid="uid://batqmyr75e4xj" path="res://assets/spritesheets/Modern_Office_32x32.png" id="5_2vph8"]
 [ext_resource type="Texture2D" uid="uid://fqd882q6k1qc" path="res://assets/spritesheets/Condominium_Design_2_layer_1_48x48.png" id="5_5jirj"]
-[ext_resource type="Texture2D" uid="uid://ususg4holh0q" path="res://assets/spritesheets/Modern_Office_48x48.png" id="6_0gkf7"]
+[ext_resource type="Texture2D" uid="uid://b8leypmtu6cur" path="res://assets/spritesheets/Modern_Office_48x48.png" id="6_0gkf7"]
 [ext_resource type="Texture2D" uid="uid://d1se2h3b2hx" path="res://assets/spritesheets/Gym_2_layer_1_48x48.png" id="6_vaxfo"]
 [ext_resource type="Texture2D" uid="uid://b1c8rha7fpd2g" path="res://assets/spritesheets/2_LivingRoom_48x48.png" id="7_6ehwc"]
 [ext_resource type="Texture2D" uid="uid://t1dmjayueb6f" path="res://assets/spritesheets/Ice_Cream_Shop_Design_layer_1_48x48.png" id="7_ftsea"]
@@ -21,19 +21,20 @@
 [ext_resource type="Texture2D" uid="uid://bjs6a78isa1s3" path="res://assets/spritesheets/Tv_Studio_Design_layer_1_48x48.png" id="10_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://du7tm2mlo4vrw" path="res://assets/spritesheets/2_LivingRoom_16x16.png" id="10_6ehwc"]
 [ext_resource type="Texture2D" uid="uid://cxwbinwmqgoy5" path="res://assets/sprites/objects/Table_vertical.png" id="10_otnwt"]
-[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC/PC.tscn" id="11_3xj4h"]
+[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC/pcEO.tscn" id="11_3xj4h"]
 [ext_resource type="Texture2D" uid="uid://b7p6j21l5mbdt" path="res://assets/spritesheets/1_Generic_48x48.png" id="11_8krtj"]
 [ext_resource type="Texture2D" uid="uid://dsjowm2ml0kku" path="res://assets/spritesheets/Floors_48x48.png" id="11_10c2w"]
 [ext_resource type="PackedScene" uid="uid://bgi2lk7cu01e3" path="res://scenes/explosiv_object/objects/cartons/cartonEO.tscn" id="12_4vuph"]
-[ext_resource type="PackedScene" uid="uid://b5h17lqmc7s3u" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
+[ext_resource type="PackedScene" path="res://scenes/checkpoint_object/checkpoint_object.tscn" id="12_10c2w"]
 [ext_resource type="PackedScene" uid="uid://dfvpa4l3xlr0c" path="res://scenes/explosiv_object/objects/camera/cameraEO.tscn" id="12_wdnak"]
 [ext_resource type="PackedScene" uid="uid://b2xb0yh8gs3da" path="res://scenes/explosiv_object/objects/cartons/3_cartonsEO.tscn" id="13_1iff4"]
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://d4ijywnprs7se" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
-[ext_resource type="Texture2D" uid="uid://g335nwc7hyit" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
-[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/ExtinguisherEO.tscn" id="15_uyinl"]
-[ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plant.tscn" id="16_8b66f"]
+[ext_resource type="Texture2D" uid="uid://nxoktdra6ykx" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
+[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
+[ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
+[ext_resource type="PackedScene" uid="uid://dadol1h0ka8ml" path="res://scenes/explosiv_object/objects/fruits/fruitsEO.tscn" id="21_tyhjx"]
 [ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
 [ext_resource type="PackedScene" uid="uid://bt0bmexq1ufrc" path="res://scenes/explosiv_object/objects/flower_red/flower_redEO.tscn" id="26_l2dhg"]
 [ext_resource type="AudioStream" uid="uid://0wr6n5mxjucy" path="res://resources/music/Inferno Run 2.mp3" id="29_l2dhg"]
@@ -10286,6 +10287,11 @@ position = Vector2(617, 1703)
 [node name="TargetObject" parent="Rooms/CoffeeKitchen" instance=ExtResource("13_pg2xm")]
 position = Vector2(1036, 899)
 
+[node name="Objects" type="Node2D" parent="Rooms/CoffeeKitchen"]
+
+[node name="Fruits" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_tyhjx")]
+position = Vector2(949, 1333)
+
 [node name="BossOffice" type="Node2D" parent="Rooms"]
 
 [node name="CheckpointObject" parent="Rooms/BossOffice" instance=ExtResource("12_10c2w")]
@@ -10310,12 +10316,12 @@ position = Vector2(510, 83)
 [node name="Plant2" parent="Rooms/BossOffice/Objects" instance=ExtResource("16_8b66f")]
 position = Vector2(96, 319)
 
-[node name="Flower_red" parent="Rooms/BossOffice" instance=ExtResource("26_l2dhg")]
-position = Vector2(102, 135)
-
-[node name="Pc" parent="Rooms/BossOffice" instance=ExtResource("11_3xj4h")]
+[node name="Pc" parent="Rooms/BossOffice/Objects" instance=ExtResource("11_3xj4h")]
 position = Vector2(199, 263)
-rotation = 3.1415927
+rotation = -3.1415925
+
+[node name="Flower_red" parent="Rooms/BossOffice/Objects" instance=ExtResource("26_l2dhg")]
+position = Vector2(102, 135)
 
 [node name="Warehouse" type="Node2D" parent="Rooms"]
 
