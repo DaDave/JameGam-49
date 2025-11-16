@@ -1,0 +1,48 @@
+[gd_scene load_steps=9 format=3 uid="uid://tc1ya8s2kgkn"]
+
+[ext_resource type="Texture2D" uid="uid://dymwxs52r0ak6" path="res://scenes/explosiv_object/objects/water_dispenser/water_dispenser.png" id="1_wayus"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_og1hh"]
+[ext_resource type="PackedScene" uid="uid://bsh548t04tmhp" path="res://scenes/projectiles/water_dispenser/water_dispenser_1.tscn" id="3_wayus"]
+[ext_resource type="PackedScene" uid="uid://bvvqct3p8muo3" path="res://scenes/projectiles/water_dispenser/water_dispenser_2.tscn" id="4_ukjou"]
+[ext_resource type="PackedScene" uid="uid://d2sunylsbbj0j" path="res://scenes/projectiles/water_dispenser/water_dispenser_3.tscn" id="5_wsgti"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wayus")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1s5n"]
+size = Vector2(24, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(222, 193)
+
+[node name="WaterDispenser" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_og1hh")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_objects = Array[Resource]([ExtResource("3_wayus"), ExtResource("4_ukjou"), ExtResource("5_wsgti")])
+pixel_for_explosion = 25000.0
+base_percentage = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_y1s5n")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+position = Vector2(-5, 0.5)
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

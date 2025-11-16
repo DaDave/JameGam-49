@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://cruotkayp7dfb"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_sm86i"]
+[ext_resource type="Texture2D" uid="uid://5vhtjy3yoorq" path="res://scenes/projectiles/plant2/plant2_projectile_3.png" id="2_sm86i"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kbkxx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_sm86i")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bvxje"]
+radius = 8.0
+
+[node name="Plant2_3" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_sm86i")
+animated_sprite = NodePath("AnimatedSprite2D")
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kbkxx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_bvxje")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
