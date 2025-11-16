@@ -1,0 +1,53 @@
+[gd_scene load_steps=8 format=3 uid="uid://dlmvhspgj0jlm"]
+
+[ext_resource type="Texture2D" uid="uid://dxcahkoei7hj2" path="res://scenes/explosiv_object/objects/toaster/Toaster1.png" id="1_3bn6e"]
+[ext_resource type="Texture2D" uid="uid://bjl8i08lv2eq4" path="res://scenes/explosiv_object/objects/toaster/Toaster2.png" id="2_86yox"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="3_mpp2l"]
+[ext_resource type="PackedScene" uid="uid://dg4d3u4ygmu7o" path="res://scenes/projectiles/toaster/toaster.tscn" id="4_3bn6e"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 20.0,
+"texture": ExtResource("1_3bn6e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_86yox")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1s5n"]
+size = Vector2(33, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(426, 246)
+
+[node name="Toaster" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+autoplay = "default"
+frame = 1
+frame_progress = 1.0
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("3_mpp2l")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 0
+projectile_objects = Array[Resource]([ExtResource("4_3bn6e")])
+pixel_for_explosion = 1500.0
+base_percentage = 1.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(-0.5, -1)
+shape = SubResource("RectangleShape2D_y1s5n")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

@@ -5,7 +5,6 @@ extends Area2D
 @export var animated_sprite: AnimatedSprite2D
 @export var movement_speed: int = 500
 @export var max_travel_distance: float = 500
-@export var wait_time_layer: float = 0.2
 var travelled_distance: float = 0
 var movement_vector:Vector2
 var rotation_speed: float = 0

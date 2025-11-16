@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://dg4d3u4ygmu7o"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_i7xhn"]
+[ext_resource type="Texture2D" uid="uid://bjl8i08lv2eq4" path="res://scenes/explosiv_object/objects/toaster/Toaster2.png" id="2_5ok7c"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5ok7c")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f2g6"]
+size = Vector2(30.5, 26)
+
+[node name="Toaster" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_i7xhn")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 650
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvsp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_5f2g6")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
