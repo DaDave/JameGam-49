@@ -78,7 +78,7 @@ func _on_decrease_player_health():
 func _on_increase_player_health(hp: int):
 	var heart_count = GameManager.actual_player_health
 	var heart_to_increase = heart_count - hearts.size()
-	if heart_count == 1:
-		hearts[0].make_not_critical()
+	for heart in hearts:
+		heart.make_not_critical()
 	for n in heart_to_increase:
 		add_heart()
