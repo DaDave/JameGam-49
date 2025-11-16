@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://bquo8oretf2x8"]
+[gd_scene load_steps=8 format=3 uid="uid://bquo8oretf2x8"]
 
 [ext_resource type="Texture2D" uid="uid://cgya02p8c4yer" path="res://scenes/explosiv_object/objects/duck/duck.png" id="1_xk6l1"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_teie3"]
+[ext_resource type="AudioStream" uid="uid://c3xya4qjrk20c" path="res://assets/sounds/quietschendchen.wav" id="3_o4ub3"]
 [ext_resource type="PackedScene" uid="uid://dhh3jg6ibkksd" path="res://scenes/projectiles/duck/duck.tscn" id="3_xk6l1"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
@@ -29,6 +30,7 @@ sprite_frames = SubResource("SpriteFrames_f1fnh")
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_teie3")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D")
+explosion_sound = ExtResource("3_o4ub3")
 projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("3_xk6l1")])
 pixel_for_explosion = 20000.0

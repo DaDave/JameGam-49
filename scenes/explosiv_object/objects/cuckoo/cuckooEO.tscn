@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://b7jp4bg61w7vi"]
+[gd_scene load_steps=18 format=3 uid="uid://b7jp4bg61w7vi"]
 
-[ext_resource type="Texture2D" uid="uid://brh2p0d3eod4h" path="res://assets/sprites/animated_cuckoo_clock_48x48.png" id="1_45la0"]
+[ext_resource type="Texture2D" uid="uid://bshbudt62aiqh" path="res://assets/sprites/animated_cuckoo_clock_48x48.png" id="1_45la0"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_hob2o"]
 [ext_resource type="PackedScene" uid="uid://b0ixbw7tik6c8" path="res://scenes/projectiles/cuckoo/cuckoo.tscn" id="3_45la0"]
+[ext_resource type="AudioStream" uid="uid://ejc006vovgu2" path="res://assets/sounds/kuckuck.wav" id="3_hob2o"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_47h6j"]
 atlas = ExtResource("1_45la0")
@@ -98,6 +99,7 @@ frame_progress = 0.8445476
 [node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_hob2o")]
 animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D")
+explosion_sound = ExtResource("3_hob2o")
 projectile_angle_deg = 0
 projectile_objects = Array[Resource]([ExtResource("3_45la0")])
 pixel_for_explosion = 100000.0
