@@ -120,7 +120,7 @@ text = "Controls:
 WSAD - Move
 Space - Dodge
 Enter - Push Button/Enter Box
-Tab - Toggle Objective display"
+Tab - Toggle objective display"
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_0ebjn")
