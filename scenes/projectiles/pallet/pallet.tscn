@@ -1,13 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://dimvhs60v01a3"]
+[gd_scene load_steps=5 format=3 uid="uid://bayvc3sueblti"]
 
-[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_jlqkc"]
-[ext_resource type="Texture2D" uid="uid://c5apm7q4p51rg" path="res://scenes/projectiles/fridge/Fridge_projectile_3.png" id="2_jlqkc"]
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_jj1en"]
+[ext_resource type="Texture2D" uid="uid://v7bj68b08wwe" path="res://scenes/projectiles/pallet/pallet.png" id="2_pj80h"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_jlqkc")
+"texture": ExtResource("2_pj80h")
 }],
 "loop": false,
 "name": &"default",
@@ -15,15 +15,14 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5f2g6"]
-size = Vector2(48, 30)
+size = Vector2(48, 44)
 
-[node name="Fridge_3" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+[node name="Pallet" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
 top_level = true
 collision_layer = 4
 collision_mask = 4
-script = ExtResource("1_jlqkc")
+script = ExtResource("1_jj1en")
 animated_sprite = NodePath("AnimatedSprite2D")
-movement_speed = 400
 metadata/_custom_type_script = "uid://fo1mvn5wkoux"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
