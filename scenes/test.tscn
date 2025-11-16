@@ -1,20 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi63vcjcntsty"]
+[gd_scene load_steps=3 format=3 uid="uid://bi63vcjcntsty"]
 
 [ext_resource type="PackedScene" uid="uid://bv3co3tcjuqgx" path="res://scenes/characters/Player.tscn" id="1_errlg"]
-[ext_resource type="PackedScene" uid="uid://crinajwxurlyn" path="res://scenes/explosiv_object/objects/PC/pcEO.tscn" id="3_74lek"]
-[ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="3_iyx0m"]
+[ext_resource type="PackedScene" uid="uid://d0m76hrwshn6r" path="res://scenes/heal_object/heal_object.tscn" id="2_bl13t"]
 
 [node name="Test" type="Node2D"]
-
-[node name="Keyboard" parent="." instance=ExtResource("3_iyx0m")]
-position = Vector2(626, 246)
-movement_speed = 0
 
 [node name="Player" parent="." instance=ExtResource("1_errlg")]
 top_level = true
 position = Vector2(554, 231)
 
-[node name="Computers" type="Node2D" parent="."]
-
-[node name="Pc" parent="Computers" instance=ExtResource("3_74lek")]
-position = Vector2(326, 112)
+[node name="HealObject" parent="." instance=ExtResource("2_bl13t")]
+position = Vector2(459, 208)
