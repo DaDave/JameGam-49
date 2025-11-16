@@ -5,3 +5,6 @@ class_name Heart extends TextureRect
 
 func make_critical():
 	sprite.play("low_hp")
+
+func make_not_critical():
+	sprite.play("default")
