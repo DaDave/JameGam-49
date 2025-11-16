@@ -1,6 +1,6 @@
 [gd_scene load_steps=18 format=3 uid="uid://pct6aj3jkveo"]
 
-[ext_resource type="Texture2D" uid="uid://4uixk5i2kgfj" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="1_kei8x"]
+[ext_resource type="Texture2D" uid="uid://dkuh124j8j36q" path="res://assets/sprites/animated_security_camera_left_48x48.png" id="1_kei8x"]
 [ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_1joeq"]
 [ext_resource type="AudioStream" uid="uid://bcrn8w1pwx5xo" path="res://assets/sounds/Explosion 3.wav" id="3_e3w7a"]
 [ext_resource type="PackedScene" uid="uid://c4rmc202203oa" path="res://scenes/projectiles/camera/camera.tscn" id="3_ml1gf"]
@@ -92,6 +92,7 @@ size = Vector2(364, 299)
 rotation = 1.5864893
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+rotation = -0.01536266
 sprite_frames = SubResource("SpriteFrames_f1fnh")
 autoplay = "default"
 frame_progress = 0.9023496

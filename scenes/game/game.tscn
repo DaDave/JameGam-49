@@ -32922,8 +32922,8 @@ position = Vector2(340, 415)
 [node name="Plant" parent="Rooms/BossOffice/Objects" instance=ExtResource("16_8b66f")]
 position = Vector2(301, 436)
 
-[node name="Camera" parent="Rooms/BossOffice/Objects" instance=ExtResource("12_wdnak")]
-position = Vector2(510, 83)
+[node name="Camera" parent="Rooms/BossOffice/Objects" instance=ExtResource("37_0bk81")]
+position = Vector2(506, 104.00001)
 
 [node name="Plant2" parent="Rooms/BossOffice/Objects" instance=ExtResource("16_8b66f")]
 position = Vector2(96, 319)
@@ -33284,13 +33284,13 @@ position = Vector2(3500, 2512)
 position = Vector2(3500, 2606)
 
 [node name="Camera" parent="Rooms/Reception/Node2D" instance=ExtResource("12_wdnak")]
-position = Vector2(3377, 1779)
+position = Vector2(3371, 1777)
 
 [node name="Camera2" parent="Rooms/Reception/Node2D" instance=ExtResource("12_wdnak")]
-position = Vector2(3109, 1251)
+position = Vector2(3099, 1187)
 
 [node name="Camera3" parent="Rooms/Reception/Node2D" instance=ExtResource("12_wdnak")]
-position = Vector2(3816, 1141)
+position = Vector2(3867, 1100)
 
 [node name="Extinguisher" parent="Rooms/Reception/Node2D" instance=ExtResource("15_uyinl")]
 position = Vector2(3371, 2510)
