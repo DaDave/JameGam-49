@@ -4,6 +4,7 @@ extends StaticBody2D
 #region variables
 @export var animated_sprite: AnimatedSprite2D
 @export var danger_area: Area2D
+@export var explosion_sound: AudioStreamWAV
 
 @export var count_per_projectile:int = 1
 var projectile_counter:int = 0
@@ -35,6 +36,8 @@ func _ready() -> void:
 	danger_area.body_entered.connect(_on_danger_area_2d_body_entered)
 	danger_area.body_exited.connect(_on_danger_area_2d_body_exited)
 	%TimerExplosion.wait_time = timer_ticks
+	if (explosion_sound != null):
+		%AudioStreamPlayer2D.stream = explosion_sound
 
 func _process(_delta) -> void:
 	_track_player()
@@ -42,6 +45,7 @@ func _process(_delta) -> void:
 #region explode
 func _explode() -> void:
 	is_exploded = true
+	%AudioStreamPlayer2D.play()
 	_animate_explosion()
 	_spawn_projectiles()
 

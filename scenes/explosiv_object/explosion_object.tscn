@@ -1,8 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://c0e2x3alfe40x"]
+[gd_scene load_steps=25 format=3 uid="uid://c0e2x3alfe40x"]
 
 [ext_resource type="Script" uid="uid://dxdfmoeggswbv" path="res://scenes/explosiv_object/explosion_object.gd" id="1_thvt2"]
 [ext_resource type="PackedScene" uid="uid://c8twy8ul1endc" path="res://scenes/projectiles/keyboard/keyboard.tscn" id="2_0ncj0"]
 [ext_resource type="PackedScene" uid="uid://dgy83dqvvt4wc" path="res://scenes/projectiles/mouse/mouse.tscn" id="3_hp3h1"]
+[ext_resource type="AudioStream" uid="uid://c5dvmgxhtquoq" path="res://assets/sounds/booom1.wav" id="5_lfj4a"]
 [ext_resource type="Texture2D" uid="uid://2henvo8djpfk" path="res://scenes/explosiv_object/explosion (4).png" id="5_wasgj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wasgj"]
@@ -172,5 +173,10 @@ process_material = SubResource("ParticleProcessMaterial_wmxbn")
 [node name="TimerExplosion" type="Timer" parent="."]
 unique_name_in_owner = true
 wait_time = 0.3
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("5_lfj4a")
+volume_db = -3.0
 
 [connection signal="timeout" from="TimerExplosion" to="." method="_on_timer_explosion_timeout"]
