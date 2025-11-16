@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://b0ixbw7tik6c8"]
+
+[ext_resource type="Script" uid="uid://fo1mvn5wkoux" path="res://scenes/projectiles/projectile.gd" id="1_tab07"]
+[ext_resource type="Texture2D" uid="uid://brh2p0d3eod4h" path="res://assets/sprites/animated_cuckoo_clock_48x48.png" id="2_ibf53"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hsgdg"]
+atlas = ExtResource("2_ibf53")
+region = Rect2(96, 0, 48, 96)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kvsp2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hsgdg")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5f2g6"]
+size = Vector2(30.5, 37.5)
+
+[node name="Cuckoo" type="Area2D" node_paths=PackedStringArray("animated_sprite")]
+top_level = true
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_tab07")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 400
+metadata/_custom_type_script = "uid://fo1mvn5wkoux"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kvsp2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_5f2g6")
+debug_color = Color(1, 0, 0, 0.41960785)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

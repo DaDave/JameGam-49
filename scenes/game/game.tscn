@@ -1,4 +1,4 @@
-[gd_scene load_steps=97 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=98 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -33,8 +33,8 @@
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://d4ijywnprs7se" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
 [ext_resource type="Texture2D" uid="uid://o0150rm8twrj" path="res://assets/spritesheets/22_Post_Office_48x48.png" id="13_rnb85"]
-[ext_resource type="Texture2D" uid="uid://g335nwc7hyit" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
-[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/ExtinguisherEO.tscn" id="15_uyinl"]
+[ext_resource type="Texture2D" uid="uid://nxoktdra6ykx" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
+[ext_resource type="PackedScene" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
@@ -70,6 +70,7 @@
 [ext_resource type="PackedScene" uid="uid://bnf2ogp5aovdn" path="res://scenes/explosiv_object/objects/toilet/toiletEO.tscn" id="57_q8d8h"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
 [ext_resource type="PackedScene" uid="uid://bquo8oretf2x8" path="res://scenes/explosiv_object/objects/duck/duckEO.tscn" id="63_7dxef"]
+[ext_resource type="PackedScene" uid="uid://b7jp4bg61w7vi" path="res://scenes/explosiv_object/objects/cuckoo/cuckooEO.tscn" id="67_5dkr6"]
 [ext_resource type="PackedScene" uid="uid://226arhqfpu5m" path="res://scenes/explosiv_object/objects/image1/image1EO.tscn" id="67_864w3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lfrn8"]
@@ -30067,6 +30068,9 @@ position = Vector2(294, -27)
 room_number = 4
 
 [node name="StartRoom" type="Node2D" parent="Rooms"]
+
+[node name="Cuckoo" parent="Rooms/StartRoom" instance=ExtResource("67_5dkr6")]
+position = Vector2(285, 1204)
 
 [node name="Image1" parent="Rooms/StartRoom" instance=ExtResource("67_864w3")]
 position = Vector2(142, 1061)
