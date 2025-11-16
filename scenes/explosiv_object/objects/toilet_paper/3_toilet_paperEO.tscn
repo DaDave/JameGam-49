@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://dthorv72smpjy"]
+
+[ext_resource type="Texture2D" uid="uid://bnalnr7lc2t0g" path="res://scenes/explosiv_object/objects/toilet_paper/3_toilet_paper.png" id="1_mto68"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_hwlrr"]
+[ext_resource type="PackedScene" uid="uid://byt2fvc53o77x" path="res://scenes/projectiles/toilet_paper/toilet_paper.tscn" id="3_x3kcp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mto68")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mto68"]
+radius = 19.026299
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hwlrr"]
+radius = 182.09888
+
+[node name="3 Toilet Paper" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_hwlrr")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+count_per_projectile = 3
+projectile_angle_deg = 15
+projectile_objects = Array[Resource]([ExtResource("3_x3kcp")])
+base_percentage = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+shape = SubResource("CircleShape2D_mto68")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+shape = SubResource("CircleShape2D_hwlrr")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)

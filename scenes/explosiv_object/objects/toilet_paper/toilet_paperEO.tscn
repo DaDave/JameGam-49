@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://cfut3i3neesyg"]
+
+[ext_resource type="Texture2D" uid="uid://q1g3nssslt0m" path="res://scenes/explosiv_object/objects/toilet_paper/toilet_paper.png" id="1_tynap"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_e34ag"]
+[ext_resource type="PackedScene" uid="uid://byt2fvc53o77x" path="res://scenes/projectiles/toilet_paper/toilet_paper.tscn" id="3_tynap"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_tynap")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_tynap"]
+height = 26.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_e34ag"]
+radius = 51.0
+height = 222.0
+
+[node name="Toilet Paper" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_e34ag")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+projectile_angle_deg = 0
+projectile_objects = Array[Resource]([ExtResource("3_tynap")])
+pixel_for_explosion = 3500.0
+base_percentage = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+shape = SubResource("CapsuleShape2D_tynap")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+shape = SubResource("CapsuleShape2D_e34ag")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
