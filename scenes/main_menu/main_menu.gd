@@ -7,6 +7,7 @@ func _on_start_button_pressed():
 
 func _on_credits_button_pressed():
 	$CreditsLabel.visible = !$CreditsLabel.visible
+	$ControlsLabel.visible = !$ControlsLabel.visible
 
 func _on_quit_button_pressed():
 	get_tree().quit()
