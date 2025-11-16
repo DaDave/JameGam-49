@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://d0nxssr1gygm"]
+
+[ext_resource type="Texture2D" uid="uid://ey6f8co5ih2e" path="res://scenes/explosiv_object/objects/tool_cabinet/tool_cabinet.png" id="1_uqa3r"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_g24qa"]
+[ext_resource type="PackedScene" uid="uid://corw5h3hcgxp7" path="res://scenes/projectiles/tool_cabinet/tool_cabinet.tscn" id="3_lo3cq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f1fnh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_uqa3r")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y1s5n"]
+size = Vector2(38, 66)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
+size = Vector2(150, 222)
+
+[node name="ToolCabinet" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_f1fnh")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_g24qa")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D")
+count_per_projectile = 3
+projectile_angle_deg = 45
+projectile_objects = Array[Resource]([ExtResource("3_lo3cq")])
+pixel_for_explosion = 3000.0
+base_percentage = 2.5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+shape = SubResource("RectangleShape2D_y1s5n")
+
+[node name="DangerArea2D" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
+position = Vector2(0, 53)
+shape = SubResource("RectangleShape2D_1jx3t")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
