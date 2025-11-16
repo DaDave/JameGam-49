@@ -1,4 +1,4 @@
-# JameGam-49 - Design Document
+# Explocorp - Design Document
 
 ## Introduction
 
@@ -59,6 +59,7 @@ The box is players safe space. By finding a way to open the box the player is ab
 |-------------------------|---------------------------------------------------------------------------------------------------------------------|
 | Movement                | By pressing W,A,S,D (or arrow keys) the player moves the the protagonist through the factory.                       |
 | Dodge                   | By pressing SPACEBAR the player is able to evade projectives after explosions.                                      |
+| Interaction             | By pressing ENTER the player is able to interact with buttons and boxes                                             |
 
 ## Art & Audio
 
@@ -69,7 +70,7 @@ The box is players safe space. By finding a way to open the box the player is ab
 
 ### Music
 
-- mostly self created 8-bit music
+- AI generated music by Suno
 
 ### Sound Effects
 
@@ -82,6 +83,7 @@ The box is players safe space. By finding a way to open the box the player is ab
 - W, A, S, D (movement)
 - arrow keys (movement)
 - SPACEBAR (dodging)
+- ENTER (interaction)
 
 ## Development Timeline
 
