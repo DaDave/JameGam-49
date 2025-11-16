@@ -914,7 +914,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_down",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -937,7 +937,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_left",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -960,7 +960,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_right",
-"speed": 5.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -983,7 +983,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"run_up",
-"speed": 5.0
+"speed": 7.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_p0vlq"]
@@ -1000,7 +1000,8 @@ input_component = NodePath("InputComponent")
 position = Vector2(0, -6)
 scale = Vector2(0.7204169, 0.7204169)
 sprite_frames = SubResource("SpriteFrames_lt3gi")
-animation = &"interact_up"
+animation = &"run_up"
+frame_progress = 0.96067
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 23)
