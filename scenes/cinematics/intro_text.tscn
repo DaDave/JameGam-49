@@ -44,7 +44,7 @@ offset_right = 1123.0
 offset_bottom = 478.0
 text = "You need to press two different buttons hidden in
 random rooms to open the safety box.
-Then you have to find the safety box in a third room"
+Then you have to find the safety box in a third room."
 
 [node name="Label3" type="Label" parent="Control"]
 layout_mode = 0
