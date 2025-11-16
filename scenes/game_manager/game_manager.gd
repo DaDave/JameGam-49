@@ -103,6 +103,7 @@ func _onGameQuitted() -> void:
 	occupied_room_values = []
 	checkpoint_objects = []
 	target_objects = []
+	button_rooms = []
 	pause()
 
 func _onCheckpointObjectRegistered(checkpoint_object: CheckpointObject) -> void:

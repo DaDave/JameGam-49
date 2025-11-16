@@ -9,7 +9,7 @@
 [ext_resource type="Script" uid="uid://ccfn1s3bwoan5" path="res://scenes/Components/input_component.gd" id="4_70d11"]
 [ext_resource type="AudioStream" uid="uid://dmo1g1sopgvea" path="res://assets/sounds/deathsound.wav" id="4_ufbvs"]
 [ext_resource type="Script" uid="uid://b58a5mkblegvr" path="res://scenes/Components/animation_component.gd" id="5_qu4a1"]
-[ext_resource type="AudioStream" uid="uid://dh2fhghkvj3l1" path="res://assets/sounds/dodge.mp3" id="10_7lms1"]
+[ext_resource type="AudioStream" uid="uid://bfnghvg8cssaq" path="res://assets/sounds/dodge.wav" id="10_7lms1"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trv16"]
 atlas = ExtResource("1_p0vlq")

@@ -11,7 +11,7 @@ class_name AnimationComponent extends Node
 @export var hurt_sound: AudioStreamWAV
 @export var walk_sound: AudioStreamWAV
 @export var death_sound: AudioStreamWAV
-@export var dodge_sound: AudioStreamMP3
+@export var dodge_sound: AudioStreamWAV
 
 var up: bool = false 
 var down: bool = true 
@@ -49,7 +49,7 @@ func handle_move_animation(direction_horizontal: float, direction_vertical: floa
 	right = direction_horizontal > 0
 
 func handle_dodge_roll_animation(wants_to_dodge: bool, direction_horizontal: float, direction_vertical: float) -> void:
-	if wants_to_dodge:
+	if wants_to_dodge and !is_dodging:
 		if sprite.animation.contains("up"):
 			sprite.play("dodge_up")
 		elif sprite.animation.contains("down"):
@@ -78,7 +78,6 @@ func handle_interaction() -> void:
 func handle_player_damage() -> void:
 	sprite.modulate = Color(1,0,0)
 	audio_stream_player.stop()
-	audio_stream_player.volume_db = -15.0
 	audio_stream_player.stream = hurt_sound
 	audio_stream_player.play()
 	audio_stream_player.volume_db = 0
