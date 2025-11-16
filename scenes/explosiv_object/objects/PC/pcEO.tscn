@@ -32,6 +32,7 @@ animated_sprite = NodePath("../AnimatedSprite2D")
 danger_area = NodePath("../DangerArea2D2")
 explosion_sound = ExtResource("3_66vdk")
 pixel_for_explosion = 10000.0
+adjust_audio_volume = -20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
 shape = SubResource("RectangleShape2D_sb60f")

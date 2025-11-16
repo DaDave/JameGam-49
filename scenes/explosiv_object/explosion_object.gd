@@ -18,6 +18,7 @@ var projectile_angle_rad:float
 @export var base_percentage:float = 5
 var calculated_percentage:float = 0
 @export var timer_ticks:float = 0.3
+@export var adjust_audio_volume:int = -10
 
 var is_exploded:bool = false
 var movement_pixel:int = 0 :
@@ -118,6 +119,7 @@ func _setup_sound() -> void:
 		%AudioStreamPlayer2D.stream = explosion_sound
 	
 	%AudioStreamPlayer2D.pitch_scale += random_number_generator.randf_range(-0.1, 0.1)
+	%AudioStreamPlayer2D.volume_db = adjust_audio_volume
 
 func _on_danger_area_2d_body_entered(body) -> void:
 	if (body is Player):

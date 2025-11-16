@@ -177,6 +177,5 @@ wait_time = 0.3
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_lfj4a")
-volume_db = -3.0
 
 [connection signal="timeout" from="TimerExplosion" to="." method="_on_timer_explosion_timeout"]
