@@ -1,5 +1,14 @@
-[gd_resource type="LabelSettings" load_steps=0 format=3 uid="uid://dc1rv5ap7yev5"]
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://dc1rv5ap7yev5"]
+
+[ext_resource type="FontFile" uid="uid://7jdcyc6qvdvm" path="res://resources/font/poco.ttf" id="1_36lt2"]
 
 [resource]
-font_size = 14
-font_color = Color(0, 0, 0, 1)
+line_spacing = 0.0
+paragraph_spacing = -6.0
+font = ExtResource("1_36lt2")
+font_size = 17
+outline_size = 6
+outline_color = Color(0, 0, 0, 1)
+stacked_shadow_count = 1
+stacked_shadow_0/offset = Vector2(1, 1)
+stacked_shadow_0/outline_size = 7

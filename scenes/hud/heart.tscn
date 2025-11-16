@@ -45,7 +45,7 @@ script = ExtResource("1_ryuuj")
 sprite = NodePath("HeartSprite")
 
 [node name="HeartSprite" type="AnimatedSprite2D" parent="."]
-position = Vector2(9, 9)
+position = Vector2(15, 16)
 sprite_frames = SubResource("SpriteFrames_gdr8i")
 animation = &"low_hp"
 frame_progress = 0.6441891

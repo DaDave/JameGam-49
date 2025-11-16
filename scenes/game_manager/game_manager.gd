@@ -22,7 +22,7 @@ func _ready() -> void:
 	GameManagerSignalBus.pause_requested.connect(_onPauseRequested)
 	GameManagerSignalBus.game_over_menu_initiated.connect(_onGameOverMenuInitiated)
 	GameManagerSignalBus.game_over.connect(_onGameOver)
-	GameManagerSignalBus.game_over_menu_quitted.connect(_onGameOverQuitted)
+	GameManagerSignalBus.game_quitted.connect(_onGameQuitted)
 	GameManagerSignalBus.register_checkpoint_object.connect(_onCheckpointObjectRegistered)
 	GameManagerSignalBus.interact_checkpoint_object.connect(_onCheckpointObjectInteracted)
 	GameManagerSignalBus.register_target_object.connect(_onTargetObjectRegistered)
@@ -32,7 +32,7 @@ func _onSceneByPathSwitched(path: String) -> void:
 	call_deferred("_deferred_switch_scene", path)
 
 func _onGameStarted() -> void:
-	max_player_health = 3
+	max_player_health = 10
 	interaction_countdown = 2
 	## select checkpoint a
 	var room_value_checkpoint_a = select_random_room_for_object()
@@ -96,7 +96,7 @@ func _onGameOver(successful: bool) -> void:
 		game_over_instance.set_text("You blew up!")
 	game_over_instance.show()
 	
-func _onGameOverQuitted() -> void:
+func _onGameQuitted() -> void:
 	occupied_room_values = []
 	checkpoint_objects = []
 	target_objects = []

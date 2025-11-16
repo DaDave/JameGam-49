@@ -12,7 +12,7 @@ signal game_over(successful : bool)
 
 signal game_over_menu_initiated(game_over_closed: GameOverMenu)
 
-signal game_over_menu_quitted()
+signal game_quitted()
 
 signal switch_scene_by_path(path: String)
 

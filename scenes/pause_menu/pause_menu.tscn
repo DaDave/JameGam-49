@@ -59,7 +59,7 @@ theme_override_fonts/font = ExtResource("2_qcmsd")
 theme_override_font_sizes/font_size = 30
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VerticalBoxContainer/ResumeButton" to="." method="_on_resume_button_pressed"]
-[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/ResumeButton" to="." method="_on_resume_pressed"]
 [connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="MarginContainer/VerticalBoxContainer/QuitButton" to="." method="_on_quit_pressed"]

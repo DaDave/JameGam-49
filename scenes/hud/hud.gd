@@ -11,16 +11,16 @@ class_name Hud extends Control
 
 @export_subgroup("Settings")
 @export var countdown_label_text: String = "{0}"
-@export var button_objective_text = "{0}.Get to the {1}\n and push the button!"
-@export var box_objective_text = "3.Get to the {0}\n and get in the box!"
+@export var button_objective_text = "{0}. Push button in \n{1}"
+@export var box_objective_text = "3. Get in box in \n{0}"
 
 var room_names = {
-	GameManager.COFFEE_KITCHEN: "Coffee Kitchen",
+	GameManager.COFFEE_KITCHEN: "Coffee kitchen",
 	GameManager.BOSS_OFFICE: "Boss office",
 	GameManager.WAREHOUSE: "Warehouse",
 	GameManager.RECEPTION: "Reception",
 	GameManager.RESTROOM: "Restroom",
-	GameManager.MEETINGROOM: "Meeting Room",
+	GameManager.MEETINGROOM: "Meeting room",
 	GameManager.OPEN_PLAN_OFFICE: "Big office"
 }
 
