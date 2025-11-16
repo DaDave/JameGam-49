@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://0ahcoxfpwt3l" path="res://scenes/hud/hud.gd" id="1_48c2t"]
 [ext_resource type="PackedScene" uid="uid://kmtgpd2wi5x7" path="res://scenes/hud/heart.tscn" id="2_cgeww"]
 
-[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar")]
+[node name="HUD" type="Control" node_paths=PackedStringArray("healthbar", "countdown_label")]
 layout_mode = 3
 anchors_preset = 0
 offset_left = -576.0
@@ -14,11 +14,16 @@ scale = Vector2(2, 2)
 script = ExtResource("1_48c2t")
 healthbar = NodePath("VBoxContainer/Healthbar")
 heart_scene = ExtResource("2_cgeww")
+countdown_label = NodePath("VBoxContainer/Countdown")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
 offset_right = 40.0
-offset_bottom = 40.0
+offset_bottom = 80.0
 
 [node name="Healthbar" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 14)
+layout_mode = 2
+
+[node name="Countdown" type="Label" parent="VBoxContainer"]
 layout_mode = 2
