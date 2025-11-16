@@ -35078,6 +35078,10 @@ heal_amount = 3
 position = Vector2(2183, 1024)
 heal_amount = 3
 
+[node name="HealObject9" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
+position = Vector2(2871, 1146)
+heal_amount = 3
+
 [node name="HealObject8" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(101, 1930)
 heal_amount = 3
