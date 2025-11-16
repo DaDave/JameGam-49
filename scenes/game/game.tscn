@@ -6,10 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://co08cid1pk4oh" path="res://assets/spritesheets/Generic_Home_1_Layer_1_48x48.png" id="3_kelw5"]
 [ext_resource type="Texture2D" uid="uid://bg5s7ytaf8w1b" path="res://assets/spritesheets/Condominium_Design_layer_1_48x48.png" id="4_kp23o"]
 [ext_resource type="PackedScene" uid="uid://jw72sm4n7uia" path="res://scenes/game_over_menu/game_over_menu.tscn" id="4_lfrn8"]
-[ext_resource type="Texture2D" uid="uid://bbcr2cyloqx5o" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
+[ext_resource type="Texture2D" uid="uid://cfn2j1h4ktrbi" path="res://assets/spritesheets/Generic_Home_Walls_48x48.png" id="4_uyinl"]
 [ext_resource type="Texture2D" uid="uid://batqmyr75e4xj" path="res://assets/spritesheets/Modern_Office_32x32.png" id="5_2vph8"]
 [ext_resource type="Texture2D" uid="uid://fqd882q6k1qc" path="res://assets/spritesheets/Condominium_Design_2_layer_1_48x48.png" id="5_5jirj"]
-[ext_resource type="Texture2D" uid="uid://b8leypmtu6cur" path="res://assets/spritesheets/Modern_Office_48x48.png" id="6_0gkf7"]
+[ext_resource type="Texture2D" uid="uid://ususg4holh0q" path="res://assets/spritesheets/Modern_Office_48x48.png" id="6_0gkf7"]
 [ext_resource type="Texture2D" uid="uid://d1se2h3b2hx" path="res://assets/spritesheets/Gym_2_layer_1_48x48.png" id="6_vaxfo"]
 [ext_resource type="Texture2D" uid="uid://b1c8rha7fpd2g" path="res://assets/spritesheets/2_LivingRoom_48x48.png" id="7_6ehwc"]
 [ext_resource type="Texture2D" uid="uid://t1dmjayueb6f" path="res://assets/spritesheets/Ice_Cream_Shop_Design_layer_1_48x48.png" id="7_ftsea"]
@@ -35,7 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://o0150rm8twrj" path="res://assets/spritesheets/22_Post_Office_48x48.png" id="13_rnb85"]
 [ext_resource type="Texture2D" uid="uid://g335nwc7hyit" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
 [ext_resource type="Texture2D" uid="uid://c4md0ai46los6" path="res://assets/spritesheets/3_Bathroom_48x48.png" id="15_5dkr6"]
-[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
+[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/ExtinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
@@ -32760,7 +32760,7 @@ tile_set = SubResource("TileSet_0sr1o")
 [node name="CoffeeKitchen" type="Node2D" parent="Rooms"]
 
 [node name="CheckpointObject" parent="Rooms/CoffeeKitchen" instance=ExtResource("12_10c2w")]
-position = Vector2(617, 1703)
+position = Vector2(605, 1713)
 
 [node name="TargetObject" parent="Rooms/CoffeeKitchen" instance=ExtResource("13_pg2xm")]
 position = Vector2(1036, 899)
