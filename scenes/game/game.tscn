@@ -29944,8 +29944,8 @@ room_number = 4
 
 [node name="StartRoom" type="Node2D" parent="Rooms"]
 
-[node name="Flower_red" parent="Rooms/StartRoom" instance=ExtResource("67_864w3")]
-position = Vector2(141, 1061)
+[node name="Image1" parent="Rooms/StartRoom" instance=ExtResource("67_864w3")]
+position = Vector2(142, 1061)
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
 position = Vector2(139, 1298)

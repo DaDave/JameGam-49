@@ -23,7 +23,7 @@ size = Vector2(38, 44)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1jx3t"]
 size = Vector2(98, 228)
 
-[node name="Flower_red" type="Node2D"]
+[node name="Image1" type="Node2D"]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_f1fnh")
