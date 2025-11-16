@@ -69,7 +69,7 @@ func _onGameStarted() -> void:
 	print("selected target room index: " + str(target_index))
 	var target = target_objects[target_index]
 	target.visible = true
-	checkpoint_b.set_collision_layer_value(1, true)
+	target.set_collision_layer_value(1, true)
 	box_room = room_value_target
 	
 	selected_target_object = target
