@@ -106,6 +106,7 @@ position = Vector2(-10, 1)
 shape = SubResource("CircleShape2D_awb6q")
 
 [node name="DangerArea2D" type="Area2D" parent="."]
+visible = false
 collision_layer = 4
 
 [node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D"]
