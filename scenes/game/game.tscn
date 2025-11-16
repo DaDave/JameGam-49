@@ -1,4 +1,4 @@
-[gd_scene load_steps=66 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=67 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
+[ext_resource type="PackedScene" uid="uid://d3gj2of70wm3h" path="res://scenes/explosiv_object/objects/fridge/fridgeEO.tscn" id="21_fba2n"]
 [ext_resource type="PackedScene" uid="uid://w1k3s82ivplk" path="res://scenes/explosiv_object/objects/carrots/carrotsEO.tscn" id="21_sikks"]
 [ext_resource type="PackedScene" uid="uid://dadol1h0ka8ml" path="res://scenes/explosiv_object/objects/fruits/fruitsEO.tscn" id="21_tyhjx"]
 [ext_resource type="PackedScene" uid="uid://dl2mh6tj606gc" path="res://scenes/explosiv_object/objects/cartons/7_cartonsEO.tscn" id="23_3jaai"]
@@ -10294,6 +10295,9 @@ position = Vector2(1036, 899)
 
 [node name="Objects" type="Node2D" parent="Rooms/CoffeeKitchen"]
 
+[node name="Fridge" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_fba2n")]
+position = Vector2(1280, 1057)
+
 [node name="Carrots" parent="Rooms/CoffeeKitchen/Objects" instance=ExtResource("21_sikks")]
 position = Vector2(797, 1519)
 
@@ -10375,6 +10379,9 @@ position = Vector2(3121, 1161.0001)
 room_number = 3
 
 [node name="Node2D" type="Node2D" parent="Rooms/Reception"]
+
+[node name="Flower_red" parent="Rooms/Reception/Node2D" instance=ExtResource("26_l2dhg")]
+position = Vector2(3500, 1753)
 
 [node name="Telefon" parent="Rooms/Reception/Node2D" instance=ExtResource("34_41gcl")]
 position = Vector2(3579, 1500)
@@ -11817,11 +11824,8 @@ position = Vector2(425, 228)
 [node name="Bin2" parent="Rooms/BathLockerRoom/LockRoom" instance=ExtResource("18_gc57s")]
 position = Vector2(903, 228)
 
-[node name="Flower_red" parent="Rooms" instance=ExtResource("26_l2dhg")]
-position = Vector2(3500, 1753)
-
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
-position = Vector2(3627, 1649)
+position = Vector2(735, 1192)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Player"]
 offset_left = -576.0
