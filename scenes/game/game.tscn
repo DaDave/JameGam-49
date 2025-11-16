@@ -1,4 +1,4 @@
-[gd_scene load_steps=98 format=4 uid="uid://k0reyf16mn4x"]
+[gd_scene load_steps=99 format=4 uid="uid://k0reyf16mn4x"]
 
 [ext_resource type="Script" uid="uid://s7wtswnm8mhe" path="res://scenes/game/game.gd" id="1_0sr1o"]
 [ext_resource type="PackedScene" uid="uid://ciri27wpl8l7m" path="res://scenes/pause_menu/pause_menu.tscn" id="1_sul5r"]
@@ -31,7 +31,7 @@
 [ext_resource type="Texture2D" uid="uid://o577yusoy4ro" path="res://assets/sprites/objects/Chair.png" id="13_5v6r0"]
 [ext_resource type="PackedScene" uid="uid://d4ijywnprs7se" path="res://scenes/target_object/target_object.tscn" id="13_pg2xm"]
 [ext_resource type="Texture2D" uid="uid://nxoktdra6ykx" path="res://assets/sprites/objects/Locker.png" id="14_5v6r0"]
-[ext_resource type="PackedScene" uid="uid://b6ixn7244ikek" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
+[ext_resource type="PackedScene" path="res://scenes/explosiv_object/objects/extinguisher/extinguisherEO.tscn" id="15_uyinl"]
 [ext_resource type="PackedScene" uid="uid://vo7kwhnd74pt" path="res://scenes/explosiv_object/objects/plant/plantEO.tscn" id="16_8b66f"]
 [ext_resource type="PackedScene" uid="uid://bq2k8p11pk2c1" path="res://scenes/explosiv_object/objects/bin/binEO.tscn" id="18_gc57s"]
 [ext_resource type="PackedScene" uid="uid://20rvj047lqtn" path="res://scenes/explosiv_object/objects/oranges/orangesEO.tscn" id="21_5q2xh"]
@@ -59,6 +59,7 @@
 [ext_resource type="PackedScene" uid="uid://dc4yhs4127itg" path="res://scenes/explosiv_object/objects/couch_left/couch_leftEO.tscn" id="42_vbi6r"]
 [ext_resource type="PackedScene" uid="uid://cnujlind414h0" path="res://scenes/explosiv_object/objects/books_orange/booksEO.tscn" id="44_twah4"]
 [ext_resource type="PackedScene" uid="uid://d0nxssr1gygm" path="res://scenes/explosiv_object/objects/tool_cabinet/tool_cabinetEO.tscn" id="44_yy23q"]
+[ext_resource type="PackedScene" uid="uid://ckbap2hslurvu" path="res://scenes/explosiv_object/objects/barrel_1/barrel_1EO.tscn" id="45_0bk81"]
 [ext_resource type="PackedScene" uid="uid://dxkd7p6xwwyow" path="res://scenes/explosiv_object/objects/book_blue/bookEO.tscn" id="45_qn4tv"]
 [ext_resource type="PackedScene" uid="uid://c77pwihjdg71k" path="res://scenes/explosiv_object/objects/table_lamp/table_lampEO.tscn" id="49_ye7x0"]
 [ext_resource type="PackedScene" uid="uid://bylhn8h2nlga3" path="res://scenes/explosiv_object/objects/shelve/shelveEO.tscn" id="61_tcm0m"]
@@ -10629,6 +10630,9 @@ position = Vector2(2306, 2422)
 
 [node name="ToolCabinet" parent="Rooms/Warehouse/Objects" instance=ExtResource("44_yy23q")]
 position = Vector2(3092, 2334)
+
+[node name="Barrel1" parent="Rooms/Warehouse/Objects" instance=ExtResource("45_0bk81")]
+position = Vector2(2574, 2563)
 
 [node name="Shelve" parent="Rooms/Warehouse/Objects" instance=ExtResource("61_tcm0m")]
 position = Vector2(3083, 2013)

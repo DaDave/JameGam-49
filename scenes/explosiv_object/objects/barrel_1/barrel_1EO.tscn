@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://ckbap2hslurvu"]
+
+[ext_resource type="Texture2D" uid="uid://b8hhwgtfolp1m" path="res://scenes/explosiv_object/objects/barrel_1/Barrel_1.png" id="1_52v0w"]
+[ext_resource type="PackedScene" uid="uid://c0e2x3alfe40x" path="res://scenes/explosiv_object/explosion_object.tscn" id="2_qqnd0"]
+[ext_resource type="PackedScene" uid="uid://2ugem6wxv8gp" path="res://scenes/projectiles/barrel_1/barrel_1.tscn" id="3_52v0w"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_th3o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_52v0w")
+}],
+"loop": false,
+"name": &"default",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mi31f"]
+size = Vector2(30, 28)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fir08"]
+radius = 73.68175
+
+[node name="Barrel1" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.625, 0.625)
+sprite_frames = SubResource("SpriteFrames_th3o8")
+
+[node name="Explosionobject" parent="." node_paths=PackedStringArray("animated_sprite", "danger_area") instance=ExtResource("2_qqnd0")]
+animated_sprite = NodePath("../AnimatedSprite2D")
+danger_area = NodePath("../DangerArea2D2")
+projectile_angle_deg = 0
+projectile_objects = Array[Resource]([ExtResource("3_52v0w")])
+pixel_for_explosion = 3000.0
+base_percentage = 2.5
+timer_ticks = 0.4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Explosionobject"]
+position = Vector2(-3, 0)
+shape = SubResource("RectangleShape2D_mi31f")
+
+[node name="DangerArea2D2" type="Area2D" parent="."]
+collision_layer = 4
+
+[node name="DangerShape2D" type="CollisionShape2D" parent="DangerArea2D2"]
+shape = SubResource("CircleShape2D_fir08")
+debug_color = Color(0.75696266, 0.45515418, 1.92523e-07, 0.41960785)
