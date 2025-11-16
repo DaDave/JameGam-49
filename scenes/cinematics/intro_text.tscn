@@ -137,9 +137,9 @@ autowrap_mode = 2
 [node name="DescriptionText" type="Label" parent="Control"]
 layout_mode = 0
 offset_left = 705.0
-offset_top = 330.0
+offset_top = 341.0
 offset_right = 1148.0
-offset_bottom = 602.0
+offset_bottom = 613.0
 theme_override_font_sizes/font_size = 18
 text = "You need to press two different buttons hidden in
 random rooms to open the safety box.
@@ -163,14 +163,14 @@ text = "Press any key to continue"
 horizontal_alignment = 1
 
 [node name="ButtonRed" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(932, 395)
+position = Vector2(932, 406)
 sprite_frames = SubResource("SpriteFrames_ehks3")
 autoplay = "default"
 frame = 1
 frame_progress = 0.19741084
 
 [node name="BoxOpenFull1" type="AnimatedSprite2D" parent="Control"]
-position = Vector2(932, 463)
+position = Vector2(932, 474)
 sprite_frames = SubResource("SpriteFrames_to777")
 autoplay = "default"
 frame = 2
@@ -238,5 +238,5 @@ offset_bottom = 508.0
 text = "Reception"
 
 [node name="Medipack" type="Sprite2D" parent="Control"]
-position = Vector2(932, 581)
+position = Vector2(932, 592)
 texture = ExtResource("14_0jaoo")
