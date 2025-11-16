@@ -111,10 +111,10 @@ horizontal_alignment = 2
 [node name="ControlsLabel" type="Label" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 793.0
-offset_top = 482.0
-offset_right = 1119.0
-offset_bottom = 644.0
+offset_left = 787.0
+offset_top = 467.0
+offset_right = 1113.0
+offset_bottom = 629.0
 theme_override_font_sizes/font_size = 24
 text = "Controls:
 WSAD - Move
