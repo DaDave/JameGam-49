@@ -32,7 +32,7 @@ func _onSceneByPathSwitched(path: String) -> void:
 	call_deferred("_deferred_switch_scene", path)
 
 func _onGameStarted() -> void:
-	max_player_health = 10
+	max_player_health = 100
 	interaction_countdown = 2
 	## select checkpoint a
 	var room_value_checkpoint_a = select_random_room_for_object()
@@ -43,7 +43,7 @@ func _onGameStarted() -> void:
 	var checkpoint_a = checkpoint_objects[checkpoint_a_index]
 	checkpoint_a.visible = true
 	checkpoint_a.interactable = true
-	button_rooms.append(checkpoint_a_index)
+	button_rooms.append(room_value_checkpoint_a)
 	
 	## select checkpoint b
 	var room_value_checkpoint_b = select_random_room_for_object()
@@ -54,7 +54,7 @@ func _onGameStarted() -> void:
 	var checkpoint_b = checkpoint_objects[checkpoint_b_index]
 	checkpoint_b.visible = true
 	checkpoint_b.interactable = true
-	button_rooms.append(checkpoint_b_index)
+	button_rooms.append(room_value_checkpoint_b)
 	
 	## select target 
 	var room_value_target = select_random_room_for_object()
@@ -64,7 +64,7 @@ func _onGameStarted() -> void:
 	print("selected target room index: " + str(target_index))
 	var target = target_objects[target_index]
 	target.visible = true
-	box_room = target_index
+	box_room = room_value_target
 	
 	selected_target_object = target
 	selected_target_object.execute_alert_closed_light()
