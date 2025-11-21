@@ -13,6 +13,7 @@ var isPaused : bool = false
 var current_scene = null
 var button_rooms: Array[int] = []
 var box_room: int
+var difficulty: DIFFICULTY = DIFFICULTY.DIFFICULTY_NORMAL
 
 func _ready() -> void:
 	var root = get_tree().root
@@ -29,6 +30,7 @@ func _ready() -> void:
 	GameManagerSignalBus.register_target_object.connect(_onTargetObjectRegistered)
 	GameManagerSignalBus.decrease_player_health.connect(_onPlayerHealthDecreased)
 	GameManagerSignalBus.increase_player_health.connect(_onPlayerHealthIncreased)
+	GameManagerSignalBus.set_difficulty.connect(_onSetDifficulty)
 
 func _onSceneByPathSwitched(path: String) -> void:
 	call_deferred("_deferred_switch_scene", path)
@@ -162,6 +164,13 @@ func pause():
 	
 	isPaused = !isPaused
 
+
+func _onSetDifficulty(new_difficulty_level: DIFFICULTY) -> void:
+	difficulty = new_difficulty_level
+
+func getDifficulty() -> DIFFICULTY:
+	return difficulty
+
 ## ROOM ENUM 
 enum Rooms {COFFEE_KITCHEN, BOSS_OFFICE, WAREHOUSE, RECEPTION, RESTROOM, MEETINGROOM, OPEN_PLAN_OFFICE}
 
@@ -172,3 +181,12 @@ const RECEPTION = 3
 const RESTROOM = 4
 const MEETINGROOM = 5
 const OPEN_PLAN_OFFICE = 6
+
+## DIFFICULTY ENUM 
+enum DIFFICULTY {DIFFICULTY_BABY, DIFFICULTY_EASY, DIFFICULTY_NORMAL, DIFFICULTY_HARD, DIFFICULTY_HELL}
+
+const DIFFICULTY_BABY = 0
+const DIFFICULTY_EASY = 1
+const DIFFICULTY_NORMAL = 2
+const DIFFICULTY_HARD = 3
+const DIFFICULTY_HELL = 4

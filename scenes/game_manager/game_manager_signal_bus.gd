@@ -29,3 +29,5 @@ signal interact_checkpoint_object()
 signal register_target_object(Target_object: TargetObject)
 
 signal game_started()
+
+signal set_difficulty(difficulty_level: int)
