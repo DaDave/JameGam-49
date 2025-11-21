@@ -35198,39 +35198,30 @@ debug_color = Color(1, 0, 0, 0.41960785)
 
 [node name="HealObject" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(1525, 1995)
-heal_amount = 2
 
 [node name="HealObject2" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(139, 1119)
-heal_amount = 2
 
 [node name="HealObject3" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(99, 453)
-heal_amount = 2
 
 [node name="HealObject4" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(1477, 1697)
-heal_amount = 2
 
 [node name="HealObject5" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(3182, 944)
-heal_amount = 2
 
 [node name="HealObject6" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(3145, 1688)
-heal_amount = 2
 
 [node name="HealObject7" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(2183, 1024)
-heal_amount = 2
 
 [node name="HealObject9" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(2871, 1146)
-heal_amount = 2
 
 [node name="HealObject8" parent="Rooms/HealObjects" instance=ExtResource("74_yegcf")]
 position = Vector2(101, 1930)
-heal_amount = 2
 
 [node name="Player" parent="." instance=ExtResource("2_5jirj")]
 position = Vector2(133, 1438)
