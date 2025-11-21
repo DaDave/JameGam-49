@@ -42,9 +42,9 @@ func _setup_difficulty() -> void:
 	# HARD ist der Default fuer die eingestellten Werte
 	match difficulty:
 		GameManager.DIFFICULTY_BABY:
-			_change_difficulty(0.4)
+			_change_difficulty(0.5)
 		GameManager.DIFFICULTY_EASY:
-			_change_difficulty(0.6)
+			_change_difficulty(0.65)
 		GameManager.DIFFICULTY_NORMAL:
 			_change_difficulty(0.8)
 		GameManager.DIFFICULTY_HELL:
