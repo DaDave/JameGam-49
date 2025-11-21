@@ -75,10 +75,10 @@ text = "Quit"
 [node name="OptionButton" type="OptionButton" parent="."]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 153.0
-offset_top = 515.0
-offset_right = 292.0
-offset_bottom = 543.0
+offset_left = 191.0
+offset_top = 513.0
+offset_right = 330.0
+offset_bottom = 541.0
 selected = 0
 fit_to_longest_item = false
 item_count = 6
