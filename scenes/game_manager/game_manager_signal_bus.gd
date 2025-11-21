@@ -1,5 +1,7 @@
 extends Node
 
+@warning_ignore_start("unused_signal")
+
 signal start_game()
 
 signal pause_menu_initiated(pause_menu : PauseMenu)
