@@ -13,13 +13,17 @@ config_version=5
 config/name="Explocorp"
 run/main_scene="uid://dyvgpxd0rqg44"
 config/features=PackedStringArray("4.5", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cxr68mv33uqdw"
 
 [autoload]
 
 GameManagerSignalBus="*res://scenes/game_manager/game_manager_signal_bus.gd"
 GameManager="*res://scenes/game_manager/game_manager.gd"
 GameTimer="*res://scenes/game_manager/timer.gd"
+
+[dotnet]
+
+project/assembly_name="JameGam-49"
 
 [gui]
 
