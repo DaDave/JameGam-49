@@ -38,6 +38,7 @@ func _ready() -> void:
 	danger_area.body_exited.connect(_on_danger_area_2d_body_exited)
 	%TimerExplosion.wait_time = timer_ticks
 	_setup_sound()
+	_setup_difficulty()
 
 func _process(_delta) -> void:
 	_track_player()
@@ -120,6 +121,36 @@ func _setup_sound() -> void:
 	
 	%AudioStreamPlayer2D.pitch_scale += random_number_generator.randf_range(-0.1, 0.1)
 	%AudioStreamPlayer2D.volume_db = adjust_audio_volume
+
+func _setup_difficulty() -> void:
+	var difficulty = GameManager.getDifficulty()
+	
+	# HARD ist der Default fuer die eingestellten Werte
+	match difficulty:
+		GameManager.DIFFICULTY_BABY:
+			_set_max_projectiles(1)
+			_change_difficulty(2)
+		GameManager.DIFFICULTY_EASY:
+			_set_max_projectiles(2)
+			_change_difficulty(1.5)
+		GameManager.DIFFICULTY_NORMAL:
+			_change_difficulty(1.25)
+		GameManager.DIFFICULTY_HELL:
+			_change_difficulty(0.75)
+		GameManager.DIFFICULTY_MADNESS:
+			count_per_projectile += 1
+			if projectile_angle_deg == 0:
+				projectile_angle_deg = 10
+			_change_difficulty(0.75)
+
+func _change_difficulty(multiplier: float):
+	pixel_for_explosion = pixel_for_explosion * multiplier
+	base_percentage = base_percentage / multiplier
+	timer_ticks = timer_ticks * multiplier
+
+func _set_max_projectiles(max_amount: int):
+	if count_per_projectile > max_amount:
+		count_per_projectile = max_amount
 
 func _on_danger_area_2d_body_entered(body) -> void:
 	if (body is Player):

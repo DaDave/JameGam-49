@@ -81,7 +81,7 @@ offset_right = 292.0
 offset_bottom = 543.0
 selected = 0
 fit_to_longest_item = false
-item_count = 5
+item_count = 6
 popup/item_0/text = "Baby"
 popup/item_0/id = 0
 popup/item_1/text = "Easy"
@@ -92,6 +92,8 @@ popup/item_3/text = "Hard"
 popup/item_3/id = 3
 popup/item_4/text = "Hell"
 popup/item_4/id = 4
+popup/item_5/text = "Madness"
+popup/item_5/id = 5
 
 [node name="CreditsLabel" type="Label" parent="."]
 unique_name_in_owner = true
