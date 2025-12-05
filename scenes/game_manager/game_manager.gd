@@ -19,6 +19,7 @@ func _ready() -> void:
 	var root = get_tree().root
 	current_scene = root.get_child(root.get_child_count() - 1)
 	GameManagerSignalBus.switch_scene_by_path.connect(_onSceneByPathSwitched)
+	GameManagerSignalBus.switch_scene_by_resource.connect(_onSceneByResourceSwitched)
 	GameManagerSignalBus.start_game.connect(_onGameStarted)
 	GameManagerSignalBus.pause_menu_initiated.connect(_onPauseMenuInitiated)
 	GameManagerSignalBus.pause_requested.connect(_onPauseRequested)
@@ -33,7 +34,10 @@ func _ready() -> void:
 	GameManagerSignalBus.set_difficulty.connect(_onSetDifficulty)
 
 func _onSceneByPathSwitched(path: String) -> void:
-	call_deferred("_deferred_switch_scene", path)
+	_deferred_switch_scene_by_path.call_deferred(path)
+	
+func _onSceneByResourceSwitched(resource: Resource) -> void:
+	_deferred_switch_scene_by_resource.call_deferred(resource)
 
 func _onGameStarted() -> void:
 	max_player_health = 10
@@ -139,10 +143,16 @@ func _onPlayerHealthIncreased(hp: int) -> void:
 		actual_player_health = max_player_health
 	print(actual_player_health)
 
-func _deferred_switch_scene(scene_path):
+func _deferred_switch_scene_by_path(scene_path: String):
 	current_scene.free()
 	var scene = load(scene_path)
 	current_scene = scene.instantiate()
+	get_tree().root.add_child(current_scene)
+	get_tree().current_scene = current_scene
+
+func _deferred_switch_scene_by_resource(resource: Resource):
+	current_scene.free()
+	current_scene = resource.instantiate()
 	get_tree().root.add_child(current_scene)
 	get_tree().current_scene = current_scene
 

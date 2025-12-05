@@ -13,9 +13,9 @@
 [ext_resource type="Texture2D" uid="uid://vsciguk2ycsh" path="res://assets/sprites/box_open_half_1.png" id="10_8jbrj"]
 [ext_resource type="Texture2D" uid="uid://b60ayk8f0pw6u" path="res://assets/sprites/box_open_full.png" id="11_yd50d"]
 [ext_resource type="Texture2D" uid="uid://c1ktvq5ubiumj" path="res://resources/background/Version_1.png" id="13_1fvgr"]
-[ext_resource type="Texture2D" uid="uid://deju26fo67sdh" path="res://scenes/heal_object/medipack.png" id="14_0jaoo"]
-[ext_resource type="Texture2D" uid="uid://cfu6y1o8saxuv" path="res://scenes/heal_object/medipack_2.png" id="15_yd50d"]
-[ext_resource type="Texture2D" uid="uid://cp1l6h7ataqft" path="res://scenes/heal_object/medipack_3.png" id="16_a0jlw"]
+[ext_resource type="Texture2D" uid="uid://db5pjxa8eofwo" path="res://scenes/heal_object/medipack.png" id="14_0jaoo"]
+[ext_resource type="Texture2D" uid="uid://c7v3g3126jj60" path="res://scenes/heal_object/medipack_2.png" id="15_yd50d"]
+[ext_resource type="Texture2D" uid="uid://c6yl8ggv2h786" path="res://scenes/heal_object/medipack_3.png" id="16_a0jlw"]
 [ext_resource type="Texture2D" uid="uid://d0il20c24x5wu" path="res://scenes/heal_object/medipack_4.png" id="17_to777"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1f3nx"]

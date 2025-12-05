@@ -18,6 +18,8 @@ signal game_quitted()
 
 signal switch_scene_by_path(path: String)
 
+signal switch_scene_by_resource(resource: Resource)
+
 signal decrease_player_health()
 
 signal increase_player_health(hp: int)
